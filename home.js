@@ -3,7 +3,10 @@ function loadhome() {
         document.getElementsByClassName("block-elements")[0].innerHTML +=
             `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})">
                     <div class="video-thumbnail">
-                        <div class="duration">
+                        <iframe src="https://www.youtube.com/embed/${ln[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${ln[i][6]}"
+            height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
+            <div class="clear"></div>
+                    <div class="duration">
                             🔉 LIVE
                         </div>
                     </div>
@@ -12,7 +15,7 @@ function loadhome() {
                     <div class="video-sub">
                     </div>
                 </div>`;
-        document.getElementsByClassName("video-thumbnail")[i].style.backgroundImage = `url('thumbnails/${ln[i][0]}')`;
+        document.getElementsByClassName("clear")[i].style.backgroundImage = `url('thumbnails/${ln[i][0]}')`;
         document.getElementsByClassName("duration")[i].style.width = "45px";
         document.getElementsByClassName("duration")[i].style.left = "100px";
         document.getElementsByClassName("duration")[i].style.backgroundColor = "red";
@@ -29,6 +32,9 @@ function loadhome() {
         document.getElementsByClassName("block-elements")[1].innerHTML +=
             `<div class="block-video" onmouseenter="playvid(${i + ln.length})" onmouseleave="stopvid(${i + ln.length})">
                     <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/${fp[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${fp[i][6]}"
+            height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
+            <div class="clear"></div>
                         <div class="duration">
                         </div>
                     </div>
@@ -37,7 +43,7 @@ function loadhome() {
                     <div class="video-sub">
                     </div>
                 </div>`
-        document.getElementsByClassName("video-thumbnail")[i + ln.length].style.backgroundImage = `url('thumbnails/${fp[i][0]}')`;
+        document.getElementsByClassName("clear")[i + ln.length].style.backgroundImage = `url('thumbnails/${fp[i][0]}')`;
         document.getElementsByClassName("duration")[i + ln.length].innerHTML = `${fp[i][1]}`;
         document.getElementsByClassName("duration")[i + ln.length].style.left = "105px";
         document.getElementsByClassName("duration")[i + ln.length].style.width = "40px";
@@ -122,6 +128,9 @@ function clickMenu(index) {
             document.getElementsByClassName("page")[0].innerHTML +=
                 `<div class="block-video" onmouseenter="playsmallvid(${i})" onmouseleave="stopsmallvid(${i})">
                     <div class="small-video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/${all[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${all[i][6]}"
+        height="240" width="240" frameborder="0" style="position:absolute;"></iframe>
+        <div class="small-clear"></div>
                         <div class="small-duration"></div>
                     </div>
                     <div class="small-video-title">
@@ -129,7 +138,7 @@ function clickMenu(index) {
                     <div class="video-sub">
                     </div>
                 </div>`
-            document.getElementsByClassName("small-video-thumbnail")[i].style.backgroundImage = `url('thumbnails/${all[i][0]}')`;
+            document.getElementsByClassName("small-clear")[i].style.backgroundImage = `url('thumbnails/${all[i][0]}')`;
             document.getElementsByClassName("small-duration")[i].innerHTML = `${all[i][1]}`;
             if (all[i][1] == '🔉 LIVE') {
                 document.getElementsByClassName("small-duration")[i].style.backgroundColor = "red";
@@ -149,49 +158,21 @@ function clickMenu(index) {
 }
 
 function playvid(index) {
-    if (index < ln.length) {
-        document.getElementsByClassName("video-thumbnail")[index].innerHTML = 
-            `<iframe src="https://www.youtube.com/embed/${ln[index][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${ln[index][6]}"
-            height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
-            <div class="clear"></div>`;
-    } else {
-        document.getElementsByClassName("video-thumbnail")[index].innerHTML = 
-            `<iframe src="https://www.youtube.com/embed/${fp[index - ln.length][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${fp[index - ln.length][6]}"
-            height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
-            <div class="clear"></div>`;
-    }
+    document.getElementsByClassName("clear")[index].style.opacity = 0;
+    document.getElementsByClassName("duration")[index].style.opacity = 0;
 }
 
 function stopvid(index) {
-    document.getElementsByClassName("video-thumbnail")[index].innerHTML = `<div class="duration"></div>`
-    if (index < ln.length) {
-        document.getElementsByClassName("duration")[index].innerHTML = `${ln[index][1]}`;
-        document.getElementsByClassName("duration")[index].style.backgroundColor = "red";
-        document.getElementsByClassName("duration")[index].style.color = "white";
-        document.getElementsByClassName("duration")[index].style.fontWeight = "bold";
-        document.getElementsByClassName("duration")[index].style.left = "100px";
-        document.getElementsByClassName("duration")[index].style.width = "45px";
-    } else {
-        document.getElementsByClassName("duration")[index].innerHTML = `${fp[index - ln.length][1]}`;
-        document.getElementsByClassName("duration")[index].style.left = "105px";
-        document.getElementsByClassName("duration")[index].style.width = "40px";
-        document.getElementsByClassName("duration")[index].style.backgroundColor = "rgb(0,0,0,0.4)";
-        document.getElementsByClassName("duration")[index].style.color = "rgb(255,255,255,0.8)";
-    }
+    document.getElementsByClassName("clear")[index].style.opacity = 1;
+    document.getElementsByClassName("duration")[index].style.opacity = 1;
 }
 
 function playsmallvid(index) {
-    document.getElementsByClassName("small-video-thumbnail")[index].innerHTML =
-        `<iframe src="https://www.youtube.com/embed/${all[index][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${all[index][6]}"
-        height="240" width="240" frameborder="0" style="position:absolute;"></iframe>
-        <div class="small-clear"></div>`;
+    document.getElementsByClassName("small-clear")[index].style.opacity = 0;
+    document.getElementsByClassName("small-duration")[index].style.opacity = 0;
 }
 
 function stopsmallvid(index) {
-    document.getElementsByClassName("small-video-thumbnail")[index].innerHTML = `<div class="small-duration"></div>`
-    document.getElementsByClassName("small-duration")[index].innerHTML = `${all[index][1]}`;
-    if (all[index][1] == '🔉 LIVE') {
-        document.getElementsByClassName("small-duration")[index].style.backgroundColor = "red";
-        document.getElementsByClassName("small-duration")[index].style.color = "white";
-    }
+    document.getElementsByClassName("small-clear")[index].style.opacity = 1;
+    document.getElementsByClassName("small-duration")[index].style.opacity = 1;
 }
