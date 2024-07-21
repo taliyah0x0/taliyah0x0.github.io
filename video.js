@@ -22,7 +22,7 @@ function openVideo(index) {
     if (code.substring(0,8) != "https://") {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
-        <iframe src="https://www.youtube-nocookie.com/embed/${code}?autoplay=0&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+        <iframe src="https://www.youtube.com/embed/${code}?autoplay=0&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
             height="500" width="700" frameborder="0" allowfullscreen style="position:absolute; top:-50px;"></iframe>
             <div class="cover"></div>
             <div class="title">${title}</div>
@@ -51,7 +51,7 @@ function openSmallVideo(index) {
     if (code.substring(0,8) != "https://") {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
-            <iframe src="https://www.youtube-nocookie.com/embed/${all[index][5]}?autoplay=0&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+            <iframe src="https://www.youtube.com/embed/${all[index][5]}?autoplay=0&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
                 height="500" width="700" frameborder="0" allowfullscreen style="position:absolute; top:-50px;"></iframe>
             <div class="cover"></div>
             <div class="title">${all[index][2]}</div>
