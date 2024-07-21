@@ -1,12 +1,11 @@
 var startIndex = 0;
 var smallStartIndex = 0;
 function loadhome() {
-    startIndex = ln.length + fp.length - 1;
     for (var i = 0; i < ln.length; i++) {
         document.getElementsByClassName("block-elements")[0].innerHTML +=
-            `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="openVideo(${i})">
+            `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="openVideo(${all.indexOf(w[ln[i]])})">
                 <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/${ln[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${ln[i][6]}"
+                <iframe src="https://www.youtube.com/embed/${w[ln[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${w[ln[i]][6]}"
             height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
                     <div class="clear"></div>
                     <div class="duration">🔉 LIVE</div>
@@ -14,50 +13,47 @@ function loadhome() {
                 <div class="video-title"></div>
                 <div class="video-sub"></div>
             </div>`;
-        document.getElementsByClassName("clear")[i].style.backgroundImage = `url('thumbnails/${ln[i][0]}')`;
+        document.getElementsByClassName("clear")[i].style.backgroundImage = `url('thumbnails/${w[ln[i]][0]}')`;
         document.getElementsByClassName("duration")[i].style.width = "45px";
         document.getElementsByClassName("duration")[i].style.left = "100px";
         document.getElementsByClassName("duration")[i].style.backgroundColor = "red";
         document.getElementsByClassName("duration")[i].style.fontWeight = "bold";
-        document.getElementsByClassName("video-title")[i].innerHTML = `${ln[i][2]}`;
+        document.getElementsByClassName("video-title")[i].innerHTML = `${w[ln[i]][2]}`;
 
-        var startYear = parseInt(ln[i][3].slice(0, 4));
-        var startMonth = parseInt(ln[i][3].slice(5, 7));
-        var startDay = parseInt(ln[i][3].slice(8, 10));
+        var startYear = parseInt(w[ln[i]][3].slice(0, 4));
+        var startMonth = parseInt(w[ln[i]][3].slice(5, 7));
+        var startDay = parseInt(w[ln[i]][3].slice(8, 10));
         var ago = setAgo(startYear, startMonth, startDay);
-        document.getElementsByClassName("video-sub")[i].innerHTML = `${ln[i][4]} • ${ago}`;
+        document.getElementsByClassName("video-sub")[i].innerHTML = `${w[ln[i]][4]} • ${ago}`;
     }
     for (var i = 0; i < fp.length; i++) {
         document.getElementsByClassName("block-elements")[1].innerHTML +=
-            `<div class="block-video" onmouseenter="playvid(${i + ln.length})" onmouseleave="stopvid(${i + ln.length})" onclick="openVideo(${i + ln.length})">
-                    <div class="video-thumbnail">
-                    <iframe src="https://www.youtube.com/embed/${fp[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${fp[i][6]}"
+            `<div class="block-video" onmouseenter="playvid(${i + ln.length})" onmouseleave="stopvid(${i + ln.length})" onclick="openVideo(${all.indexOf(p[fp[i]])})">
+                <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/${p[fp[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${p[fp[i]][6]}"
             height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
-            <div class="clear"></div>
-                        <div class="duration">
-                        </div>
-                    </div>
-                    <div class="video-title">
-                    </div>
-                    <div class="video-sub">
-                    </div>
-                </div>`
-        document.getElementsByClassName("clear")[i + ln.length].style.backgroundImage = `url('thumbnails/${fp[i][0]}')`;
-        document.getElementsByClassName("duration")[i + ln.length].innerHTML = `${fp[i][1]}`;
-        document.getElementsByClassName("duration")[i + ln.length].style.left = "105px";
+                    <div class="clear"></div>
+                    <div class="duration"></div>
+                </div>
+                <div class="video-title"></div>
+                <div class="video-sub"></div>
+            </div>`;
+        document.getElementsByClassName("clear")[i + ln.length].style.backgroundImage = `url('thumbnails/${p[fp[i]][0]}')`;
         document.getElementsByClassName("duration")[i + ln.length].style.width = "40px";
-        document.getElementsByClassName("duration")[i + ln.length].style.backgroundColor = "rgb(0,0,0,0.4)";
-        document.getElementsByClassName("duration")[i + ln.length].style.color = "rgb(255,255,255,0.8)";
-        document.getElementsByClassName("video-title")[i + ln.length].innerHTML = `${fp[i][2]}`;
+        document.getElementsByClassName("duration")[i + ln.length].style.left = "100px";
+        document.getElementsByClassName("duration")[i + ln.length].style.backgroundColor = "rgb(0,0,0,0.5)";
+        document.getElementsByClassName("duration")[i + ln.length].style.fontWeight = "bold";
+        document.getElementsByClassName("duration")[i + ln.length].innerHTML = `${p[fp[i]][1]}`;
+        document.getElementsByClassName("video-title")[i + ln.length].innerHTML = `${p[fp[i]][2]}`;
 
-        var startYear = parseInt(fp[i][3].slice(0, 4));
-        var startMonth = parseInt(fp[i][3].slice(5, 7));
-        var startDay = parseInt(fp[i][3].slice(8, 10));
+        var startYear = parseInt(p[fp[i]][3].slice(0, 4));
+        var startMonth = parseInt(p[fp[i]][3].slice(5, 7));
+        var startDay = parseInt(p[fp[i]][3].slice(8, 10));
         var ago = setAgo(startYear, startMonth, startDay);
-        document.getElementsByClassName("video-sub")[i + ln.length].innerHTML = `${fp[i][4]} • ${ago}`;
+        document.getElementsByClassName("video-sub")[i + ln.length].innerHTML = `${p[fp[i]][4]} • ${ago}`;
     }
     
-    setInterval(setVideoStarts, 5000);
+    setInterval(setVideoStarts, 8000);
 }
 
 function setAgo(startYear, startMonth, startDay) {
@@ -125,7 +121,7 @@ function clickMenu(index) {
         document.getElementById("container").innerHTML =  `<div class="page"></div>`;
         for (var i = 0; i < all.length; i++) {
             document.getElementsByClassName("page")[0].innerHTML +=
-                `<div class="block-video" onmouseenter="playsmallvid(${i})" onmouseleave="stopsmallvid(${i})" onclick="openSmallVideo(${i})">
+                `<div class="block-video" onmouseenter="playsmallvid(${i})" onmouseleave="stopsmallvid(${i})" onclick="openVideo(${i})">
                     <div class="small-video-thumbnail">
                     <iframe src="https://www.youtube.com/embed/${all[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${all[i][6]}"
         height="240" width="240" frameborder="0" style="position:absolute;"></iframe>
@@ -169,7 +165,6 @@ const setVideoStarts = () => {
 };
 
 function playvid(index) {
-
     document.getElementsByClassName("clear")[index].style.transition = "ease-in-out 0.5s";
     document.getElementsByClassName("clear")[index].style.opacity = 0;
     document.getElementsByClassName("duration")[index].style.opacity = 0;
