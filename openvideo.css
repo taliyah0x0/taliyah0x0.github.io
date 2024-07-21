@@ -1,0 +1,96 @@
+.open-video {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 600px;
+    padding: 30px;
+    overflow-y:visible;
+    background-color: #0F0E0E;
+}
+
+.cover {
+    background-color: #0F0E0E;
+    position:absolute;
+    top:0;
+    left:0;
+    height: 30px;
+    width: 800px;
+    z-index: 100;
+}
+
+.title {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    width: 700px;
+    margin-top: 5px;
+    position: absolute;
+    top: 460px;
+}
+
+.video-cover {
+    width: 700px;
+    height: 420px;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    background-color: rgb(0,0,0,0.2);
+}
+
+iframe {
+    border-radius: 10px;
+}
+
+.play {
+    width: 25px;
+    height: 25px;
+    background-image: url('icons8-play-90.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    opacity: 0.8;
+    transition: ease-in-out 0.2s;
+}
+
+.play:hover {
+    opacity: 1;
+}
+
+.skip {
+    width: 30px;
+    height: 30px;
+    background-image: url('icons8-skip-90.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 55px;
+    bottom: 8px;
+    opacity: 0.8;
+    transition: ease-in-out 0.2s;
+}
+
+.skip:hover {
+    opacity: 1;
+}
+
+.full-screen {
+    width: 30px;
+    height: 30px;
+    background-image: url('icons8-full-screen-100.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    opacity: 0.8;
+    transition: ease-in-out 0.2s;
+}
+
+.full-screen:hover {
+    opacity: 1;
+}

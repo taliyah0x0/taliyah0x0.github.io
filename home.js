@@ -1,9 +1,9 @@
 function loadhome() {
     for (var i = 0; i < ln.length; i++) {
         document.getElementsByClassName("block-elements")[0].innerHTML +=
-            `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})">
+            `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="openVideo(${i})">
                     <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/${ln[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${ln[i][6]}"
+                        <iframe src="https://www.youtube-nocookie.com/embed/${ln[i][5]}?mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${ln[i][6]}"
             height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
             <div class="clear"></div>
                     <div class="duration">
@@ -30,9 +30,9 @@ function loadhome() {
     }
     for (var i = 0; i < fp.length; i++) {
         document.getElementsByClassName("block-elements")[1].innerHTML +=
-            `<div class="block-video" onmouseenter="playvid(${i + ln.length})" onmouseleave="stopvid(${i + ln.length})">
+            `<div class="block-video" onmouseenter="playvid(${i + ln.length})" onmouseleave="stopvid(${i + ln.length})" onclick="openVideo(${i + ln.length})">
                     <div class="video-thumbnail">
-                    <iframe src="https://www.youtube.com/embed/${fp[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${fp[i][6]}"
+                    <iframe src="https://www.youtube-nocookie.com/embed/${fp[i][5]}?mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${fp[i][6]}"
             height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
             <div class="clear"></div>
                         <div class="duration">
@@ -57,6 +57,7 @@ function loadhome() {
         var ago = setAgo(startYear, startMonth, startDay);
         document.getElementsByClassName("video-sub")[i + ln.length].innerHTML = `${fp[i][4]} • ${ago}`;
     }
+    
 }
 
 function setAgo(startYear, startMonth, startDay) {
@@ -102,8 +103,6 @@ function clickMenu(index) {
     }
     document.getElementsByClassName("menu-item")[index].id = "highlight-item";
     
-    document.getElementById("container").innerHTML = "";
-
     if (index == 0) {
         document.getElementById("container").innerHTML =  `
             <div class="block">
@@ -126,9 +125,9 @@ function clickMenu(index) {
         document.getElementById("container").innerHTML =  `<div class="page"></div>`;
         for (var i = 0; i < all.length; i++) {
             document.getElementsByClassName("page")[0].innerHTML +=
-                `<div class="block-video" onmouseenter="playsmallvid(${i})" onmouseleave="stopsmallvid(${i})">
+                `<div class="block-video" onmouseenter="playsmallvid(${i})" onmouseleave="stopsmallvid(${i})" onclick="openSmallVideo(${i})">
                     <div class="small-video-thumbnail">
-                    <iframe src="https://www.youtube.com/embed/${all[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${all[i][6]}"
+                    <iframe src="https://www.youtube-nocookie.com/embed/${all[i][5]}?mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${all[i][6]}"
         height="240" width="240" frameborder="0" style="position:absolute;"></iframe>
         <div class="small-clear"></div>
                         <div class="small-duration"></div>
@@ -158,21 +157,29 @@ function clickMenu(index) {
 }
 
 function playvid(index) {
+    var video = document.getElementsByClassName("block-video")[index];
+    var nowPlaying = $(video).find('iframe').attr('src');
+    $(video).find('iframe').attr('src',nowPlaying+'&autoplay=1');
+
+    document.getElementsByClassName("clear")[index].style.transition = "ease-in-out 0.5s";
     document.getElementsByClassName("clear")[index].style.opacity = 0;
     document.getElementsByClassName("duration")[index].style.opacity = 0;
 }
 
 function stopvid(index) {
+    document.getElementsByClassName("clear")[index].style.transition = "none";
     document.getElementsByClassName("clear")[index].style.opacity = 1;
     document.getElementsByClassName("duration")[index].style.opacity = 1;
 }
 
 function playsmallvid(index) {
+    document.getElementsByClassName("small-clear")[index].style.transition = "ease-in-out 0.5s";
     document.getElementsByClassName("small-clear")[index].style.opacity = 0;
     document.getElementsByClassName("small-duration")[index].style.opacity = 0;
 }
 
 function stopsmallvid(index) {
+    document.getElementsByClassName("small-clear")[index].style.transition = "none";
     document.getElementsByClassName("small-clear")[index].style.opacity = 1;
     document.getElementsByClassName("small-duration")[index].style.opacity = 1;
 }

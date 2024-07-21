@@ -140,7 +140,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex: 1.5;
+    flex: 2;
     gap: 10px;
     font-size: 2.5vh;
 }
@@ -152,6 +152,7 @@ a {
     padding: 12px;
     border-radius: 2px;
     font-weight: bold;
+    margin-left: 20px;
 }
 
 .subscribe-button {
@@ -160,6 +161,7 @@ a {
     color: white;
     border-radius: 2px;
     border: 1px solid #AB1314;
+    margin-right:10px;
 }
 
 .menu {
