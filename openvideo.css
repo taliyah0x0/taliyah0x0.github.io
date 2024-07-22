@@ -32,10 +32,20 @@
     cursor: pointer;
 }
 
+.playbar {
+    width: 680px;
+    height: 3px;
+    background-color: white;
+    opacity: 0.3;
+    position: absolute;
+    top: 395px;
+    left: 10px;
+}
+
 .play {
     width: 25px;
     height: 25px;
-    background-image: url('icons8-play-90.png');
+    background-image: url('icons/icons8-play-90.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -51,29 +61,10 @@
     opacity: 1;
 }
 
-.skip {
-    width: 30px;
-    height: 30px;
-    background-image: url('icons8-skip-90.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    left: 55px;
-    bottom: 8px;
-    opacity: 0.8;
-    transition: ease-in-out 0.2s;
-    pointer-events: auto;
-}
-
-.skip:hover {
-    opacity: 1;
-}
-
 .full-screen {
-    width: 30px;
-    height: 30px;
-    background-image: url('icons8-full-screen-100.png');
+    width: 25px;
+    height: 25px;
+    background-image: url('icons/icons8-full-screen-100.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -87,6 +78,16 @@
 
 .full-screen:hover {
     opacity: 1;
+}
+
+iframe#setZoom {
+    zoom: 0.69;
+    -moz-transform: scale(0.69);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.69);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.69);
+    -webkit-transform-origin: 0 0;
 }
 
 .iframe-container {
@@ -176,13 +177,13 @@
     background-color: #CD3536;
 }
 
-.description-link {
+.hyperlink {
     color: lightpink;
     text-decoration: underline;
 }
 
 .heartplay {
-    background-image: url('heartplay.png');
+    background-image: url('icons/heartplay.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

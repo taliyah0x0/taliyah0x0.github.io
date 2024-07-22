@@ -1,12 +1,13 @@
-var ln = [0, 1, 2, 3]
-var fp = [2, 5, 0, 4]
+var fl = [0, 1, 2, 3]; // Featured lives (from work)
+var fp = [2, 5, 0, 4]; // Featured projects (from projects)
+var ln = [0, 1, 2, 3]; // Live now (from work)
 
 var p = [ // Thumbnail, Duration, Title, Start Date, Skills, Youtube, Video Start, Optional: Website // Project Tags, Project Icon, Project Name, Optional: Project Video, Project Description
     ["gamepigeon.png", '1 mo', "GamePigeon Bots & More - Fun Programming Project", '2024-06-19', 'Arduino/Python', '3ex0ym1oMgs', 0, "",
         "#hacks #wordhunt #imessage", "gamepigeon.jpg", "GamePigeon Bots & More", '3ex0ym1oMgs',
         `Exploring the potential of Python and Arduino through building fun bots for winning iMessage GamePigeon's Word Hunt, Anagrams, and Darts, as well as a few other helpful hacks.
         <br><br>❤︎❤︎❤︎
-        <br>View code <a href="https://github.com/taliyah0x0/GamePigeon-Bots" target="_blank" class="description-link">here</a>`
+        <br>View code <a href="https://github.com/taliyah0x0/GamePigeon-Bots" target="_blank" class="hyperlink">here</a>`
     ],
     ["typewanesethumbnail.png", '3 mos', "Typewanese/Tai-Ping - First Romanized Taiwanese Keyboard", '2023-08-01', 'Python/HTML/CSS/JS', 'jXlTl5RPKoY', 43, "https://bobaway.org",
         "#taiwan #language #keyboard", "flav_9.png", "Typewanese & Tai-Ping", 'jXlTl5RPKoY',
@@ -17,16 +18,19 @@ var p = [ // Thumbnail, Duration, Title, Start Date, Skills, Youtube, Video Star
         `To help other Taiwanese-American kids out there with immigrant parents, I created BobaWay, the Google Translate for English to Taiwanese. Open the web app on any device, input English sentences, and out pops the Taiwanese translation in audio form for learning perfect pronunciation.`
     ],
     ["emokeysthumbnail.png", '2 mos', 'Emokeys - Versatile Emoji Keyboard', '2023-07-01', 'Arduino/CAD/Python', 'wGvIvYGg-gg', 24, "",
-        "#keyboard #emoji #discord", "smile.png", "Emokeys", 'wGvIvYGg-gg',
+        "#keyboard #emoji #discord", "emokeys.png", "Emokeys", 'wGvIvYGg-gg',
         `Meet Emokeys, a macropad for typing emoji. Featuring 9 OLED displays that allow an infinite library of colorful characters, plus there's Discord mode where you can even input custom stickers and animated GIFs on your server!`
     ],
     ["circuitfulthumbnail.png", '2 mos', 'Circuitful - Colorful Circuit Diagramming', '2022-07-01', 'Javascript', '2UL5aBr_zVA', 121, "",
-        "#electronics #fritzing #arduino", "favicon.png", "Circuitful", '2UL5aBr_zVA',
+        "#electronics #fritzing #arduino", "circuit.png", "Circuitful", '2UL5aBr_zVA',
         `Frustrated with the lack of keyboard shortcuts, graphics, and customization in circuit diagramming software like Fritzing and Tinkercad, I set off to program my own. Introducing Circuitful, the colorful circuit diagramming app.`
     ],
-    ["mousekythumbnail.png", '2 mos', 'Mouseky - Unique Keyboard Designed from Scratch', '2022-06-01', 'Arduino/CAD', '6V3gyArkQ38', 5, ""],
+    ["mousekythumbnail.png", '2 mos', 'Mouseky - Unique Keyboard Designed from Scratch', '2022-06-01', 'Arduino/CAD', '6V3gyArkQ38', 5, "",
+        "#3dprinting #integration #design", "mouseky.png", "Mouseky", '6V3gyArkQ38',
+        `Meet the most high-tech keyboard ever designed! This is Mouseky, a split, wireless, 64-key masterpiece that has an integrated mouse packed with touchpad-equivalent features.`
+    ],
     ["maxresdefault.webp", '8 mos', 'STEMables - Educational Tech Blocks', '2021-06-01', 'Arduino/CAD', 'TMdWpt-RRqY', 37, "https://bit.ly/stemables",
-        "#electronics #programming #accessibletoys", "stemables.webp", "STEMables", '6V3gyArkQ38',
+        "#electronics #programming #accessibletoys", "stemables.png", "STEMables", '6V3gyArkQ38',
         `Rearrangeable 3D-printed blocks to create an infinite number of smart circuit sensor systems. Mission for visually-impaired and dexterously-challenged kids to learn electronics and programming in a fun, easy, and accessible way.`,
     ],
     ["cpace.webp", '7 mos', 'CPACE - Assistive Technology for Quadriplegia', '2020-11-01', 'Arduino/CAD', '0uANgR1oOII', 25, "https://bit.ly/projectcpace",
@@ -38,11 +42,11 @@ var p = [ // Thumbnail, Duration, Title, Start Date, Skills, Youtube, Video Star
         `As one of the 24 participants selected for the Girls Garage summer program, I remember skipping sleep to go beyond basic woodworking as instructed, taking an unorthodox approach to design an Arduino-integrated that automatically drives a 3D resin-printed “Swan Lake” music box when sat upon.`
     ],
     ["automask.png", '5 mos', 'Auto Mask - Build for COVID 19', '2020-05-01', 'Arduino/CAD', 'mftXIeZvh94', 9, "https://bit.ly/auto-mask",
-        "#touchless #sensors #hygiene", "automask.webp", "Auto Mask", 'mftXIeZvh94',
+        "#touchless #sensors #hygiene", "automask.png", "Auto Mask", 'mftXIeZvh94',
         `Behold the latest technology designed for the coronavirus pandemic and California wildfires: Auto Mask. With eye protection, touchless control, air and muscles sensors, this is a mask you'll never want to take off!`
     ],
     ["autoflote.jpg", '9 mos', 'Auto Flöte Clean - Musical Refreshment', '2019-01-01', 'Arduino/CAD/Handicraft', 'VGhm98lCZWY', 11, "https://bit.ly/autoflote",
-        "#flute #cleaning #machine", "autoflote.png", "Auto Flöte Clean", 'VGhm98lCZWY',
+        "#flute #cleaning #machine", "image.png", "Auto Flöte Clean", 'VGhm98lCZWY',
         `My first “big project” was achieved in 9th grade: A quartet of automatic cleaning machines that fully cleanse and sanitize the flute. I was able to represent my school in personally presenting to the U.S. Vice President Mike Pence and CEO of Oracle, Safra Catz.`
     ]
 ]
@@ -98,3 +102,43 @@ for (var i = 0; i < all.length - 1; i++) {
         }
     }
 }
+
+var skills = [
+    ["3dprinting.jpg", "3D Printing", "2018-10-01"],
+    ["arduino.jpg", "Arduino", "2019-03-01"],
+    ["pexels-jibarofoto-1787235.jpg", "Photography", "2018-01-01"],
+    ["pexels-alexfu-1767783.jpg", "Video Editing", "2016-08-01"],
+    ["python.png", "Python", "2021-01-22"],
+    ["html.png", "HTML", "2019-03-01"],
+    ["css.png", "CSS", "2018-10-01"],
+    ["js.png", "Javascript", "2019-03-01"],
+    ["java.png", "Java", "2024-01-01"],
+    ["cad.png", "Computer-Aided Design", "2018-10-01"]
+]
+
+function shuffle(array) {
+    let currentIndex = array.length;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+}
+
+var ln_play = [];
+for (var i = 0; i < ln.length; i++) {
+    ln_play.push(w[ln[i]]);
+}
+
+var playlists = [
+    ["Live Now", ln_play, "ln_play"],
+    ["Work Experience", w, "w"],
+    ["Personal Projects", p, "p"]
+];

@@ -3,42 +3,42 @@ var smallStartIndex = 0;
 function loadhome() {
     for (var i = 0; i < ln.length; i++) {
         document.getElementsByClassName("block-elements")[0].innerHTML +=
-            `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="openVideo(${all.indexOf(w[ln[i]])})">
+            `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="openVideo(${all.indexOf(w[fl[i]])})">
                 <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/${w[ln[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${w[ln[i]][6]}"
-            height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
+                    <iframe src="https://www.youtube.com/embed/${w[fl[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${w[fl[i]][6]}"
+                height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
                     <div class="clear"></div>
                     <div class="duration">🔉 LIVE</div>
                 </div>
                 <div class="video-title"></div>
                 <div class="video-sub"></div>
             </div>`;
-        document.getElementsByClassName("clear")[i].style.backgroundImage = `url('thumbnails/${w[ln[i]][0]}')`;
+        document.getElementsByClassName("clear")[i].style.backgroundImage = `url('thumbnails/${w[fl[i]][0]}')`;
         document.getElementsByClassName("duration")[i].style.width = "45px";
         document.getElementsByClassName("duration")[i].style.left = "100px";
         document.getElementsByClassName("duration")[i].style.backgroundColor = "red";
         document.getElementsByClassName("duration")[i].style.fontWeight = "bold";
-        document.getElementsByClassName("video-title")[i].innerHTML = `${w[ln[i]][2]}`;
+        document.getElementsByClassName("video-title")[i].innerHTML = `${w[fl[i]][2]}`;
 
-        var startYear = parseInt(w[ln[i]][3].slice(0, 4));
-        var startMonth = parseInt(w[ln[i]][3].slice(5, 7));
-        var startDay = parseInt(w[ln[i]][3].slice(8, 10));
+        var startYear = parseInt(w[fl[i]][3].slice(0, 4));
+        var startMonth = parseInt(w[fl[i]][3].slice(5, 7));
+        var startDay = parseInt(w[fl[i]][3].slice(8, 10));
         var ago = setAgo(startYear, startMonth, startDay);
-        document.getElementsByClassName("video-sub")[i].innerHTML = `${w[ln[i]][4]} • ${ago}`;
+        document.getElementsByClassName("video-sub")[i].innerHTML = `${w[fl[i]][4]} • ${ago}`;
     }
     for (var i = 0; i < fp.length; i++) {
         document.getElementsByClassName("block-elements")[1].innerHTML +=
             `<div class="block-video" onmouseenter="playvid(${i + ln.length})" onmouseleave="stopvid(${i + ln.length})" onclick="openVideo(${all.indexOf(p[fp[i]])})">
                 <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/${p[fp[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${p[fp[i]][6]}"
-            height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
+                    <iframe src="https://www.youtube.com/embed/${p[fp[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${p[fp[i]][6]}"
+                height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
                     <div class="clear"></div>
                     <div class="duration"></div>
                 </div>
                 <div class="video-title"></div>
                 <div class="video-sub"></div>
             </div>`;
-        document.getElementsByClassName("clear")[i + ln.length].style.backgroundImage = `url('thumbnails/${p[fp[i]][0]}')`;
+        document.getElementsByClassName("clear")[i + ln.length].style.backgroundImage = `url('thumbnails/fp/${p[fp[i]][0]}')`;
         document.getElementsByClassName("duration")[i + ln.length].style.width = "40px";
         document.getElementsByClassName("duration")[i + ln.length].style.left = "100px";
         document.getElementsByClassName("duration")[i + ln.length].style.backgroundColor = "rgb(0,0,0,0.5)";
@@ -105,50 +105,76 @@ function clickMenu(index) {
                 <div class="block-title">
                     Live now
                 </div>
-                <div class="block-elements">
-                </div>
+                <div class="block-elements"></div>
             </div>
             <div class="block">
                 <div class="block-title">
                     Featured projects
                 </div>
-                <div class="block-elements">
-                </div>
+                <div class="block-elements"></div>
             </div>`;
         loadhome();
-    } else if (index == 1) {
 
+    } else if (index == 1) {
+        loadSmallVideos(all);
+
+    } else if (index == 2) {
+        shuffle(skills);
         document.getElementById("container").innerHTML =  `<div class="page"></div>`;
-        for (var i = 0; i < all.length; i++) {
-            document.getElementsByClassName("page")[0].innerHTML +=
-                `<div class="block-video" onmouseenter="playsmallvid(${i})" onmouseleave="stopsmallvid(${i})" onclick="openVideo(${i})">
-                    <div class="small-video-thumbnail">
-                    <iframe src="https://www.youtube.com/embed/${all[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${all[i][6]}"
-        height="240" width="240" frameborder="0" style="position:absolute;"></iframe>
-        <div class="small-clear"></div>
-                        <div class="small-duration"></div>
-                    </div>
-                    <div class="small-video-title">
-                    </div>
-                    <div class="video-sub">
-                    </div>
-                </div>`
-            document.getElementsByClassName("small-clear")[i].style.backgroundImage = `url('thumbnails/${all[i][0]}')`;
-            document.getElementsByClassName("small-duration")[i].innerHTML = `${all[i][1]}`;
-            if (all[i][1] == '🔉 LIVE') {
-                document.getElementsByClassName("small-duration")[i].style.backgroundColor = "red";
-                document.getElementsByClassName("small-duration")[i].style.color = "white";
-            }
-            document.getElementsByClassName("small-video-title")[i].innerHTML = `${all[i][2]}`;
-    
-            var startYear = parseInt(all[i][3].slice(0, 4));
-            var startMonth = parseInt(all[i][3].slice(5, 7));
-            var startDay = parseInt(all[i][3].slice(8, 10));
+        for (var i = 0; i < skills.length; i++) {
+            var startYear = parseInt(skills[i][2].slice(0, 4));
+            var startMonth = parseInt(skills[i][2].slice(5, 7));
+            var startDay = parseInt(skills[i][2].slice(8, 10));
             var ago = setAgo(startYear, startMonth, startDay);
-            document.getElementsByClassName("video-sub")[i].innerHTML = `${all[i][4]} • ${ago}`;
+            ago = ago.substring(0, ago.length - 4);
+
+            document.getElementsByClassName("page")[0].innerHTML +=
+            `<div class="shorts">
+                <div class="shorts-thumbnail"><div class="shorts-cover"></div></div>
+                <div class="shorts-title">${skills[i][1]}</div>
+                <div class="shorts-sub">${ago}</div>
+            </div>`
+
+            document.getElementsByClassName("shorts-thumbnail")[i].style.backgroundImage = `url(skills/${skills[i][0]})`;
+        }
+        
+    } else if (index == 3) {
+        document.getElementById("container").innerHTML =  `<div class="page"></div>`;
+
+    } else if (index == 4) {
+        document.getElementById("container").innerHTML =  `<div class="page"></div>`;
+        for (var i = 0; i < playlists.length; i++) {
+            document.getElementsByClassName("page")[0].innerHTML += 
+            `<div class="block-video" onclick="loadSmallVideos(${playlists[i][2]})">
+                <div class="small-video-thumbnail">
+                    <div class="playlist-cover">
+                        <div class="playlist-count"></div>
+                        <div class="playlist-icon"></div>
+                    </div>
+                </div>
+                <div class="small-video-title"></div>
+                <div class="video-sub">VIEW FULL PLAYLIST</div>
+            </div>`
+            document.getElementsByClassName("small-video-thumbnail")[i].style.backgroundImage = `url(thumbnails/${playlists[i][1][0][0]})`;
+            document.getElementsByClassName("small-video-title")[i].innerHTML = `${playlists[i][0]}`;
+            document.getElementsByClassName("playlist-count")[i].innerHTML = `${playlists[i][1].length}`
         }
 
-        setInterval(setSmallVideoStarts, 3000);
+    } else if (index == 5) {
+        document.getElementById("container").innerHTML =  `<div class="block"><div class="block-title">About Me</div><div class="about-text"></div></div>`;
+        document.getElementsByClassName("about-text")[0].innerHTML = `Hello! My name is Taliyah. I am an inventor, entrepreneur, and a junior studying biomedical engineering with a passion for mechatronics.
+        <br><br>Current Education ❥ Johns Hopkins University (2022 - Present)
+        <br>Major ❥ Biomedical Engineering, B.S.
+        <br>Minors ❥ Robotics, Computer Science, Entrepreneurship & Management
+        <br><br>Contact me:
+        <br>❥ <a href="mailto:thuang57@jhu.edu" target="_blank" class="hyperlink">thuang57@jhu.edu</a>
+        <br>❥ <a href="mailto:taliyahengineering@gmail.com" target="_blank" class="hyperlink">taliyahengineering@gmail.com</a>
+        <br><br>❤︎❤︎❤︎
+        <br>Follow me for fun content!
+        <br>Youtube: <a href="http://youtube.com/@taliyahengineering" target="_blank" class="hyperlink">https://youtube.com/@taliyahengineering</a>
+        <br>Instagram: <a href="http://instagram.com/taliyahengineering" target="_blank" class="hyperlink">http://instagram.com/taliyahengineering</a>
+        <br>Facebook: <a href="http://facebook.com/taliyahengineering" target="_blank" class="hyperlink">http://facebook.com/taliyahengineering</a>
+        <br>TikTok: <a href="http://tiktok.com/@taliyahengineering" target="_blank" class="hyperlink">http://tiktok.com/@taliyahengineering</a>`
     }
 
     document.getElementsByClassName("screen")[0].scrollTo(0, 250);
@@ -196,4 +222,47 @@ function stopsmallvid(index) {
     document.getElementsByClassName("small-clear")[index].style.transition = "none";
     document.getElementsByClassName("small-clear")[index].style.opacity = 1;
     document.getElementsByClassName("small-duration")[index].style.opacity = 1;
+}
+
+function loadSmallVideos(list) {
+    if (list != all) {
+        var playlist_title;
+        for (var i = 0; i < playlists.length; i++) {
+            if (playlists[i][1] === list) {
+                playlist_title = playlists[i][0];
+            }
+        }
+        document.getElementById("container").innerHTML =  `<div class="block-title" style="margin: 30px 0px 10px 30px;">${playlist_title}<div class="playlist-icon"></div></div><div class="page"></div>`;
+    } else {
+        document.getElementById("container").innerHTML =  `<div class="page"></div>`;
+    }
+    for (var i = 0; i < list.length; i++) {
+        document.getElementsByClassName("page")[0].innerHTML +=
+            `<div class="block-video" onmouseenter="playsmallvid(${i})" onmouseleave="stopsmallvid(${i})" onclick="openVideo(${all.indexOf(list[i])})">
+                <div class="small-video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/${list[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${list[i][6]}"
+        height="240" width="240" frameborder="0" style="position:absolute;"></iframe>
+                    <div class="small-clear"></div>
+                    <div class="small-duration"></div>
+                </div>
+                <div class="small-video-title"></div>
+                <div class="video-sub"></div>
+            </div>`
+        document.getElementsByClassName("small-clear")[i].style.backgroundImage = `url('thumbnails/${list[i][0]}')`;
+        document.getElementsByClassName("small-duration")[i].innerHTML = `${list[i][1]}`;
+        if (list[i][1] == '🔉 LIVE') {
+            document.getElementsByClassName("small-duration")[i].style.backgroundColor = "red";
+            document.getElementsByClassName("small-duration")[i].style.color = "white";
+        }
+        document.getElementsByClassName("small-video-title")[i].innerHTML = `${list[i][2]}`;
+
+        var startYear = parseInt(list[i][3].slice(0, 4));
+        var startMonth = parseInt(list[i][3].slice(5, 7));
+        var startDay = parseInt(list[i][3].slice(8, 10));
+        var ago = setAgo(startYear, startMonth, startDay);
+        document.getElementsByClassName("video-sub")[i].innerHTML = `${list[i][4]} • ${ago}`;
+    }
+
+    setInterval(setSmallVideoStarts, 3000);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 250);
 }

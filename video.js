@@ -63,17 +63,17 @@ function openVideo(index) {
             </div>
             <div class="description"><div class="description-title">${company} • ${ago}&nbsp;&nbsp;${hashtags}</div>${description}</div>
         </div>`;
-        document.getElementsByClassName("video-profile-pic")[0].style.backgroundImage = `url(icons/${channel_pic})`
+        document.getElementsByClassName("video-profile-pic")[0].style.backgroundImage = `url(channels/${channel_pic})`
     } else {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
-                <iframe src="${code}" height="440" width="700" frameborder="0"></iframe>
+                <iframe src="${code}" height="440" width="700" frameborder="0" id="none" muted="yes"></iframe>
             </div>
             <div class="video-cover" onclick="pause()">
                 <div class="heartplay"></div>
+                <div class="playbar"></div>
                 <div class="play" onclick="pause()"></div>
-                <div class="skip"></div>
                 <a href="${code}" target="_blank"><div class="full-screen"></div></a>
             </div>
             <div class="title">${title}</div>
@@ -87,14 +87,20 @@ function openVideo(index) {
             </div>
             <div class="description"><div class="description-title">${company} • ${ago}&nbsp;&nbsp;${hashtags}</div>${description}</div>
         </div>`;
-        document.getElementsByClassName("video-profile-pic")[0].style.backgroundImage = `url(icons/${channel_pic})`
-        setTimeout(() => {
-        if (channel == "Typewanese & Tai-Ping") {
-            var h = document.getElementsByTagName("iframe")[0].contentWindow.document.getElementsByTagName("div");
-            console.log(h)
-            //.contentWindow.document.getElementsByClassName("menu-button")[0].click();
+        document.getElementsByClassName("video-profile-pic")[0].style.backgroundImage = `url(channels/${channel_pic})`
+
+        if (channel != "BobaWay" && channel != "Typewanese & Tai-Ping") {
+            document.getElementsByTagName("iframe")[0].style.position = "absolute";
+            document.getElementsByTagName("iframe")[0].width = "1500";
+            document.getElementsByTagName("iframe")[0].id = "setZoom";
+            if (channel != "Auto Flöte Clean") {
+                document.getElementsByTagName("iframe")[0].style.top = "-50px";
+                document.getElementsByTagName("iframe")[0].height = "1000";
+            } else {
+                document.getElementsByTagName("iframe")[0].height = "1050";
+            }
         }
-    }, 1000);
+        play = 0;
     }
 
     document.getElementsByClassName("screen")[0].scrollTo(0, 240);
@@ -114,8 +120,9 @@ function removeCover() {
 }
 
 function pause() {
+    console.log(play)
     if (play == 1) {
-        document.getElementsByClassName("play")[0].style.backgroundImage = "url('icons8-play-90.png')";
+        document.getElementsByClassName("play")[0].style.backgroundImage = "url('icons/icons8-play-90.png')";
         document.getElementsByClassName("video-cover")[0].style.backgroundColor = "rgb(0,0,0,0.2)";
         document.getElementsByClassName("video-cover")[0].style.pointerEvents = "auto";
         setTimeout (() => {
@@ -123,9 +130,11 @@ function pause() {
         }, 10);
     } else {
         document.getElementsByClassName("heartplay")[0].style.display = "none";
-        document.getElementsByClassName("play")[0].style.backgroundImage = "url('icons8-pause-90.png')";
+        document.getElementsByClassName("play")[0].style.backgroundImage = "url('icons/icons8-pause-90.png')";
         document.getElementsByClassName("video-cover")[0].style.backgroundColor = "rgb(0,0,0,0)";
         document.getElementsByClassName("video-cover")[0].style.pointerEvents = "none";
-        play = 1;
+        setTimeout (() => {
+            play = 1;
+        }, 10);
     }
 }
