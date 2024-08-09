@@ -12,6 +12,7 @@ function loadhome() {
                 </div>
                 <div class="video-title"></div>
                 <div class="video-sub"></div>
+                <div class="video-tag">Work Experience</div>
             </div>`;
         document.getElementsByClassName("clear")[i].style.backgroundImage = `url('thumbnails/${w[fl[i]][0]}')`;
         document.getElementsByClassName("duration")[i].style.width = "45px";
@@ -26,6 +27,7 @@ function loadhome() {
         var ago = setAgo(startYear, startMonth, startDay);
         document.getElementsByClassName("video-sub")[i].innerHTML = `${w[fl[i]][4]} • ${ago}`;
     }
+    
     for (var i = 0; i < fp.length; i++) {
         document.getElementsByClassName("block-elements")[1].innerHTML +=
             `<div class="block-video" onmouseenter="playvid(${i + ln.length})" onmouseleave="stopvid(${i + ln.length})" onclick="openVideo(${all.indexOf(p[fp[i]])})">
@@ -37,6 +39,7 @@ function loadhome() {
                 </div>
                 <div class="video-title"></div>
                 <div class="video-sub"></div>
+                <div class="video-tag">Project</div>
             </div>`;
         document.getElementsByClassName("clear")[i + ln.length].style.backgroundImage = `url('thumbnails/fp/${p[fp[i]][0]}')`;
         document.getElementsByClassName("duration")[i + ln.length].style.width = "40px";
@@ -52,15 +55,23 @@ function loadhome() {
         var ago = setAgo(startYear, startMonth, startDay);
         document.getElementsByClassName("video-sub")[i + ln.length].innerHTML = `${p[fp[i]][4]} • ${ago}`;
     }
+
+    var blocks = document.getElementsByClassName("block-elements");
+    for (var i = 0; i < blocks.length; i++) {
+        document.getElementsByClassName("block-elements")[i].innerHTML +=
+        `<div class="block-right" onclick="loadSmallVideos(${playlists[i][2]}, '${playlists[i][0]}')">
+            <img style="width: 50px; height: 50px;" src="icons/icons8-next-page-96.png">
+        </div>`;
+    }
     
     setInterval(setVideoStarts, 8000);
 }
 
 function setAgo(startYear, startMonth, startDay) {
-    let currentDate = new Date().toJSON();
-    let currentYear = parseInt(currentDate.slice(0, 4));
-    let currentMonth = parseInt(currentDate.slice(5, 7));
-    let currentDay = parseInt(currentDate.slice(8, 10));
+    var currentDate = new Date().toJSON();
+    var currentYear = parseInt(currentDate.slice(0, 4));
+    var currentMonth = parseInt(currentDate.slice(5, 7));
+    var currentDay = parseInt(currentDate.slice(8, 10));
 
     var ago = "";
     if (currentYear - startYear == 0) {
@@ -102,24 +113,39 @@ function clickMenu(index) {
     if (index == 0) {
         document.getElementById("container").innerHTML =  `
             <div class="block">
-                <div class="block-title">
-                    Live now
+                <div class="trailer-elements">
+                    <div class="trailer-video-container">
+                        <video width="480" height="320" controls autoplay muted loop class="trailer-video">
+                            <source src="trailer.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="trailer-text">
+                        <div class="trailer-video-title">Channel Trailer: Taliyah Huang</div>
+                        <div class="trailer-video-sub">Inventive trailblazer with a cheerful energy! • 19 years old</div>
+                        <div class="trailer-video-description">I’m a biomedical engineering student at Johns Hopkins University, while also pursuing minors that capture my interest for robotics, computer science, and entrepreneurship.
+                            <br><br>As a high schooler, I discovered a passion for engineering, and spent years honing my creativity and innovation.
+                            <br><br>I met my best friend who supported me, despite my failed assistive device I had worked on for months.
+                            <br><br> Now, it’s my goal to develop in the clinical field, so that I can give back to the kindest hearts who need technology more than anyone.
+                        </div>
+                    </div>
                 </div>
-                <div class="block-elements"></div>
             </div>
             <div class="block">
-                <div class="block-title">
-                    Featured projects
+                <div class="block-title">Live now</div>
+                <div class="block-elements">
                 </div>
-                <div class="block-elements"></div>
+            </div>
+            <div class="block">
+                <div class="block-title">Featured projects</div>
+                <div class="block-elements">
+                </div>
             </div>`;
         loadhome();
 
     } else if (index == 1) {
-        loadSmallVideos(all);
+        loadSmallVideos(all, 'All');
 
     } else if (index == 2) {
-        shuffle(skills);
         document.getElementById("container").innerHTML =  `<div class="page"></div>`;
         for (var i = 0; i < skills.length; i++) {
             var startYear = parseInt(skills[i][2].slice(0, 4));
@@ -129,7 +155,7 @@ function clickMenu(index) {
             ago = ago.substring(0, ago.length - 4);
 
             document.getElementsByClassName("page")[0].innerHTML +=
-            `<div class="shorts">
+            `<div class="shorts" onmouseover="shortsHover(${i})" onmouseout="shortsOut(${i})" onclick="shortsOpen(${i})">
                 <div class="shorts-thumbnail"><div class="shorts-cover"></div></div>
                 <div class="shorts-title">${skills[i][1]}</div>
                 <div class="shorts-sub">${ago}</div>
@@ -143,9 +169,25 @@ function clickMenu(index) {
 
     } else if (index == 4) {
         document.getElementById("container").innerHTML =  `<div class="page"></div>`;
-        for (var i = 0; i < playlists.length; i++) {
+        for (var i = 0; i < playlists.length - 1; i++) {
             document.getElementsByClassName("page")[0].innerHTML += 
-            `<div class="block-video" onclick="loadSmallVideos(${playlists[i][2]})">
+            `<div class="block-video" onclick="loadSmallVideos(${playlists[i][2]}, '${playlists[i][0]}')" onmouseover="playlistOver(${i})" onmouseout="playlistOut(${i})">
+                <div class="small-video-thumbnail">
+                    <div class="playlist-cover">
+                        <div class="playlist-count"></div>
+                        <div class="playlist-icon"></div>
+                    </div>
+                </div>
+                <div class="small-video-title"></div>
+                <div class="video-sub" style="margin-bottom: 20px">VIEW FULL PLAYLIST</div>
+            </div>`;
+            document.getElementsByClassName("small-video-thumbnail")[i].style.backgroundImage = `url(thumbnails/${playlists[i][1][0][0]})`;
+            document.getElementsByClassName("small-video-title")[i].innerHTML = `${playlists[i][0]}`;
+            document.getElementsByClassName("playlist-count")[i].innerHTML = `${playlists[i][1].length}`
+        }
+        for (var i = 0; i < skill_playlists.length; i++) {
+            document.getElementsByClassName("page")[0].innerHTML +=
+            `<div class="block-video" onclick="loadSmallVideos(sk_list[${i}], '${skill_playlists[i][0]}')" onmouseover="playlistOver(${i + playlists.length - 1})" onmouseout="playlistOut(${i + playlists.length - 1})">
                 <div class="small-video-thumbnail">
                     <div class="playlist-cover">
                         <div class="playlist-count"></div>
@@ -154,19 +196,22 @@ function clickMenu(index) {
                 </div>
                 <div class="small-video-title"></div>
                 <div class="video-sub">VIEW FULL PLAYLIST</div>
-            </div>`
-            document.getElementsByClassName("small-video-thumbnail")[i].style.backgroundImage = `url(thumbnails/${playlists[i][1][0][0]})`;
-            document.getElementsByClassName("small-video-title")[i].innerHTML = `${playlists[i][0]}`;
-            document.getElementsByClassName("playlist-count")[i].innerHTML = `${playlists[i][1].length}`
+            </div>`;
+            document.getElementsByClassName("small-video-thumbnail")[i + playlists.length - 1].style.backgroundImage = `url(skills/${skills[skill_playlists[i][3]][0]})`;
+            document.getElementsByClassName("small-video-title")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][0]}`;
+            document.getElementsByClassName("playlist-count")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][2]}`;
         }
 
     } else if (index == 5) {
         document.getElementById("container").innerHTML =  `<div class="block"><div class="block-title">About Me</div><div class="about-text"></div></div>`;
-        document.getElementsByClassName("about-text")[0].innerHTML = `Hello! My name is Taliyah. I am an inventor, entrepreneur, and a junior studying biomedical engineering with a passion for mechatronics.
-        <br><br>Current Education ❥ Johns Hopkins University (2022 - Present)
+        document.getElementsByClassName("about-text")[0].innerHTML = `Hello! My name is Taliyah. I am an inventor, entrepreneur, and a junior studying biomedical engineering with a passion for mechatronics. I'm particularly interested in med tech startups in the robotics field!
+        <br><br>❤︎❤︎❤︎
+        <br>Current Education
+        <br>Johns Hopkins University (2022 - Present)
         <br>Major ❥ Biomedical Engineering, B.S.
         <br>Minors ❥ Robotics, Computer Science, Entrepreneurship & Management
-        <br><br>Contact me:
+        <br><br>❤︎❤︎❤︎
+        <br>Contact me:
         <br>❥ <a href="mailto:thuang57@jhu.edu" target="_blank" class="hyperlink">thuang57@jhu.edu</a>
         <br>❥ <a href="mailto:taliyahengineering@gmail.com" target="_blank" class="hyperlink">taliyahengineering@gmail.com</a>
         <br><br>❤︎❤︎❤︎
@@ -224,15 +269,9 @@ function stopsmallvid(index) {
     document.getElementsByClassName("small-duration")[index].style.opacity = 1;
 }
 
-function loadSmallVideos(list) {
-    if (list != all) {
-        var playlist_title;
-        for (var i = 0; i < playlists.length; i++) {
-            if (playlists[i][1] === list) {
-                playlist_title = playlists[i][0];
-            }
-        }
-        document.getElementById("container").innerHTML =  `<div class="block-title" style="margin: 30px 0px 10px 30px;">${playlist_title}<div class="playlist-icon"></div></div><div class="page"></div>`;
+function loadSmallVideos(list, list_name) {
+    if (list_name != 'All') {
+        document.getElementById("container").innerHTML =  `<div class="block-title" style="margin: 30px 0px 10px 30px;">${list_name}<div class="playlist-icon"></div></div><div class="page"></div>`;
     } else {
         document.getElementById("container").innerHTML =  `<div class="page"></div>`;
     }
@@ -247,9 +286,16 @@ function loadSmallVideos(list) {
                 </div>
                 <div class="small-video-title"></div>
                 <div class="video-sub"></div>
+                <div class="video-tag"></div>
             </div>`
+        
         document.getElementsByClassName("small-clear")[i].style.backgroundImage = `url('thumbnails/${list[i][0]}')`;
         document.getElementsByClassName("small-duration")[i].innerHTML = `${list[i][1]}`;
+        if (p.includes(list[i])) {
+            document.getElementsByClassName("video-tag")[i].innerHTML = 'Project';
+        } else if (w.includes(list[i])) {
+            document.getElementsByClassName("video-tag")[i].innerHTML = 'Work Experience';
+        }
         if (list[i][1] == '🔉 LIVE') {
             document.getElementsByClassName("small-duration")[i].style.backgroundColor = "red";
             document.getElementsByClassName("small-duration")[i].style.color = "white";
@@ -264,5 +310,44 @@ function loadSmallVideos(list) {
     }
 
     setInterval(setSmallVideoStarts, 3000);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 250);
+}
+
+function playlistOver(index) {
+    document.getElementsByClassName("playlist-cover")[index].style.width = "230px";
+}
+
+function playlistOut(index) {
+    document.getElementsByClassName("playlist-cover")[index].style.width = "80px";
+}
+
+function shortsHover(index) {
+    document.getElementsByClassName("shorts-cover")[index].style.opacity = 0.2;
+}
+
+function shortsOut(index) {
+    document.getElementsByClassName("shorts-cover")[index].style.opacity = 0;
+}
+
+function shortsOpen(index) {
+    document.getElementById("container").innerHTML =  `<div class="block"></div>`;
+    document.getElementsByClassName("block")[0].innerHTML =
+    `<div class="shorts-view">
+        <div class="shorts-footage"></div>
+        <div class="shorts-comments">
+            <div class="shorts-comment-block">
+                <div class="video-profile-pic"></div>
+                <div class="shorts-channel-comment">
+                    <div class="shorts-channel-header">
+                        <div class="shorts-channel-user">@Test_Name</div>
+                        <div class="shorts-channel-sub">something</div>
+                    </div>
+                    <div class="shorts-comment">Some text and a paragraph</div>
+                </div>
+            </div>
+        </div>
+    </div>`;
+    document.getElementsByClassName("video-profile-pic")[0].style.backgroundImage = "url('channels/IMG_5548.png')";
+
     document.getElementsByClassName("screen")[0].scrollTo(0, 250);
 }

@@ -44,7 +44,7 @@ a {
 .screen {
     padding: 0px 22px 0px 22px;
     height: 90vh;
-    width: 73vw;
+    width: 75vw;
     background-color: #0F0E0E;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
     border-radius: 28px 28px 0px 0px;
@@ -59,7 +59,7 @@ a {
 .laptop {
     background-color: black;
     height: 40px;
-    width: 73vw;
+    width: 75vw;
     position: fixed;
     z-index: 1000;
     display: flex;
@@ -76,7 +76,7 @@ a {
 
 .banner {
     height: 25vh;
-    background-image: url('icons/1713637553256.jpeg');
+    background-image: url('portfoliobanner.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -150,12 +150,29 @@ a {
 .name {
     color: white;
     font-size: 4vh;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.name-banner {
+    background-color: #171616;
+    padding: 3px 10px 3px 10px;
+    font-size: 2.5vh;
+    color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    border-radius: 2.5vh;
+    border: 2px dotted grey;
 }
 
 .sub {
     color: grey;
     font-size: 2vh;
-    margin-top: 3px;
+    margin-top: 5px;
 }
 
 .buttons {
@@ -164,7 +181,7 @@ a {
     justify-content: flex-start;
     flex: 2;
     gap: 10px;
-    font-size: 18px;
+    font-size: 2.5vh;
     font-weight: bold;
 }
 
@@ -172,7 +189,7 @@ a {
     background-color: #171616;
     border: 1px solid rgb(81,148,204);
     color: rgb(81,148,204);
-    padding: 12px;
+    padding: 1.5vh;
     border-radius: 2px;
     margin-left: 20px;
 }
@@ -183,7 +200,7 @@ a {
 
 .subscribe-button {
     background-color: #AB1314;
-    padding: 12px;
+    padding: 1.5vh;
     color: white;
     border-radius: 2px;
     border: 1px solid #AB1314;
@@ -192,6 +209,7 @@ a {
     flex-direction: row;
     align-items: center;
     gap: 5px;
+    white-space: nowrap;
 }
 
 .subscribe-button:hover {
@@ -269,6 +287,19 @@ a {
     color: white;
 }
 
+.trailer-video-container {
+    width: 480px;
+    height: 290px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.trailer-video {
+    position: absolute;
+    bottom: 0;
+}
+
 .block-title {
     color: white;
     font-size: 3vh;
@@ -279,6 +310,15 @@ a {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+}
+
+.trailer-elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    overflow-x:auto;
 }
 
 .block-elements {
@@ -300,6 +340,19 @@ a {
 }
 
 .block-video:hover {
+    cursor: pointer;
+}
+
+.block-right {
+    height: 150px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    transition: ease-in-out 0.3s;
+}
+
+.block-right:hover {
+    opacity: 0.7;
     cursor: pointer;
 }
 
@@ -375,8 +428,35 @@ a {
     text-align: center;
     width: 45px;
     left: 85px;
-    background-color: rgb(0,0,0,0.4);
+    background-color: #00000066;
     font-weight: bold;
+}
+
+.trailer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 35vw;
+    height: 260px;
+    overflow-y: scroll;
+}
+
+.trailer-video-title {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    width: 265px;
+    margin-top: 5px;
+}
+
+.trailer-video-sub {
+    font-size: 14px;
+    color: grey;
+}
+
+.trailer-video-description {
+    font-size: 14px;
+    color: white;
 }
 
 .video-title {
@@ -398,7 +478,15 @@ a {
 .video-sub {
     font-size: 10px;
     color: grey;
+}
+
+.video-tag {
+    font-size: 10px;
+    padding: 1px 4px 1px 4px;
+    background-color: grey;
+    opacity: 0.7;
     margin-bottom: 20px;
+    border-radius: 2px;
 }
 
 .page {
@@ -413,6 +501,10 @@ a {
     gap: 10px;
     flex-wrap:wrap;
     color: white;
+}
+
+.shorts:hover {
+    cursor: pointer;
 }
 
 .shorts-thumbnail {
@@ -451,11 +543,6 @@ a {
     transition: ease-in-out 0.3s;
 }
 
-.shorts-cover:hover {
-    opacity: 0.2;
-    cursor: pointer;
-}
-
 .playlist-cover {
     position: absolute;
     width: 80px;
@@ -468,6 +555,7 @@ a {
     justify-content: center;
     align-items: center;
     gap: 5px;
+    transition: ease-in-out 0.3s;
 }
 
 .playlist-icon {
