@@ -1,6 +1,13 @@
 var startIndex = 0;
 var smallStartIndex = 0;
 function loadhome() {
+    setTimeout(() => {
+        document.getElementsByClassName('opening')[0].classList.add('hide');
+        document.getElementsByClassName('trailer-video')[0].play();
+        setTimeout(() => {
+            document.getElementsByClassName('opening')[0].style.display = 'none';
+        }, 1000);
+    }, 1500);
     for (var i = 0; i < ln.length; i++) {
         document.getElementsByClassName("block-elements")[0].innerHTML +=
             `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="openVideo(${all.indexOf(w[fl[i]])})">

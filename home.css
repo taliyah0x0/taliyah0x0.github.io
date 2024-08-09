@@ -45,7 +45,7 @@ a {
     padding: 0px 22px 0px 22px;
     height: 90vh;
     width: 75vw;
-    background-color: #0F0E0E;
+    background-color: black;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
     border-radius: 28px 28px 0px 0px;
     overflow-y:auto;
@@ -72,6 +72,39 @@ a {
     height: 12px;
     width: 12px;
     border-radius: 6px;
+}
+
+.opening {
+    width: 75vw;
+    height: calc(90vh - 40px);
+    background-color: #0F0E0E;
+    z-index: 501;
+    position: absolute;
+    bottom: 0;
+    left: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.opening.hide {
+    opacity: 0;
+}
+
+.opening-heartplay {
+    background-image: url('icons/heartplay.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 102px;
+    height: 72px;
 }
 
 .banner {
@@ -226,7 +259,7 @@ a {
     padding-right: 15vw;
     position: sticky;
     top: 40px; /* Stick to the top of the screen */
-    z-index: 1000;
+    z-index: 500;
     overflow-x:auto;
     justify-content: flex-start;
 }
