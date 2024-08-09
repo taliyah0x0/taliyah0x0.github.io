@@ -89,7 +89,10 @@ function openVideo(index) {
         </div>`;
         document.getElementsByClassName("video-profile-pic")[0].style.backgroundImage = `url(channels/${channel_pic})`
 
-        if (channel != "BobaWay" && channel != "Typewanese & Tai-Ping") {
+        if (channel == "Typewanese & Tai-Ping") {
+            document.getElementsByClassName("video-cover")[0].innerHTML +=
+            `<div class="keyboard-popup">↑ Click here for keyboards!</div>`;
+        } else if (channel != "BobaWay" && channel != "Typewanese & Tai-Ping") {
             document.getElementsByTagName("iframe")[0].style.position = "absolute";
             document.getElementsByTagName("iframe")[0].width = "1500";
             document.getElementsByTagName("iframe")[0].id = "setZoom";
@@ -101,6 +104,50 @@ function openVideo(index) {
             }
         }
         play = 0;
+    }
+
+    document.getElementsByClassName("open-video")[0].innerHTML += 
+    `<div class="related-buttons">
+        <div class="related-button" onclick="relatedClick(0, 3, 'All')">All</div>
+    </div>
+    <div class="related-videos"></div>`;
+
+    var related_buttons = 1;
+    var list;
+    if (w.includes(all[index])) {
+        document.getElementsByClassName("related-buttons")[0].innerHTML +=
+        `<div class="related-button" id="related-highlight" onclick="relatedClick(1, 2, 'Playlists')">Work Experiences</div>`;
+        list = JSON.parse(JSON.stringify(w_index));
+        document.getElementsByClassName("open-video")[0].innerHTML +=
+        `<div class="related-playlist" onclick="loadSmallVideos(${playlists[2][2]}, 'Work Experience')">VIEW FULL PLAYLIST</div>`;
+        related_buttons++;
+
+    } else if (p.includes(all[index])) {
+        document.getElementsByClassName("related-buttons")[0].innerHTML +=
+        `<div class="related-button" id="related-highlight" onclick="relatedClick(1, 1, 'Playlists')">Personal Projects</div>`;
+        list = JSON.parse(JSON.stringify(p_index));
+        document.getElementsByClassName("open-video")[0].innerHTML +=
+        `<div class="related-playlist" onclick="loadSmallVideos(${playlists[1][2]}, 'Personal Projects')">VIEW FULL PLAYLIST</div>`;
+        related_buttons++;
+    }
+
+    loadRelatedVideos(index, list);
+    
+    if (all[index][1] == '🔉 LIVE') {
+        document.getElementsByClassName("related-buttons")[0].innerHTML +=
+        `<div class="related-button" onclick="relatedClick(2, 0, 'Playlists')">Live Now</div>`;
+        related_buttons++;
+    }
+
+    for (var i = 0; i < all[index][13].length; i++) {
+        var skill_index;
+        for (var j = 0; j < skill_playlists.length; j++) {
+            if (all[index][13][i] == skill_playlists[j][0] || (all[index][13][i] == 'CAD' && skill_playlists[j][0] == 'Computer-Aided Design')) {
+                skill_index = j;
+            }
+        }
+        document.getElementsByClassName("related-buttons")[0].innerHTML +=
+        `<div class="related-button" onclick="relatedClick(${related_buttons + i}, ${skill_index}, 'Skills')">${all[index][13][i]}</div>`;
     }
 
     document.getElementsByClassName("screen")[0].scrollTo(0, 240);
@@ -120,7 +167,6 @@ function removeCover() {
 }
 
 function pause() {
-    console.log(play)
     if (play == 1) {
         document.getElementsByClassName("play")[0].style.backgroundImage = "url('icons/icons8-play-90.png')";
         document.getElementsByClassName("video-cover")[0].style.backgroundColor = "rgb(0,0,0,0.2)";
@@ -129,6 +175,12 @@ function pause() {
             play = 0;
         }, 10);
     } else {
+        var code = document.getElementsByClassName("full-screen")[0].href;
+        document.getElementsByClassName("video-cover")[0].innerHTML =
+        `<div class="heartplay"></div>
+        <div class="playbar"></div>
+        <div class="play" onclick="pause()"></div>
+        <a href="${code}" target="_blank"><div class="full-screen"></div></a>`;
         document.getElementsByClassName("heartplay")[0].style.display = "none";
         document.getElementsByClassName("play")[0].style.backgroundImage = "url('icons/icons8-pause-90.png')";
         document.getElementsByClassName("video-cover")[0].style.backgroundColor = "rgb(0,0,0,0)";
@@ -136,5 +188,79 @@ function pause() {
         setTimeout (() => {
             play = 1;
         }, 10);
+    }
+}
+
+function relatedHover(index) {
+    document.getElementsByClassName("related-video-clear")[index].style.opacity = "0.7";
+}
+
+function relatedOff(index) {
+    document.getElementsByClassName("related-video-clear")[index].style.opacity = "1";
+}
+
+function relatedClick(button, index, playlist_type) {
+    var buttons = document.getElementsByClassName("related-button");
+    for (var i = 0; i < buttons.length; i++) {
+        document.getElementsByClassName("related-button")[i].id = "related-button";
+    }
+    document.getElementsByClassName("related-button")[button].id = "related-highlight";
+
+    document.getElementsByClassName("related-videos")[0].innerHTML = "";
+
+    if (playlist_type == 'Playlists') {
+        document.getElementsByClassName("related-playlist")[0].setAttribute( "onClick", `javascript: loadSmallVideos(${playlists[index][2]}, '${playlists[index][0]}');` );
+        loadRelatedVideos(index, playlists[index][3]);
+    } else if (playlist_type == 'All') {
+        document.getElementsByClassName("related-playlist")[0].setAttribute( "onClick", "javascript: clickMenu(1);");
+        loadRelatedVideos(index, playlists[index][3]);
+    } else if (playlist_type == 'Skills') {
+        document.getElementsByClassName("related-playlist")[0].setAttribute( "onClick", `javascript: loadSmallVideos(sk_list[${index}], '${skill_playlists[index][0]}');` );
+        loadRelatedVideos(index, skill_playlists[index][1]);
+    }
+}
+
+function loadRelatedVideos(index, in_list) {
+    var list = JSON.parse(JSON.stringify(in_list));
+    shuffle(list);
+    var related_videos = -1;
+    for (var i = 0; i < list.length; i++) {
+        if (all[list[i]][0] != all[index][0]) {
+            related_videos++;
+            document.getElementsByClassName("related-videos")[0].innerHTML +=
+            `<div class="related-video" onmouseover="relatedHover(${related_videos})" onmouseout="relatedOff(${related_videos})" onclick="openVideo(${list[i]})">
+                <div class="related-video-thumbnail">
+                    <div class="related-video-clear"></div>
+                    <div class="related-duration"></div>
+                </div>
+                <div class="related-video-text">
+                    <div class="related-video-title"></div>
+                    <div class="video-sub"></div>
+                </div>
+            </div>`;
+
+            document.getElementsByClassName("related-video-clear")[related_videos].style.backgroundImage = `url('thumbnails/${all[list[i]][0]}')`;
+            if (JSON.stringify(list) == JSON.stringify(p_index)) {
+                document.getElementsByClassName("related-video-clear")[related_videos].style.backgroundImage = `url('thumbnails/fp/${all[list[i]][0]}')`;
+            }
+            document.getElementsByClassName("related-duration")[related_videos].innerHTML = `${all[list[i]][1]}`;
+            if (all[list[i]][1] == '🔉 LIVE') {
+                document.getElementsByClassName("related-duration")[related_videos].style.backgroundColor = "red";
+                document.getElementsByClassName("related-duration")[related_videos].style.color = "white";
+            } else {
+                document.getElementsByClassName("related-duration")[related_videos].style.width = "30px";
+                document.getElementsByClassName("related-duration")[related_videos].style.top = "32px";
+                document.getElementsByClassName("related-duration")[related_videos].style.left = "51px";
+            }
+            
+            document.getElementsByClassName("related-video-title")[related_videos].innerHTML = `${all[list[i]][2]}`;
+
+            var startYear = parseInt(all[list[i]][3].slice(0, 4));
+            var startMonth = parseInt(all[list[i]][3].slice(5, 7));
+            var startDay = parseInt(all[list[i]][3].slice(8, 10));
+            var ago = setAgo(startYear, startMonth, startDay);
+            document.getElementsByClassName("video-sub")[related_videos].innerHTML = `${all[list[i]][4]}<br>• ${ago}`;
+            document.getElementsByClassName("video-sub")[related_videos].style.marginBottom = "0";
+        }
     }
 }

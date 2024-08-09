@@ -1,0 +1,53 @@
+.shorts-view {
+    width: 75vw;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.shorts-footage {
+    height: 500px;
+    width: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('skills/3dprinting.jpg');
+    border-radius: 20px 0 0 20px;
+}
+
+.shorts-comments {
+    height: 500px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: #212121;
+    border-radius: 0 20px 20px 0;
+}
+.shorts-comment-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.shorts-channel-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.shorts-channel-user {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.shorts-channel-sub {
+    color: lightgrey;
+    font-size: 12px;
+}
+
+.shorts-comment {
+    color: white;
+    font-size: 14px;
+}
