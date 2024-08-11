@@ -2,10 +2,9 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    height: 800px;
     padding: 30px;
-    overflow-y:hidden;
     background-color: #0F0E0E;
+    overflow: scroll;
 }
 
 .cover {
@@ -19,8 +18,8 @@
 }
 
 .video-cover {
-    width: 700px;
-    height: 440px;
+    width: 600px;
+    height: 377px;
     position: absolute;
     left: 30px;
     top: 30px;
@@ -32,105 +31,147 @@
     cursor: pointer;
 }
 
-.playbar {
-    width: 680px;
-    height: 3px;
-    background-color: white;
-    opacity: 0.3;
+.bottom-bar {
+    width: 600px;
+    height: 57px;
     position: absolute;
-    top: 395px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.3;
+}
+
+.playbar {
+    width: 580px;
+    height: 2px;
+    background-color: white;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 55px;
     left: 10px;
 }
 
 .play {
-    width: 25px;
-    height: 25px;
     background-image: url('icons/icons8-play-90.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    left: 20px;
-    bottom: 10px;
-    opacity: 0.8;
-    transition: ease-in-out 0.2s;
-    pointer-events: auto;
+    left: 15px;
 }
 
-.play:hover {
-    opacity: 1;
+.previous {
+    background-image: url('icons/icons8-skip-90.png');
+    transform: rotate(180deg);
+    left: 45px;
+}
+
+.next {
+    background-image: url('icons/icons8-skip-90.png');
+    left: 80px;
 }
 
 .full-screen {
+    background-image: url('icons/icons8-full-screen-100.png');
+    right: 15px;
+}
+
+.play:hover, .previous:hover, .next:hover, .full-screen:hover {
+    opacity: 1;
+}
+
+.play, .full-screen, .previous, .next {
     width: 25px;
     height: 25px;
-    background-image: url('icons/icons8-full-screen-100.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    right: 20px;
-    bottom: 10px;
+    bottom: 25px;
     opacity: 0.8;
     transition: ease-in-out 0.2s;
     pointer-events: auto;
 }
 
-.full-screen:hover {
-    opacity: 1;
+.moment-text {
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    left: 120px;
+    bottom: 28px;
+    transition: ease-in-out 0.2s;
+    pointer-events: auto;
 }
 
 .keyboard-popup {
     position: absolute;
     top: 35px;
-    left: 400px;
+    left: 320px;
     background-color: red;
     padding: 2px 6px 2px 6px;
     border-radius: 8px;
     color: white; 
     font-weight: bold;
+    font-size: 12px;
 }
 
 iframe#setZoom {
-    zoom: 0.69;
-    -moz-transform: scale(0.69);
+    zoom: 0.62;
+    -moz-transform: scale(0.62);
     -moz-transform-origin: 0 0;
-    -o-transform: scale(0.69);
+    -o-transform: scale(0.62);
     -o-transform-origin: 0 0;
-    -webkit-transform: scale(0.69);
+    -webkit-transform: scale(0.62);
     -webkit-transform-origin: 0 0;
+    left:0;
 }
 
 .iframe-container {
-    height: 440px;
-    width: 700px;
+    height: 360px;
+    width: 600px;
     position: absolute;
     overflow: hidden;
     border-radius: 10px;
     top: 30px;
     left: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: ease-in-out 0.5s;
+    display: flex;
+    justify-content: center; 
 }
 
 .title {
     font-size: 20px;
     color: white;
     font-weight: bold;
-    width: 700px;
+    width: 600px;
+}
+
+.left-panel {
     position: absolute;
-    top: 485px;
+    top: 405px;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    left: 650px;
+    top: 30px;
+    width: 400px;
 }
 
 .description {
     background-color: #272727;
     border-radius: 10px;
-    position: absolute;
-    top: 590px;
-    width: 670px;
+    width: 565px;
     padding: 15px;
     color: white;
     font-size: 14px;
     font-weight: normal;
     line-height: 20px;
+    margin-bottom: 20px;
 }
 
 .description-title {
@@ -140,8 +181,6 @@ iframe#setZoom {
 
 .video-profile {
     height: 80px;
-    position: absolute;
-    top: 510px;
     width: 680px;
     display: flex;
     flex-direction: row;
@@ -177,11 +216,12 @@ iframe#setZoom {
 
 .small-subscribe-button {
     background-color: #AB1314;
-    padding: 10px;
+    padding: 8px;
     color: white;
     font-weight: bold;
     margin-left: 20px;
     border-radius: 2px;
+    font-size: 14px;
 }
 
 .small-subscribe-button:hover {
@@ -193,6 +233,10 @@ iframe#setZoom {
     text-decoration: underline;
 }
 
+.hyperlink:hover {
+    cursor: pointer;
+}
+
 .heartplay {
     background-image: url('icons/heartplay.png');
     background-position: center;
@@ -201,14 +245,11 @@ iframe#setZoom {
     width: 68px;
     height: 48px;
     position: absolute;
-    left: 316px;
-    top: 166px;
+    left: 266px;
+    top: 130px;
 }
 
 .related-playlist {
-    position: absolute;
-    top: 80px;
-    left: 750px;
     color: grey;
     font-size: 12px;
 }
@@ -222,14 +263,13 @@ iframe#setZoom {
     flex-direction: row;
     gap: 10px;
     align-items: center;
-    width: 310px;
+    width: 400px;
     overflow-x: scroll;
     color: white;
     font-weight: bold;
     font-size: 14px;
-    position: absolute;
-    left: 750px;
-    top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(100,100,100,0.5);
 }
 
 .related-button {
@@ -261,10 +301,7 @@ iframe#setZoom {
 .related-videos {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    left: 750px;
-    top: 100px;
-    width: 310px;
+    width: 400px;
     height: 600px;
     gap: 10px;
 }
@@ -273,7 +310,7 @@ iframe#setZoom {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    width: 310px;
+    width: 400px;
 }
 
 .related-video:hover {
@@ -310,7 +347,7 @@ iframe#setZoom {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    width: 160px;
+    width: 200px;
 }
 
 .related-video-title {
@@ -334,4 +371,36 @@ iframe#setZoom {
     left: 48px;
     background-color: rgb(0,0,0,0.4);
     font-weight: bold;
+}
+
+.highlights-box {
+    background-color: #272727;
+    border-radius: 10px;
+    width: 370px;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    margin-bottom: 15px;
+}
+
+.highlights-box-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.read-description {
+    color: grey;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.read-description:hover {
+    cursor: pointer;
+}
+
+video {
+    transition: ease-in-out 0.5s;
 }
