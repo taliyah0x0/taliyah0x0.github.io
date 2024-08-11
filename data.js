@@ -2,7 +2,7 @@ var fl = [0, 1, 2, 3]; // Featured lives (from work)
 var fp = [2, 5, 0, 4]; // Featured projects (from projects)
 var ln = [0, 1, 2, 3]; // Live now (from work)
 
-var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4], Youtube Link [5], Video Start [6], Optional: Website [7] // Project Tags [8], Project Icon [9], Project Name [10], Optional: Project Video Link [11], Project Description [12] // Skill Tags [13]
+var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4], Youtube Link [5], Video Start [6], Optional: Website [7] // Project Tags [8], Project Icon [9], Project Name [10], Optional: Project Video Link [11], Project Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
     ["gamepigeon.png", '1 mo', "GamePigeon Bots & More - Fun Programming Project", '2024-06-19', 'Arduino/Python', '3ex0ym1oMgs', 0, "",
         "#hacks #wordhunt #imessage", "gamepigeon.jpg", "GamePigeon Bots & More", '3ex0ym1oMgs',
         
@@ -10,81 +10,114 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         <br><br>❤︎❤︎❤︎
         <br>View code <a href="https://github.com/taliyah0x0/GamePigeon-Bots" target="_blank" class="hyperlink">here</a>`,
         
-        ['Arduino', 'Python', 'Video Editing']
+        ['Arduino', 'Python', 'Video Editing'],
+        ['Beat everyone in GamePigeon with a bot', 'Programmed custom manipulation software', 'Collabed with the GamePigeonGOAT', 'Played the GOAT again with Anagrams'],
+        ['https://youtube.com/watch?v=3ex0ym1oMgs', 'https://github.com/taliyah0x0/GamePigeon-Bots', 'https://www.instagram.com/reel/C9krfUhPmUc/', 'https://www.instagram.com/reel/C97r_HPv6YV/'],
+        ''
     ],
     ["typewanesethumbnail.png", '3 mos', "Typewanese/Tai-Ping - First Romanized Taiwanese Keyboard", '2023-08-01', 'Python/HTML/CSS/JS', 'jXlTl5RPKoY', 43, "https://bobaway.org",
         "#taiwan #language #keyboard", "flav_9.png", "Typewanese & Tai-Ping", 'jXlTl5RPKoY',
         
         `I’ve been working hard to improve BobaWay’s speed and accuracy, but what about additional features? I present two newly programmed keyboards, Tai-Ping and Typewanese, that aim to make writing in Taiwanese romanization easy and efficient.`,
         
-        ['Python', 'HTML', 'CSS', 'Javascript', 'Video Editing']
+        ['Python', 'HTML', 'CSS', 'Javascript', 'Video Editing'],
+        ['Added keyboard resources to BobaWay', 'Published new video featuring updates', 'Python Flask with Taiwanese database'],
+        ['https://bobaway.org', 'https://youtube.com/watch?v=jXlTl5RPKoY','https://github.com/taliyah0x0/BobaWay'],
+        ''
     ],
     ["bobawaythumbnail.png", '6 mos', 'BobaWay - First Taiwanese-English Translator', '2023-05-01', 'Python/HTML/CSS/JS', 'jH8sbQL_YpA', 31, "https://bobaway.org",
         "#taiwan #language #translator", "flav_9.png", "BobaWay", 'jH8sbQL_YpA',
         
         `To help other Taiwanese-American kids out there with immigrant parents, I created BobaWay, the Google Translate for English to Taiwanese. Open the web app on any device, input English sentences, and out pops the Taiwanese translation in audio form for learning perfect pronunciation.`,
         
-        ['Python', 'HTML', 'CSS', 'Javascript', 'Video Editing']
+        ['Python', 'HTML', 'CSS', 'Javascript', 'Video Editing'],
+        ['Made the first "Google Translate" for Taiwanese', 'Used Python Flask to build back-end of HTML site', 'Interview with TaiwaneseAmericanOrg', 'Interview with Taiwan Plus', 'Interview with Radio Taiwan International', 'Interview with World Journal', 'Interview with Talking Taiwan'],
+        ['https://bobaway.org', 'https://github.com/taliyah0x0/BobaWay', 'https://www.taiwaneseamerican.org/2023/07/taliyah-huang-interview-bobaway/', 'https://www.youtube.com/watch?v=VlkX0hAB5Fw&t=27s', 'https://en.rti.org.tw/radio/programMessagePlayer/programId/1435/id/108711', 'https://www.worldjournal.com/wj/story/121359/7289244', 'https://talkingtaiwan.com/taliyah-huang-young-inventor-of-bobaway-online-translator-that-converts-english-to-taiwanese-ep-253/'],
+        ''
     ],
     ["emokeysthumbnail.png", '2 mos', 'Emokeys - Versatile Emoji Keyboard', '2023-07-01', 'Arduino/CAD/Python', 'wGvIvYGg-gg', 24, "",
         "#keyboard #emoji #discord", "emokeys.png", "Emokeys", 'wGvIvYGg-gg',
        
         `Meet Emokeys, a macropad for typing emoji. Featuring 9 OLED displays that allow an infinite library of colorful characters, plus there's Discord mode where you can even input custom stickers and animated GIFs on your server!`,
 
-        ['Arduino', 'CAD', 'Python', '3D Printing', 'Video Editing']
+        ['Arduino', 'CAD', 'Python', '3D Printing', 'Video Editing'],
+        [''],
+        [''],
+        ''
     ],
     ["circuitfulthumbnail.png", '2 mos', 'Circuitful - Colorful Circuit Diagramming', '2022-07-01', 'Javascript', '2UL5aBr_zVA', 121, "",
         "#electronics #fritzing #arduino", "circuit.png", "Circuitful", '2UL5aBr_zVA',
         
         `Frustrated with the lack of keyboard shortcuts, graphics, and customization in circuit diagramming software like Fritzing and Tinkercad, I set off to program my own. Introducing Circuitful, the colorful circuit diagramming app.`,
 
-        ['Javascript']
+        ['Javascript'],
+        [''],
+        [''],
+        ''
     ],
     ["mousekythumbnail.png", '2 mos', 'Mouseky - Unique Keyboard Designed from Scratch', '2022-06-01', 'Arduino/CAD', '6V3gyArkQ38', 5, "",
         "#3dprinting #integration #design", "mouseky.png", "Mouseky", '6V3gyArkQ38',
         
         `Meet the most high-tech keyboard ever designed! This is Mouseky, a split, wireless, 64-key masterpiece that has an integrated mouse packed with touchpad-equivalent features.`,
 
-        ['Arduino', 'CAD', '3D Printing', 'Video Editing']
+        ['Arduino', 'CAD', '3D Printing', 'Video Editing'],
+        [''],
+        [''],
+        ''
     ],
     ["maxresdefault.webp", '8 mos', 'STEMables - Educational Tech Blocks', '2021-06-01', 'Arduino/CAD', 'TMdWpt-RRqY', 37, "https://bit.ly/stemables",
         "#electronics #programming #accessibletoys", "stemables.png", "STEMables", '6V3gyArkQ38',
         
         `Rearrangeable 3D-printed blocks to create an infinite number of smart circuit sensor systems. Mission for visually-impaired and dexterously-challenged kids to learn electronics and programming in a fun, easy, and accessible way.`,
     
-        ['Arduino', 'CAD', '3D Printing', 'Web Design']
+        ['Arduino', 'CAD', '3D Printing', 'Web Design'],
+        ['Designed the project website', 'Filmed an ad-like video'],
+        ['https://bit.ly/stemables', 'https://youtube.com/watch?v=6V3gyArkQ38'],
+        ''
     ],
     ["cpace.webp", '7 mos', 'CPACE - Assistive Technology for Quadriplegia', '2020-11-01', 'Arduino/CAD', '0uANgR1oOII', 25, "https://bit.ly/projectcpace",
         "#disabilitytech #phonecontrol #affordable", "cpace.png", "CPACE", '0uANgR1oOII',
         
         `How might we help a quadriplegic use the same technology we all use? Current solutions have limited apps and features, or cost tens of thousands of dollars! CPACE lets anyone easily plug in a smartphone or computer to start using! It tracks head motion to position a mouse on screen, and the bite sensor for clicking.`,
 
-        ['Arduino', 'CAD', '3D Printing', 'Web Design']
+        ['Arduino', 'CAD', '3D Printing', 'Web Design'],
+        ['Designed the project website', 'Filmed an ad-like video'],
+        ['https://bit.ly/projectcpace', 'https://youtube.com/watch?v=0uANgR1oOII'],
+        ''
     ],
     ["swanchair.webp", '1 mo', 'Swan Chair - Musical Throne', '2020-06-01', 'Arduino/CAD/Handicraft', 'jH6qUVLfZfc', 2, "",
         "#diy #woodworking #musicbox", "swan.png", "Swan Chair", 'jH6qUVLfZfc',
         
         `As one of the 24 participants selected for the Girls Garage summer program, I remember skipping sleep to go beyond basic woodworking as instructed, taking an unorthodox approach to design an Arduino-integrated that automatically drives a 3D resin-printed “Swan Lake” music box when sat upon.`,
 
-        ['Arduino', 'CAD', 'Handicraft']
+        ['Arduino', 'CAD', 'Handicraft'],
+        ['Felt like being "extra" and built this'],
+        ['https://youtube.com/watch?v=jH6qUVLfZfc'],
+        ''
     ],
     ["automask.png", '5 mos', 'Auto Mask - Build for COVID 19', '2020-05-01', 'Arduino/CAD', 'mftXIeZvh94', 9, "https://bit.ly/auto-mask",
         "#touchless #sensors #hygiene", "automask.png", "Auto Mask", 'mftXIeZvh94',
         
         `Behold the latest technology designed for the coronavirus pandemic and California wildfires: Auto Mask. With eye protection, touchless control, air and muscles sensors, this is a mask you'll never want to take off!`,
 
-        ['Arduino', 'CAD', '3D Printing', 'Web Design']
+        ['Arduino', 'CAD', '3D Printing', 'Web Design'],
+        ['Won hackathons with my first version', 'Big revision for sleekness'],
+        ['https://www.youtube.com/watch?v=c2UgIyFofbM', 'https://www.youtube.com/watch?v=U8a_-_DJ29E'],
+        ''
     ],
     ["autoflote.jpg", '9 mos', 'Auto Flöte Clean - Musical Refreshment', '2019-01-01', 'Arduino/CAD/Handicraft', 'VGhm98lCZWY', 11, "https://bit.ly/autoflote",
         "#flute #cleaning #machine", "image.png", "Auto Flöte Clean", 'VGhm98lCZWY',
         
         `My first “big project” was achieved in 9th grade: A quartet of automatic cleaning machines that fully cleanse and sanitize the flute. I was able to represent my school in personally presenting to the U.S. Vice President Mike Pence and CEO of Oracle, Safra Catz.`,
 
-        ['Arduino', 'CAD', '3D Printing', 'Handicraft', 'Web Design']
+        ['Arduino', 'CAD', '3D Printing', 'Handicraft', 'Web Design'],
+        ['Made a website to show all the prototypes'],
+        ['https://bit.ly/autoflote'],
+        ''
     ]
 ]
 
-var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4], Youtube Link [5], Video Start [6], Optional: Website [7], Location Tags [8] // Description [9] // Channel Icon [10], Channel Description [11], Channel Website [12] // Skill Tags [13]
+var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4], Youtube Link [5], Video Start [6], Optional: Website [7], Location Tags [8] // Description [9] // Channel Icon [10], Channel Description [11], Channel Website [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
     ["Moon-Surgical.jpg", '🔉 LIVE', 'Clinical Development Engineering Intern', '2024-06-03', 'Moon Surgical', 'sWpCpD1zYg8', 8, "", "#sancarlos #california", 
         
         `❥ Conducted design validation and usability studies with 15 surgeons for the Maestro surgical robotic assistant's advanced feature ScoPilot, including 4 human cadaver labs
@@ -95,7 +128,15 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "moonsurgical_logo.jpeg", "Medical Robotics, Haptics, & Computer Vision", "https://moonsurgical.com",
 
-        ['CAD', '3D Printing', '3D Modeling/Animation', 'Design Thinking']
+        ['CAD', '3D Printing', 'Modeling/Animation', 'Design Thinking'],
+        ['3D modeling & installing a custom uterus model', 'Designing a creative demo game', 'Conducting 15 surgeon usability studies', 'Shadowing surgical procedures at hospitals'],
+        ['uterus.mp4','0811.mp4','observation.mp4','shadowing.mp4'],
+        `<strong>How this aligns with my career goals:</strong>
+        <br>With just around 25 employees at the US office, I was able to interact closely with my direct small clinical team as well as other people in different areas.
+        I really enjoyed this internship, from the close commute from my house to how there was a lot of trust involved in the culture, where I would never feel underestimated as an intern.
+        Working on multiple projects simultaneously kept me engaged and never bored at the job.
+        I picked up on a lot of new skills such as learning how to cast silicon models and helping out with the whole process of conducting formative studies for FDA approval, while being able to contribute significantly with my experience in 3D modeling and surgical shadowing.
+        It was amazing to see and be involved directly with the design process I had only learned about in class, from the user interviews and coded need statements to the research and prototypes!`,
     ],
     ["pexels-ekamelev-813872.jpg", '🔉 LIVE', 'Undergraduate Design Team Leader', '2024-01-01', 'Hopkins Biomedical Engineering', 'bzP4ZosYo3s', 0, "", "#baltimore #maryland", 
         
@@ -104,7 +145,10 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
        
         "johns_hopkins_biomedical_engineering_logo.jpeg", "Medical Device Design & Innovation", "https://www.bme.jhu.edu/",
 
-        ['Design Thinking', 'Leadership']
+        ['Design Thinking', 'Leadership'],
+        ['Shadowing Da Vinci procedures at the hospital'],
+        ['IMG_2393.mp4'],
+        ''
     ],
     ["pexels-chevanon-302899.jpg", '🔉 LIVE', "Co-Founder, Business Development & Graphic Design", '2023-05-12', 'Higher Grounds Vending L.L.C.', 'mD-utJUMmkU', 0, "", "#baltimore #maryland", 
         
@@ -116,7 +160,14 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "highergroundslogoblack.png", "Affordable, freshly-brewed coffee and tea at Johns Hopkins!", "https://instagram.com/highergroundsvending",
 
-        ['Business', 'Graphic Design']
+        ['Business', 'Graphic Design'],
+        ['2 vending machines so far at JHU!', 'Accepted to several paid accelerators', 'Won $5,000 as top audience pick', 'My grand opening posters'],
+        ['IMG_6140.mp4', 'IMG_6051.mp4', '1717214730861.jpg', '2.png'],
+        `<strong>How this aligns with my career goals:</strong>
+        <br>With my ultimate dream being a successful startup founder, I want to start gaining experience about growing a business from the ground up.
+        90% of startups fail, with the majority being due to offering an unwanted product, so in order to avoid risks as I learn the ropes around financial accounting, funding, insurance, and more, I teamed up with 3 other highly-motivated students to found Higher Grounds Vending, L.L.C.
+        Sourcing our fresh beverage-making vending machines directly from a manufacturer doesn't exactly show innovation, but it allowed us to quickly start operating as we continued to learn more and cater our products towards our target audience: College students.
+        So far, it has been a great experience with the support of  Johns Hopkins' entrepreneurship programs and resources, as we are continuing to expand our reach and services across campus.`,
     ],
     ["pexels-mediocrememories-1117132.jpg", '🔉 LIVE', "Content Creator", '2023-01-01', 'Taliyah Engineering', 'AJlgPpAQshM', 1, "", "#youtube #instagram #facebook #tiktok",
         
@@ -127,16 +178,33 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "IMG_5548.png", "Engineering student who loves to invent and create!", "https://youtube.com/@taliyahengineering",
 
-        ['Video Editing']
+        ['Video Editing'],
+        ['Filming in the Community Kitchen'],
+        ['IMG_3617.mp4'],
+        ''
     ],
-    ["magic.png", '5 mos', "3D Modeling/Animation", '2022-08-01', 'MagIC Lifescienc Inc.', 'W6m0floaz-E', 3, "", "#blender #pcr #contract",
+    ["pexels-pixabay-236663.jpg", '12 mos', 'Undergraduate Robotics Researcher', '2023-01-22', 'Dr. Li Terradynamics Lab', 'RG9TMn1FJzc', 67, "", "#meche #robotics #computervision",
+        `❥ Use Python and Matlab to analyze climbing mechanism of mountain goats and humans for model robot development
+        <br>❥ Work cross-functionally with PhD students of different disciplines and give weekly presentations`,
+        
+        "jhuwse.jpeg", "Movement science at the interface of biology, robotics & physics", "https://li.me.jhu.edu/",
+
+        ['Python', 'Matlab'],
+        ['Tracking human climbing poses from videos'],
+        ['climbing.mp4'],
+        ''
+    ],
+    ["magic.png", '5 mos', "3D Modeling/Animation", '2022-08-01', 'MagIC Lifescience Inc.', 'W6m0floaz-E', 3, "", "#blender #pcr #contract",
         
         `❥ Created professionally-animated 3D simulation for demonstrating the startup company’s biotech product
         <br>❥ Led team meetings and planning for  animation production`,
         
         "1638399138601.jpeg", "Leveraging giant magnetoresistance to advance molecular diagnostics", "https://magiclifescience.com/",
 
-        ['CAD', '3D Modeling/Animation']
+        ['CAD', 'Modeling/Animation'],
+        ['Modeled and animated 85% of this'],
+        ['https://youtube.com/watch?v=W6m0floaz-E'],
+        ''
     ],
     ["virgo.png", '3 mos', "Bioengineering Team Intern", '2022-06-10', 'Stanford Institute of Medicine', '8GJGm3xvwq8', 0, "https://www.im-creator.com/free/teamsaturn/saturn", "#summerprogram #allergy #medtech",
         
@@ -145,7 +213,10 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "stanford_university_logo.jpeg", "Center for Biodesign", "https://simr.stanford.edu/",
 
-        ['CAD', '3D Printing', '3D Modeling/Animation', 'Web Design']
+        ['CAD', '3D Printing', 'Modeling/Animation', 'Web Design'],
+        ['Website design & development was all me', 'Did the CAD for several prototypes'],
+        ['https://www.im-creator.com/free/teamsaturn/saturn', 'https://cad.onshape.com/documents/0539fa19643aa5ea69bea0c8/w/6b37b10aaf9fd72a722668ae/e/078abaceeb5841a0192c7ebb?renderMode=0&uiState=66b8506bc8af0930f4bf2dd5'],
+        ''
     ],
 ]
 
@@ -166,12 +237,13 @@ var skills = [
     ["arduino.jpg", "Arduino", "2019-03-01"],
     ["pexels-jibarofoto-1787235.jpg", "Photography", "2018-01-01"],
     ["pexels-alexfu-1767783.jpg", "Video Editing", "2016-08-01"],
-    ["python.png", "Python", "2021-01-22"],
-    ["html.png", "HTML", "2019-03-01"],
-    ["css.png", "CSS", "2019-03-01"],
-    ["js.png", "Javascript", "2019-03-01"],
+    ["python.png", "Python", "2021-03-01"],
+    ["html.png", "HTML/CSS", "2021-10-01"],
+    ["js.png", "Javascript", "2020-10-01"],
     ["java.png", "Java", "2024-01-01"],
-    ["cad.png", "Computer-Aided Design", "2018-10-01"]
+    ["cad.png", "Modeling/Animation", "2018-10-01"],
+    ["graphic.png", "Graphic Design", "2020-12-01"],
+    ["matlab.png", "Matlab", "2023-01-01"]
 ]
 skills.sort((a, b) => a[2].localeCompare(b[2]));
 

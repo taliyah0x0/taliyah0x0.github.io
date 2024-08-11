@@ -153,13 +153,15 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 75vw;
+    overflow-x: scroll;
 }
 
 .profile {
     display: flex;
-    flex: 1;
     align-items: center;
     justify-content: flex-end;
+    margin-left: 50px;
 }
 
 .profile-image {
@@ -176,8 +178,8 @@ a {
 .profile-text {
     display: flex;
     flex-direction: column;
-    margin-left: 2vw;
-    flex: 4;
+    margin-left: 20px;
+    width: 500px;
 }
 
 .name {
@@ -212,10 +214,10 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex: 2;
     gap: 10px;
     font-size: 2.5vh;
     font-weight: bold;
+    margin-left: 30px;
 }
 
 .join-button {
@@ -237,7 +239,6 @@ a {
     color: white;
     border-radius: 2px;
     border: 1px solid #AB1314;
-    margin-right: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -269,7 +270,7 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 2vh;
+    padding-top: 1.5vh;
     flex: 0 0 auto;
 }
 
@@ -302,8 +303,23 @@ a {
     cursor: normal;
 }
 
+.about-text-container {
+    width: calc(75vw - 30px);
+    overflow-x: scroll;
+}
+
 .about-text {
     width: 550px;
+    margin-bottom: 30px;
+}
+
+.about-channel {
+    width: 550px;
+    padding: 15px;
+    color: black;
+    background-color: grey;
+    font-size: 14px;
+    border-radius: 20px;
     margin-bottom: 30px;
 }
 

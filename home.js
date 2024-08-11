@@ -71,7 +71,7 @@ function loadhome() {
         </div>`;
     }
     
-    setInterval(setVideoStarts, 8000);
+    setInterval(setVideoStarts, 50000 / (ln.length + fp.length));
 }
 
 function setAgo(startYear, startMonth, startDay) {
@@ -153,8 +153,8 @@ function clickMenu(index) {
         loadSmallVideos(all, 'All');
 
     } else if (index == 2) {
-        document.getElementById("container").innerHTML =  `<div class="page"></div>`;
-        for (var i = 0; i < skills.length; i++) {
+        document.getElementById("container").innerHTML =  `<div class="page">Page in Progress!</div>`;
+        /*for (var i = 0; i < skills.length; i++) {
             var startYear = parseInt(skills[i][2].slice(0, 4));
             var startMonth = parseInt(skills[i][2].slice(5, 7));
             var startDay = parseInt(skills[i][2].slice(8, 10));
@@ -169,10 +169,10 @@ function clickMenu(index) {
             </div>`
 
             document.getElementsByClassName("shorts-thumbnail")[i].style.backgroundImage = `url(skills/${skills[i][0]})`;
-        }
+        }*/
         
     } else if (index == 3) {
-        document.getElementById("container").innerHTML =  `<div class="page"></div>`;
+        document.getElementById("container").innerHTML =  `<div class="page">Page in Progress!</div>`;
 
     } else if (index == 4) {
         document.getElementById("container").innerHTML =  `<div class="page"></div>`;
@@ -210,7 +210,19 @@ function clickMenu(index) {
         }
 
     } else if (index == 5) {
-        document.getElementById("container").innerHTML =  `<div class="block"><div class="block-title">About Me</div><div class="about-text"></div></div>`;
+        document.getElementById("container").innerHTML =  `
+        <div class="block">
+            <div class="about-text-container">
+            <div class="block-title">About Me</div>
+            <div class="about-text"></div>
+            <div class="about-channel">
+                <strong>Why a Youtube channel theme?</strong><br>
+                Designing and programming this website was honestly one of my most fun projects of all time!
+                Ever since I started making Youtube videos in elementary school, I was always proud of my high-effort creative projects despite the low view counts.
+                It didn’t matter to me if the comments complained about the poor quality or if there weren’t any comments at all, I simply enjoyed being brave enough to share my ideas and personality with the internet!!
+            </div>
+            </div>
+        </div>`;
         document.getElementsByClassName("about-text")[0].innerHTML = `Hello! My name is Taliyah. I am an inventor, entrepreneur, and a junior studying biomedical engineering with a passion for mechatronics. I'm particularly interested in med tech startups in the robotics field!
         <br><br>❤︎❤︎❤︎
         <br>Current Education
@@ -316,7 +328,7 @@ function loadSmallVideos(list, list_name) {
         document.getElementsByClassName("video-sub")[i].innerHTML = `${list[i][4]} • ${ago}`;
     }
 
-    setInterval(setSmallVideoStarts, 3000);
+    setInterval(setSmallVideoStarts, 50000 / list.length);
     document.getElementsByClassName("screen")[0].scrollTo(0, 250);
 }
 
