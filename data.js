@@ -105,7 +105,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         ['https://www.youtube.com/watch?v=c2UgIyFofbM', 'https://www.youtube.com/watch?v=U8a_-_DJ29E'],
         ''
     ],
-    ["autoflote.jpg", '9 mos', 'Auto Flöte Clean - Musical Refreshment', '2019-01-01', 'Arduino/CAD/Handicraft', 'VGhm98lCZWY', 11, "https://bit.ly/autoflote",
+    ["autoflote.jpg", '9 mos', 'Auto Flöte Clean - Musical Refreshment', '2019-01-01', 'Arduino/CAD/Handicraft', 'VGhm98lCZWY', 11, "https://autofloteclean.weebly.com/",
         "#flute #cleaning #machine", "image.png", "Auto Flöte Clean", 'VGhm98lCZWY',
         
         `My first “big project” was achieved in 9th grade: A quartet of automatic cleaning machines that fully cleanse and sanitize the flute. I was able to represent my school in personally presenting to the U.S. Vice President Mike Pence and CEO of Oracle, Safra Catz.`,
