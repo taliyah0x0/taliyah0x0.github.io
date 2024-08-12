@@ -1,3 +1,5 @@
+let current_content = -1;
+let files = ['mov', 'mp4', 'jpg', 'png'];
 function openVideo(index) {
     for (var i = 0; i < 6; i++) {
         document.getElementsByClassName("menu-item")[i].id = "menu-item";
@@ -40,35 +42,89 @@ function openVideo(index) {
         learn_more = `https://youtube.com/watch?v=${all[index][11]}`;
         button_text = "Watch Video";
     }
+
+    let content_array = all[index][15];
     
-    if (code.substring(0,8) != "https://") {
+    if (code.substring(0,8) != "https://" && files.includes(content_array[0].toLowerCase().slice(-3)) == false) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
                 <iframe src="https://www.youtube.com/embed/${code}?mute=1&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
-                    height="500" width="700" frameborder="0" allowfullscreen style="position:absolute; top:-60px;"></iframe>
+                    height="428" width="600" frameborder="0" allowfullscreen style="position:absolute; top:-60px;"></iframe>
             </div>
             <div class="cover"></div>
             <div class="video-cover" onclick="removeCover()">
                 <div class="heartplay"></div>
             </div>
-            <div class="title">${title}</div>
-            <div class="video-profile">
-                <a href="${learn_more}" target="_blank"><div class="video-profile-pic"></div></a>
-                <div class="video-profile-text">
-                    <div class="video-profile-name">${channel}</div>
-                    <div class="video-profile-role">${channel_description}</div>
+            <div class="left-panel">
+                <div class="title">${title}</div>
+                <div class="video-profile">
+                    <a href="${learn_more}" target="_blank"><div class="video-profile-pic"></div></a>
+                    <div class="video-profile-text">
+                        <div class="video-profile-name">${channel}</div>
+                        <div class="video-profile-role">${channel_description}</div>
+                    </div>
+                    <a href="${learn_more}" target="_blank"><div class="small-subscribe-button">${button_text}</div></a>
                 </div>
-                <a href="${learn_more}" target="_blank"><div class="small-subscribe-button">${button_text}</div></a>
+                <div class="description"><div class="description-title">${company} • ${ago}&nbsp;&nbsp;${hashtags}</div>${description}</div>
             </div>
-            <div class="description"><div class="description-title">${company} • ${ago}&nbsp;&nbsp;${hashtags}</div>${description}</div>
+            <div class="right-panel">
+                <div class="highlights-box">
+                    <div class="highlights-box-title">Key moments</div>
+                </div>
+            </div>
         </div>`;
-        document.getElementsByClassName("video-profile-pic")[0].style.backgroundImage = `url(channels/${channel_pic})`
+    } else if (files.includes(content_array[0].toLowerCase().slice(-3))) {
+        document.getElementById("container").innerHTML = 
+        `<div class="open-video">
+            <div class="iframe-container">
+                <video height="428" autoplay muted loop>
+                    <source src="content/${all[index][4]}/${content_array[0]}" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-cover" onclick="pause()">
+                <div class="heartplay"></div>
+                <div class="bottom-bar"></div>
+                <div class="playbar"></div>
+                <div class="play" onclick="pause()"></div>
+                <div class="previous" onclick="previous(${index})"></div>
+                <div class="next" onclick="next(${index})"></div>
+                <div class="moment-text">${all[index][14][0]}</div>
+                <a href="content/${all[index][4]}/${content_array[0]}" target="_blank" onclick="play=0;pause()" id="full-screen"><div class="full-screen"></div></a>
+            </div>
+            <div class="left-panel">
+                <div class="title">${title}</div>
+                <div class="video-profile">
+                    <a href="${learn_more}" target="_blank"><div class="video-profile-pic"></div></a>
+                    <div class="video-profile-text">
+                        <div class="video-profile-name">${channel}</div>
+                        <div class="video-profile-role">${channel_description}</div>
+                    </div>
+                    <a href="${learn_more}" target="_blank"><div class="small-subscribe-button">${button_text}</div></a>
+                </div>
+                <div class="description"><div class="description-title">${company} • ${ago}&nbsp;&nbsp;${hashtags}</div>${description}</div>
+            </div>
+            <div class="right-panel">
+                <div class="highlights-box">
+                    <div class="highlights-box-title">Key moments</div>
+                </div>
+            </div>
+        </div>`;
+        if (files.slice(0,2).includes(content_array[0].toLowerCase().slice(-3)) == false) {
+            document.getElementsByClassName('iframe-container')[0].style.backgroundImage = `url('content/${index}/${content_array[0]}')`;
+            document.getElementsByTagName("video").style.opacity = 0;
+        }
+        document.getElementsByClassName("heartplay")[0].style.display = "none";
+        document.getElementsByClassName("video-cover")[0].style.backgroundColor = "rgb(0,0,0,0)";
+        document.getElementsByClassName("video-cover")[0].style.pointerEvents = "none";
+        document.getElementsByClassName("play")[0].style.backgroundImage = "url('icons/icons8-pause-90.png')";
+        current_content = 0;
+        play = 1;
     } else {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
-                <iframe src="${code}" height="440" width="700" frameborder="0" id="none" muted="yes"></iframe>
+                <iframe src="${code}" height="360" width="600" frameborder="0" id="none" muted="yes"></iframe>
             </div>
             <div class="video-cover" onclick="pause()">
                 <div class="heartplay"></div>
@@ -76,41 +132,51 @@ function openVideo(index) {
                 <div class="play" onclick="pause()"></div>
                 <a href="${code}" target="_blank"><div class="full-screen"></div></a>
             </div>
-            <div class="title">${title}</div>
-            <div class="video-profile">
-                <a href="${learn_more}" target="_blank"><div class="video-profile-pic"></div></a>
-                <div class="video-profile-text">
-                    <div class="video-profile-name">${channel}</div>
-                    <div class="video-profile-role">${channel_description}</div>
+            <div class="left-panel">
+                <div class="title">${title}</div>
+                <div class="video-profile">
+                    <a href="${learn_more}" target="_blank"><div class="video-profile-pic"></div></a>
+                    <div class="video-profile-text">
+                        <div class="video-profile-name">${channel}</div>
+                        <div class="video-profile-role">${channel_description}</div>
+                    </div>
+                    <a href="${learn_more}" target="_blank"><div class="small-subscribe-button">${button_text}</div></a>
                 </div>
-                <a href="${learn_more}" target="_blank"><div class="small-subscribe-button">${button_text}</div></a>
+                <div class="description"><div class="description-title">${company} • ${ago}&nbsp;&nbsp;${hashtags}</div>${description}</div>
             </div>
-            <div class="description"><div class="description-title">${company} • ${ago}&nbsp;&nbsp;${hashtags}</div>${description}</div>
+            <div class="right-panel">
+                <div class="highlights-box">
+                    <div class="highlights-box-title">Key moments</div>
+                </div>
+            </div>
         </div>`;
-        document.getElementsByClassName("video-profile-pic")[0].style.backgroundImage = `url(channels/${channel_pic})`
-
+        
         if (channel == "Typewanese & Tai-Ping") {
             document.getElementsByClassName("video-cover")[0].innerHTML +=
             `<div class="keyboard-popup">↑ Click here for keyboards!</div>`;
         } else if (channel != "BobaWay" && channel != "Typewanese & Tai-Ping") {
             document.getElementsByTagName("iframe")[0].style.position = "absolute";
-            document.getElementsByTagName("iframe")[0].width = "1500";
+            document.getElementsByTagName("iframe")[0].width = "1610";
             document.getElementsByTagName("iframe")[0].id = "setZoom";
+            document.getElementsByTagName("iframe")[0].height = "1100";
             if (channel != "Auto Flöte Clean") {
                 document.getElementsByTagName("iframe")[0].style.top = "-50px";
-                document.getElementsByTagName("iframe")[0].height = "1000";
-            } else {
-                document.getElementsByTagName("iframe")[0].height = "1050";
             }
         }
         play = 0;
     }
 
-    document.getElementsByClassName("open-video")[0].innerHTML += 
+    if (all[index][16] != '') {
+        document.getElementsByClassName("left-panel")[0].innerHTML +=
+        `<div class="description">${all[index][16]}</div>`
+    }
+    
+    document.getElementsByClassName("video-profile-pic")[0].style.backgroundImage = `url(channels/${channel_pic})`
+
+    document.getElementsByClassName("right-panel")[0].innerHTML += 
     `<div class="related-buttons">
         <div class="related-button" onclick="relatedClick(0, 3, 'All')">All</div>
-    </div>
-    <div class="related-videos"></div>`;
+    </div>`;
 
     var related_buttons = 1;
     var list;
@@ -118,7 +184,7 @@ function openVideo(index) {
         document.getElementsByClassName("related-buttons")[0].innerHTML +=
         `<div class="related-button" id="related-highlight" onclick="relatedClick(1, 2, 'Playlists')">Work Experiences</div>`;
         list = JSON.parse(JSON.stringify(w_index));
-        document.getElementsByClassName("open-video")[0].innerHTML +=
+        document.getElementsByClassName("right-panel")[0].innerHTML +=
         `<div class="related-playlist" onclick="loadSmallVideos(${playlists[2][2]}, 'Work Experience')">VIEW FULL PLAYLIST</div>`;
         related_buttons++;
 
@@ -126,12 +192,10 @@ function openVideo(index) {
         document.getElementsByClassName("related-buttons")[0].innerHTML +=
         `<div class="related-button" id="related-highlight" onclick="relatedClick(1, 1, 'Playlists')">Personal Projects</div>`;
         list = JSON.parse(JSON.stringify(p_index));
-        document.getElementsByClassName("open-video")[0].innerHTML +=
+        document.getElementsByClassName("right-panel")[0].innerHTML +=
         `<div class="related-playlist" onclick="loadSmallVideos(${playlists[1][2]}, 'Personal Projects')">VIEW FULL PLAYLIST</div>`;
         related_buttons++;
     }
-
-    loadRelatedVideos(index, list);
     
     if (all[index][1] == '🔉 LIVE') {
         document.getElementsByClassName("related-buttons")[0].innerHTML +=
@@ -150,6 +214,31 @@ function openVideo(index) {
         `<div class="related-button" onclick="relatedClick(${related_buttons + i}, ${skill_index}, 'Skills')">${all[index][13][i]}</div>`;
     }
 
+    document.getElementsByClassName("right-panel")[0].innerHTML +=
+    `<div class="related-videos"></div>`;
+
+    for (var i = 0; i < all[index][14].length; i++) {
+        if (all[index][15][i].substring(0, 4) == 'http') {
+        document.getElementsByClassName("highlights-box")[0].innerHTML +=
+        `<a href="${all[index][15][i]}" target="_blank"><strong class="hyperlink">0${i}:00</strong></a> &nbsp; ${all[index][14][i]}<br>`;
+        } else if (files.includes(all[index][15][i].toLowerCase().slice(-3))) {
+            document.getElementsByClassName("highlights-box")[0].innerHTML +=
+            `<strong class="hyperlink" onclick="current_content=${i-1};next(${index});">0${i}:00</strong> &nbsp; ${all[index][14][i]}<br>`;
+        } else {
+            document.getElementsByClassName("highlights-box")[0].innerHTML +=
+        `<strong class="hyperlink">0${i}:00</strong> &nbsp; ${all[index][14][i]}<br>`;
+        }
+    }
+
+    document.getElementsByClassName("highlights-box")[0].innerHTML +=
+    `<div class="read-description" onclick="goDescription()">SHOW MORE</div>`;
+
+    var leftHeight = document.getElementsByClassName("iframe-container")[0].offsetHeight + document.getElementsByClassName("left-panel")[0].offsetHeight;
+    var rightHeight = document.getElementsByClassName("right-panel")[0].offsetHeight;
+    let larger = Math.max(leftHeight, rightHeight) + 20;
+    document.getElementsByClassName("open-video")[0].style.height = larger + 'px';
+
+    loadRelatedVideos(index, list);
     document.getElementsByClassName("screen")[0].scrollTo(0, 240);
 }
 
@@ -171,20 +260,20 @@ function pause() {
         document.getElementsByClassName("play")[0].style.backgroundImage = "url('icons/icons8-play-90.png')";
         document.getElementsByClassName("video-cover")[0].style.backgroundColor = "rgb(0,0,0,0.2)";
         document.getElementsByClassName("video-cover")[0].style.pointerEvents = "auto";
+        if (current_content >= 0) {
+            document.getElementsByTagName("video")[0].pause();
+        }
         setTimeout (() => {
             play = 0;
         }, 10);
     } else {
-        var code = document.getElementsByClassName("full-screen")[0].href;
-        document.getElementsByClassName("video-cover")[0].innerHTML =
-        `<div class="heartplay"></div>
-        <div class="playbar"></div>
-        <div class="play" onclick="pause()"></div>
-        <a href="${code}" target="_blank"><div class="full-screen"></div></a>`;
         document.getElementsByClassName("heartplay")[0].style.display = "none";
         document.getElementsByClassName("play")[0].style.backgroundImage = "url('icons/icons8-pause-90.png')";
         document.getElementsByClassName("video-cover")[0].style.backgroundColor = "rgb(0,0,0,0)";
         document.getElementsByClassName("video-cover")[0].style.pointerEvents = "none";
+        if (current_content >= 0) {
+            document.getElementsByTagName("video")[0].play();
+        }
         setTimeout (() => {
             play = 1;
         }, 10);
@@ -263,4 +352,46 @@ function loadRelatedVideos(index, in_list) {
             document.getElementsByClassName("video-sub")[related_videos].style.marginBottom = "0";
         }
     }
+}
+
+function goDescription() {
+    document.getElementsByClassName("screen")[0].scrollTo(0, 675);
+}
+
+function next(index) {
+    current_content += 1;
+    if (current_content == all[index][15].length) {
+        current_content = 0;
+    }
+    document.getElementById("full-screen").href = `content/${all[index][4]}/${all[index][15][current_content]}`;
+    document.getElementsByClassName("moment-text")[0].innerHTML = all[index][14][current_content];
+    
+    if (files.slice(0,2).includes(all[index][15][current_content].toLowerCase().slice(-3))) {
+        document.getElementsByTagName("video")[0].src = `content/${all[index][4]}/${all[index][15][current_content]}`;
+        document.getElementsByTagName("video")[0].style.opacity = 1;
+        document.getElementsByClassName('iframe-container')[0].style.backgroundImage = "";
+    } else {
+        document.getElementsByClassName("iframe-container")[0].style.backgroundImage = `url("content/${all[index][4]}/${all[index][15][current_content]}")`;
+        document.getElementsByTagName("video")[0].style.opacity = 0;
+    }
+    play = 0;
+}
+
+function previous(index) {
+    current_content -= 1;
+    if (current_content == -1) {
+        current_content = all[index][15].length - 1;
+    }
+    document.getElementById("full-screen").href = `content/${all[index][4]}/${all[index][15][current_content]}`;
+    document.getElementsByClassName("moment-text")[0].innerHTML = all[index][14][current_content];
+
+    if (files.slice(0,2).includes(all[index][15][current_content].toLowerCase().slice(-3))) {
+        document.getElementsByTagName("video")[0].src = `content/${all[index][4]}/${all[index][15][current_content]}`;
+        document.getElementsByTagName("video")[0].style.opacity = 1;
+        document.getElementsByClassName('iframe-container')[0].style.backgroundImage = "";
+    } else {
+        document.getElementsByClassName("iframe-container")[0].style.backgroundImage = `url("content/${all[index][4]}/${all[index][15][current_content]}")`;
+        document.getElementsByTagName("video")[0].style.opacity = 0;
+    }
+    play = 0;
 }
