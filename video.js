@@ -74,6 +74,7 @@ function openVideo(index) {
                 </div>
             </div>
         </div>`;
+        current_content = -1;
     } else if (files.includes(content_array[0].toLowerCase().slice(-3))) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
@@ -161,8 +162,10 @@ function openVideo(index) {
             document.getElementsByTagName("iframe")[0].height = "1100";
             if (channel != "Auto Flöte Clean") {
                 document.getElementsByTagName("iframe")[0].style.top = "-50px";
+                document.getElementsByTagName("iframe")[0].width = "1620";
             }
         }
+        current_content = -1;
         play = 0;
     }
 
