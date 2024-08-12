@@ -123,8 +123,8 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         `❥ Conducted design validation and usability studies with 15 surgeons for the Maestro surgical robotic assistant's advanced feature ScoPilot, including 4 human cadaver labs
         <br>❥ Co-authored formative study protocol and paperwork for ScoPilot's 510(k) FDA submission
         <br>❥ Developed a unique interactive demo and training game for Maestro's commercial launch
-        <br>❥ Shadowed several laparoscopic and gynecologic surgeries
-        <br>❥ Designed molds for casting custom organ models`,
+        <br>❥ Shadowed and analyzed laparoscopic procedures at various surgery centers
+        <br>❥ Designed and installed a custom gynecologic model for the uterine manipulator project`,
         
         "moonsurgical_logo.jpeg", "Medical Robotics, Haptics, & Computer Vision", "https://moonsurgical.com",
 
