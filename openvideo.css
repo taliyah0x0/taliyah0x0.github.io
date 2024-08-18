@@ -172,6 +172,10 @@ iframe#setZoom {
     font-weight: normal;
     line-height: 20px;
     margin-bottom: 20px;
+    user-select: text; /* Standard */
+    -webkit-user-select: text; /* Safari */        
+    -moz-user-select: text; /* Firefox */
+    -ms-user-select: text; /* IE10+/Edge */
 }
 
 .description-title {

@@ -550,6 +550,7 @@ a {
     gap: 10px;
     flex-wrap:wrap;
     color: white;
+    margin-bottom: 50px;
 }
 
 .shorts:hover {

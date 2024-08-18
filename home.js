@@ -111,6 +111,7 @@ function setAgo(startYear, startMonth, startDay) {
     return ago;
 }
 
+let total_load = 0;
 function clickMenu(index) {
     for (var i = 0; i < 6; i++) {
         document.getElementsByClassName("menu-item")[i].id = "menu-item";
@@ -150,11 +151,27 @@ function clickMenu(index) {
         loadhome();
 
     } else if (index == 1) {
-        loadSmallVideos(all, 'All');
+        let container = document.getElementById("container");
+        total_load = Math.floor((container.offsetWidth - 60) / 240) * 2;
+        loadSmallVideos(all.slice(0, total_load), 'All');
+        
 
+        let screen = document.getElementsByClassName("screen")[0];
+        screen.addEventListener('scroll', function() {
+            if (total_load < all.length) {
+                if (screen.scrollTop >= -200 + (total_load / Math.floor((container.offsetWidth - 60) / 240)) * 230) {
+                    let addition = Math.floor((container.offsetWidth - 60) / 240);
+                    let together = total_load + addition;
+                    loadMore(total_load, together);
+                    total_load += addition;
+                }
+            }
+        });
+        
     } else if (index == 2) {
-        document.getElementById("container").innerHTML =  `<div class="page">Page in Progress!</div>`;
-        /*for (var i = 0; i < skills.length; i++) {
+        shuffle(skills);
+        document.getElementById("container").innerHTML =  `<div class="page"></div>`;
+        for (var i = 0; i < skills.length; i++) {
             var startYear = parseInt(skills[i][2].slice(0, 4));
             var startMonth = parseInt(skills[i][2].slice(5, 7));
             var startDay = parseInt(skills[i][2].slice(8, 10));
@@ -169,7 +186,7 @@ function clickMenu(index) {
             </div>`
 
             document.getElementsByClassName("shorts-thumbnail")[i].style.backgroundImage = `url(skills/${skills[i][0]})`;
-        }*/
+        }
         
     } else if (index == 3) {
         document.getElementById("container").innerHTML =  `<div class="page">Page in Progress!</div>`;
@@ -288,6 +305,47 @@ function stopsmallvid(index) {
     document.getElementsByClassName("small-duration")[index].style.opacity = 1;
 }
 
+function loadMore(index_start, index_end) {
+    let list = all;
+    if (list.length > index_end) {
+        for (var i = index_start; i < index_end; i++) {
+            document.getElementsByClassName("page")[0].innerHTML +=
+                `<div class="block-video" onmouseenter="playsmallvid(${i})" onmouseleave="stopsmallvid(${i})" onclick="openVideo(${all.indexOf(list[i])})">
+                    <div class="small-video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/${list[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${list[i][6]}"
+            height="240" width="240" frameborder="0" style="position:absolute;"></iframe>
+                        <div class="small-clear"></div>
+                        <div class="small-duration"></div>
+                    </div>
+                    <div class="small-video-title"></div>
+                    <div class="video-sub"></div>
+                    <div class="video-tag"></div>
+                </div>`
+            
+            document.getElementsByClassName("small-clear")[i].style.backgroundImage = `url('thumbnails/${list[i][0]}')`;
+            document.getElementsByClassName("small-duration")[i].innerHTML = `${list[i][1]}`;
+            if (p.includes(list[i])) {
+                document.getElementsByClassName("video-tag")[i].innerHTML = 'Project';
+            } else if (w.includes(list[i])) {
+                document.getElementsByClassName("video-tag")[i].innerHTML = 'Work Experience';
+            }
+            if (list[i][1] == '🔉 LIVE') {
+                document.getElementsByClassName("small-duration")[i].style.backgroundColor = "red";
+                document.getElementsByClassName("small-duration")[i].style.color = "white";
+            }
+            document.getElementsByClassName("small-video-title")[i].innerHTML = `${list[i][2]}`;
+
+            var startYear = parseInt(list[i][3].slice(0, 4));
+            var startMonth = parseInt(list[i][3].slice(5, 7));
+            var startDay = parseInt(list[i][3].slice(8, 10));
+            var ago = setAgo(startYear, startMonth, startDay);
+            document.getElementsByClassName("video-sub")[i].innerHTML = `${list[i][4]} • ${ago}`;
+        }
+
+        setInterval(setSmallVideoStarts, 50000 / index_end);
+    }
+}
+
 function loadSmallVideos(list, list_name) {
     if (list_name != 'All') {
         document.getElementById("container").innerHTML =  `<div class="block-title" style="margin: 30px 0px 10px 30px;">${list_name}<div class="playlist-icon"></div></div><div class="page"></div>`;
@@ -328,7 +386,11 @@ function loadSmallVideos(list, list_name) {
         document.getElementsByClassName("video-sub")[i].innerHTML = `${list[i][4]} • ${ago}`;
     }
 
-    setInterval(setSmallVideoStarts, 50000 / list.length);
+    if (list_name == 'All') {
+        setInterval(setSmallVideoStarts, 50000 / 8);
+    } else {
+        setInterval(setSmallVideoStarts, 50000 / list.length);
+    }
     document.getElementsByClassName("screen")[0].scrollTo(0, 250);
 }
 
@@ -354,19 +416,43 @@ function shortsOpen(index) {
     `<div class="shorts-view">
         <div class="shorts-footage"></div>
         <div class="shorts-comments">
-            <div class="shorts-comment-block">
-                <div class="video-profile-pic"></div>
-                <div class="shorts-channel-comment">
-                    <div class="shorts-channel-header">
-                        <div class="shorts-channel-user">@Test_Name</div>
-                        <div class="shorts-channel-sub">something</div>
-                    </div>
-                    <div class="shorts-comment">Some text and a paragraph</div>
-                </div>
+            <div class="shorts-comments-title-block">
+                <div class="shorts-comments-title">Experiences</div>
+                <div class="shorts-comments-count"></div>
             </div>
         </div>
     </div>`;
-    document.getElementsByClassName("video-profile-pic")[0].style.backgroundImage = "url('channels/IMG_5548.png')";
 
+    let experiences = [];
+    for (var i = 0; i < all.length; i++) {
+        for (var j = 0; j < all[i][13].length; j++) {
+            if (all[i][13][j] == skills[index][1]) {
+                experiences.push(all[i]);
+            }
+        }
+    }
+    document.getElementsByClassName("shorts-comments-count")[0].innerHTML = experiences.length;
+
+    for (var i = 0; i < experiences.length; i++) {
+        document.getElementsByClassName("shorts-comments")[0].innerHTML +=
+        `<div class="shorts-comment-block">
+            <div class="video-profile-pic"></div>
+            <div class="shorts-channel-comment">
+                <div class="shorts-channel-header">
+                    <div class="shorts-channel-user">${experiences[i][2]}</div>
+                    <div class="shorts-channel-sub"></div>
+                </div>
+                <div class="shorts-comment">${experiences[i][12]}</div>
+                <div class="learn-more" onclick="openVideo(${all.indexOf(experiences[i])})">Learn more ></div>
+            </div>
+        </div>`;
+        document.getElementsByClassName("video-profile-pic")[i].style.backgroundImage = `url('channels/${experiences[i][9]}')`;
+        var startYear = parseInt(experiences[i][3].slice(0, 4));
+        var startMonth = parseInt(experiences[i][3].slice(5, 7));
+        var startDay = parseInt(experiences[i][3].slice(8, 10));
+        var ago = setAgo(startYear, startMonth, startDay);
+        document.getElementsByClassName("shorts-channel-sub")[i].innerHTML = `${ago}`;
+    }
+    
     document.getElementsByClassName("screen")[0].scrollTo(0, 250);
 }
