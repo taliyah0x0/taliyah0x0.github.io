@@ -1,7 +1,7 @@
 let current_content = -1;
 let files = ['mov', 'mp4', 'jpg', 'png'];
 function openVideo(index) {
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 5; i++) {
         document.getElementsByClassName("menu-item")[i].id = "menu-item";
     }
 
@@ -53,14 +53,14 @@ function openVideo(index) {
             </div>
             <div class="left-panel">
                 <div class="title">${title}</div>
-                <div class="video-profile">
-                    <a href="${learn_more}" target="_blank"><div class="video-profile-pic"></div></a>
+                <a href="${learn_more}" target="_blank"><div class="video-profile">
+                    <div class="video-profile-pic"></div>
                     <div class="video-profile-text">
                         <div class="video-profile-name">${channel}</div>
                         <div class="video-profile-role">${channel_description}</div>
                     </div>
-                    <a href="${learn_more}" target="_blank"><div class="small-subscribe-button">${button_text}</div></a>
-                </div>
+                    <div class="small-subscribe-button">${button_text}</div>
+                </div></a>
                 <div class="description"><div class="description-title">${channel} • ${ago}&nbsp;&nbsp;${hashtags}</div>${description}</div>
             </div>
             <div class="right-panel">
@@ -70,6 +70,7 @@ function openVideo(index) {
             </div>
         </div>`;
         current_content = -1;
+        play = 0;
     } else if (files.includes(content_array[0].slice(-3).toLowerCase())) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
@@ -90,14 +91,14 @@ function openVideo(index) {
             </div>
             <div class="left-panel">
                 <div class="title">${title}</div>
-                <div class="video-profile">
-                    <a href="${learn_more}" target="_blank"><div class="video-profile-pic"></div></a>
+                <a href="${learn_more}" target="_blank"><div class="video-profile">
+                    <div class="video-profile-pic"></div>
                     <div class="video-profile-text">
                         <div class="video-profile-name">${channel}</div>
                         <div class="video-profile-role">${channel_description}</div>
                     </div>
-                    <a href="${learn_more}" target="_blank"><div class="small-subscribe-button">${button_text}</div></a>
-                </div>
+                    <div class="small-subscribe-button">${button_text}</div>
+                </div></a>
                 <div class="description"><div class="description-title">${channel} • ${ago}&nbsp;&nbsp;${hashtags}</div>${description}</div>
             </div>
             <div class="right-panel">
@@ -136,14 +137,14 @@ function openVideo(index) {
             </div>
             <div class="left-panel">
                 <div class="title">${title}</div>
-                <div class="video-profile">
-                    <a href="${learn_more}" target="_blank"><div class="video-profile-pic"></div></a>
+                <a href="${learn_more}" target="_blank"><div class="video-profile">
+                    <div class="video-profile-pic"></div>
                     <div class="video-profile-text">
                         <div class="video-profile-name">${channel}</div>
                         <div class="video-profile-role">${channel_description}</div>
                     </div>
-                    <a href="${learn_more}" target="_blank"><div class="small-subscribe-button">${button_text}</div></a>
-                </div>
+                    <div class="small-subscribe-button">${button_text}</div>
+                </div></a>
                 <div class="description"><div class="description-title">${channel} • ${ago}&nbsp;&nbsp;${hashtags}</div>${description}</div>
             </div>
             <div class="right-panel">

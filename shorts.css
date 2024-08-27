@@ -1,0 +1,193 @@
+.shorts-view {
+    width: calc(75vw - 30px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.shorts-footage {
+    height: 70vh;
+    width: 20vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('skills/3dprinting.jpg');
+    border-radius: 20px 0 0 20px;
+    position: relative;
+}
+
+.shorts-comments {
+    height: 70vh;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #212121;
+    border-radius: 0 20px 20px 0;
+    overflow-y: scroll;
+}
+
+.shorts-comments-padding {
+    padding: 20px;
+}
+
+.shorts-comment-block {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.shorts-comment-block:hover {
+    background-color: #282828;
+}
+
+.shorts-channel-header {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+.shorts-channel-comment {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 24vw;
+}
+
+.shorts-channel-user {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 17vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.shorts-channel-sub {
+    color: lightgrey;
+    font-size: 14px;
+}
+
+.shorts-comment {
+    color: white;
+    font-size: 14px;
+    margin-top: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;         /* Use WebKit's box model */
+    -webkit-line-clamp: 4;        /* Limit the text to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+.shorts-comments-title-block {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.shorts-comments-title {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.shorts-comments-count {
+    color: grey;
+    font-size: 17px;
+}
+
+.learn-more {
+    color: #3CA7FF;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 20px;
+    background-color: none;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    width: 100px;
+}
+
+.learn-more:hover {
+    background-color: #263951;
+    cursor: pointer;
+}
+
+.footage-previous, .footage-next {
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    position: absolute;
+    right: 0.5vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    opacity: 0.5;
+    transition: ease-in-out 0.3s;
+}
+
+.footage-previous {
+    top: 31vh;
+}
+
+.footage-next {
+    top: calc(31vh + 40px);
+}
+
+.footage-previous:hover, .footage-next:hover, .shorts-previous:hover, .shorts-next:hover, .shorts-back:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.shorts-previous, .shorts-next {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: absolute;
+    right: 4vw;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+    opacity: 0.5;
+    transition: ease-in-out 0.3s;
+}
+
+.shorts-previous {
+    top: 30vh;
+}
+
+.shorts-next {
+    top: calc(30vh + 60px);
+}
+
+.shorts-back {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+    opacity: 0.5;
+    transition: ease-in-out 0.3s;
+}

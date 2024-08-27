@@ -41,8 +41,8 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         `Meet Emokeys, a macropad for typing emoji. Featuring 9 OLED displays that allow an infinite library of colorful characters, plus there's Discord mode where you can even input custom stickers and animated GIFs on your server!`,
 
         ['Arduino', 'CAD', 'Python', '3D Printing', 'Video Editing'],
-        ['Documented and explained the design process','CADed custom keyboard housing', 'Wrote Python/Arduino communication protocol'],
-        ['https://youtube.com/watch?v=wGvIvYGg-gg','https://cad.onshape.com/documents/45eebb0845694a7843d8376d/w/e79dddab06cb9b7714231f11/e/a79ad1a21bb95403dc9d6ce6?renderMode=0&uiState=66c17ed628764957d3512677','https://github.com/taliyah0x0/EMOKEYS'],
+        ['Documented and explained the design process', 'CADed custom keyboard housing', 'Wrote Python/Arduino communication protocol', 'Published DIY instructions'],
+        ['https://youtube.com/watch?v=wGvIvYGg-gg', 'https://cad.onshape.com/documents/45eebb0845694a7843d8376d/w/e79dddab06cb9b7714231f11/e/a79ad1a21bb95403dc9d6ce6?renderMode=0&uiState=66c17ed628764957d3512677','https://github.com/taliyah0x0/EMOKEYS', 'https://www.printables.com/model/532039-emokeys'],
         ''
     ],
     ["circuitfulthumbnail.png", '2 mos', 'Circuitful - Colorful Circuit Diagramming', '2022-07-01', 'Javascript', '2UL5aBr_zVA', 121, "",
@@ -51,8 +51,8 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         `Frustrated with the lack of keyboard shortcuts, graphics, and customization in circuit diagramming software like Fritzing and Tinkercad, I set off to program my own. Introducing Circuitful, the colorful circuit diagramming app.`,
 
         ['Javascript'],
-        [''],
-        [''],
+        ['Made a video to explain it', 'Open-sourced my code on Github'],
+        ['https://youtube.com/watch?v=2UL5aBr_zVA', 'https://github.com/taliyah0x0/circuitful'],
         ''
     ],
     ["mousekythumbnail.png", '2 mos', 'Mouseky - Unique Keyboard Designed from Scratch', '2022-06-01', 'Arduino/CAD', '6V3gyArkQ38', 5, "",
@@ -61,8 +61,8 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         `Meet the most high-tech keyboard ever designed! This is Mouseky, a split, wireless, 64-key masterpiece that has an integrated mouse packed with touchpad-equivalent features.`,
 
         ['Arduino', 'CAD', '3D Printing', 'Video Editing'],
-        [''],
-        [''],
+        ['Made a fun video', 'Second video to show more details', 'Published DIY instructions', 'CADed custom keyboard housing'],
+        ['https://youtube.com/watch?v=6V3gyArkQ38', 'https://youtube.com/watch?v=6V3gyArkQ38', 'https://www.printables.com/model/356141-mouseky', 'https://cad.onshape.com/documents/daeff293f435e04e10f71e4f/w/c092231cd4a00ebba90fb4d6/e/fa73797f2dd503dabaa65d9a?renderMode=0&uiState=66c5592a3a3d8b53dc998912'],
         ''
     ],
     ["maxresdefault.webp", '8 mos', 'STEMables - Educational Tech Blocks', '2021-06-01', 'Arduino/CAD', 'TMdWpt-RRqY', 37, "https://bit.ly/stemables",
@@ -101,8 +101,8 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         `Behold the latest technology designed for the coronavirus pandemic and California wildfires: Auto Mask. With eye protection, touchless control, air and muscles sensors, this is a mask you'll never want to take off!`,
 
         ['Arduino', 'CAD', '3D Printing', 'Web Design'],
-        ['Won hackathons with my first version', 'Big revision for sleekness'],
-        ['https://www.youtube.com/watch?v=c2UgIyFofbM', 'https://www.youtube.com/watch?v=U8a_-_DJ29E'],
+        ['Won hackathons with my first version', 'Big revision for sleekness', 'Behind the scenes on website'],
+        ['https://www.youtube.com/watch?v=c2UgIyFofbM', 'https://www.youtube.com/watch?v=U8a_-_DJ29E', 'https://bit.ly/auto-mask'],
         ''
     ],
     ["autoflote.jpg", '9 mos', 'Auto Flöte Clean - Musical Refreshment', '2019-01-01', 'Arduino/CAD/Handicraft', 'VGhm98lCZWY', 11, "https://autofloteclean.weebly.com/",
@@ -145,11 +145,11 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
     ],
     ["pexels-ekamelev-813872.jpg", '🔉 LIVE', 'Undergraduate Design Team Leader', '2024-01-01', 'Hopkins Biomedical Engineering', 'bzP4ZosYo3s', 0, "", "#baltimore #maryland", 
         
-        `❥ Selected to lead a team of 8 undergrad students to develop a medical device with a clinical mentor over the course of one year
-        <br>❥ Shadowed minimally-invasive robotic surgery in the Johns Hopkins Bayview hospital`,
-       
         "johns_hopkins_biomedical_engineering_logo.jpeg", "Medical Device Design & Innovation", "https://www.bme.jhu.edu/",
 
+        `❥ Selected to lead a team of 8 undergrad students to develop a medical device with a clinical mentor over the course of one year
+        <br>❥ Shadowed minimally-invasive robotic surgery in the Johns Hopkins Bayview hospital`,
+    
         ['Design Thinking', 'Leadership'],
         ['Shadowing Da Vinci procedures at the hospital', 'Mindmapping observations and finding needs'],
         ['IMG_2393.mp4', 'mindmap.mp4'],
@@ -190,7 +190,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
     ],
     ["pexels-pixabay-236663.jpg", '12 mos', 'Undergraduate Robotics Researcher', '2023-01-22', 'Dr. Li Terradynamics Lab', 'RG9TMn1FJzc', 67, "", "#meche #robotics #computervision",
         
-        "jhuwse.jpeg", "Movement science at the interface of biology, robotics & physics", "https://li.me.jhu.edu/",
+        "jhuwse.jpg", "Movement science at the interface of biology, robotics & physics", "https://li.me.jhu.edu/",
 
         `❥ Use Python and Matlab to analyze climbing mechanism of mountain goats and humans for model robot development
         <br>❥ Work cross-functionally with PhD students of different disciplines and give weekly presentations`,
