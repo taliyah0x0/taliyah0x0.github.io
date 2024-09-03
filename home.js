@@ -79,6 +79,42 @@ function loadhome() {
     }
     
     setInterval(setVideoStarts, 50000 / (fw.length + fp.length));
+
+    if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+        document.getElementsByClassName('header')[0].innerHTML =
+        `<div class="profile">
+            <div class="profile-image"></div>
+            <div class="name">
+                <div>Taliyah Huang</div>
+                <div class="name-banner">
+                    ✓ Looking for internships
+                </div>
+            </div>
+        </div>
+        <div class="sub">Surgical robotics • Software • Medical device engineering • Startups</div>
+        <div class="buttons">
+            <a href="https://www.linkedin.com/in/taliyah-huang/" target="_blank">
+                <div class="join-button">
+                    in
+                </div>
+            </a>
+            <a href="Taliyah_Huang_CV.pdf" target="_blank">
+                <div class="cv-button">
+                    cv
+                </div>
+            </a>
+            <a href="mailto:taliyahengineering@gmail.com" target="_blank">
+                <div class="subscribe-button">
+                    Contact Me
+                </div>
+            </a>
+        </div>`;
+
+        document.getElementsByClassName("trailer-video-container").innerHTML =
+        `<video controls muted loop class="trailer-video">
+            <source src="trailer.mp4" type="video/mp4">
+        </video>`;
+    }
 }
 
 function setAgo(startYear, startMonth, startDay) {
@@ -353,9 +389,11 @@ function loadSmallVideos(list, list_name) {
                     <div class="small-clear"></div>
                     <div class="small-duration"></div>
                 </div>
-                <div class="small-video-title"></div>
-                <div class="video-sub"></div>
-                <div class="video-tag"></div>
+                <div>
+                    <div class="small-video-title"></div>
+                    <div class="video-sub"></div>
+                    <div class="video-tag"></div>
+                </div>
             </div>`
         
         document.getElementsByClassName("small-clear")[i].style.backgroundImage = `url('thumbnails/${list[i][0]}')`;

@@ -10,6 +10,239 @@
     font-weight: bold;
 }
 
+@media only screen and (min-aspect-ratio: 1/1) {
+    .banner {
+        height: 25vh;
+    }
+
+    .screen {
+        width: 75vw;
+        height: 90vh;
+        padding: 0px 22px 0px 22px;
+        border-top: 2px solid silver;
+    border-left: 2px solid silver;
+    border-right: 2px solid silver;
+    }
+
+    .laptop {
+        width: 75vw;
+    }
+
+    .header {
+        width: 75vw;
+        flex-direction: row;
+        align-items: center;
+        height: 15vh;
+    }
+
+    .name {
+        font-size: 4vh;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .name-banner {
+        font-size: 2.5vh;
+        padding: 3px 10px 3px 10px;
+    }
+
+    .buttons {
+        font-size: 2.5vh;
+    }
+
+    .menu-item {
+        padding: 1.5vh 1vw 0 1vw;
+    }
+
+    .trailer-elements {
+        flex-direction: row;
+        gap: 20px;
+        overflow-x:auto;
+    }
+
+    .trailer-video-container {
+        width: 480px;
+        height: 290px;
+    }
+
+    .trailer-text {
+        width: 35vw;
+        height: 260px;
+    }
+
+    .block {
+        padding: 30px 30px 0px 30px;
+    }
+
+    .social-links {
+        margin: 15px;
+        padding: 8px;
+        gap: 15px;
+    }
+
+    .about-text-container {
+        width: calc(75vw - 30px);
+    }
+
+    .about-text {
+        width: 550px;
+    }
+
+    .about-channel {
+        width: 550px;
+    }
+
+    .page > .block-video {
+        flex-direction: column;
+    }
+
+    .small-video-thumbnail {
+        height: 130px;
+        width: 230px;
+    }
+    
+    .small-clear {
+        height: 130px;
+        width: 230px;
+    }
+
+    .page {
+        padding: 30px;
+    }
+
+    .small-video-title {
+        width: 230px;
+    }
+
+    .small-duration {
+        top: 50px;
+        left: 85px;
+    }
+
+    .opening {
+        width: 75vw;
+        height: calc(90vh - 40px);
+    }
+}
+
+@media only screen and (max-aspect-ratio: 1/1) {
+    .banner {
+        height: 18vh;
+    }
+
+    .screen {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .laptop {
+        width: 100vw;
+    }
+
+    .header {
+        width: 100vw;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 15px;
+        height: 22vh;
+    }
+
+    .name {
+        font-size: 3vh;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-left: 4vw;
+    }
+
+    .name-banner {
+        font-size: 1.5vh;
+        padding: 0 8px 0 8px;
+    }
+
+    .move-row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .buttons {
+        margin-top: 10px;
+        font-size: 2vh;
+    }
+
+    .sub {
+        margin-left: 4vw;
+    }
+
+    .menu-item {
+        padding: 2vh 2vw 0 2vw;
+    }
+
+    .trailer-elements {
+        flex-direction: column;
+    }
+
+    .trailer-video-container {
+        width: 42vh;
+        height: 25.375vh;
+    }
+    
+    video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .block {
+        padding: 20px 20px 0px 20px;
+        overflow: hidden;
+    }
+
+    .trailer-text {
+        height: 20vh;
+    }
+
+    .social-links {
+        margin: 5px;
+        padding: 4px;
+        gap: 10px;
+    }
+
+    .page > .block-video {
+        flex-direction: row;
+    }
+
+    .small-video-thumbnail {
+        height: 97.5px;
+        width: 172.5px;
+        margin-right: 5px;
+    }
+
+    .small-clear {
+        height: 97.5px;
+        width: 172.5px;
+    }
+
+    .page {
+        padding: 20px;
+    }
+
+    .small-video-title {
+        width: 172.5px;
+    }
+
+    .small-duration {
+        top: 35px;
+        left: 58px;
+    }
+
+    .opening {
+        width: 100vw;
+        height: calc(100vh - 40px);
+    }
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -34,6 +267,7 @@ html {
 
 body {
     margin: 0;
+    overflow: hidden;
 }
 
 a {
@@ -42,24 +276,17 @@ a {
 }
 
 .screen {
-    padding: 0px 22px 0px 22px;
-    height: 90vh;
-    width: 75vw;
     background-color: black;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
     border-radius: 28px 28px 0px 0px;
     overflow-y:auto;
     overflow-x:hidden;
-    border-top: 2px solid silver;
-    border-left: 2px solid silver;
-    border-right: 2px solid silver;
     scroll-behavior: smooth;
 }
 
 .laptop {
     background-color: black;
     height: 40px;
-    width: 75vw;
     position: fixed;
     z-index: 1000;
     display: flex;
@@ -75,8 +302,6 @@ a {
 }
 
 .opening {
-    width: 75vw;
-    height: calc(90vh - 40px);
     background-color: #0F0E0E;
     z-index: 501;
     position: absolute;
@@ -108,7 +333,6 @@ a {
 }
 
 .banner {
-    height: 25vh;
     background-image: url('portfoliobanner.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -130,13 +354,10 @@ a {
     bottom: 0px;
     right: 0px;
     background-color: rgb(0, 0, 0, 0.5);
-    padding: 8px;
-    margin: 15px;
     font-size: 15px;
     color: white;
     display: flex;
     flex-direction: row;
-    gap: 15px;
 }
 
 .social-icon {
@@ -149,19 +370,14 @@ a {
 
 .header {
     background-color: #171616;
-    height: 15vh;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 75vw;
     overflow-x: scroll;
 }
 
 .profile {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    margin-left: 50px;
+    margin-left: 5vw;
 }
 
 .profile-image {
@@ -183,17 +399,11 @@ a {
 
 .name {
     color: white;
-    font-size: 4vh;
     display: flex;
-    flex-direction: row;
-    gap: 15px;
-    align-items: center;
 }
 
 .name-banner {
     background-color: #171616;
-    padding: 3px 10px 3px 10px;
-    font-size: 2.5vh;
     color: grey;
     display: flex;
     justify-content: center;
@@ -214,7 +424,6 @@ a {
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    font-size: 2.5vh;
     font-weight: bold;
     margin-left: 4vw;
 }
@@ -261,18 +470,17 @@ a {
     height: 6vh;
     display: flex;
     flex-direction: row;
-    font-size: 2vh;
     padding-left: 3vw;
     padding-right: 12vw;
+    font-size: 2vh;
     position: sticky;
-    top: 40px; /* Stick to the top of the screen */
+    top: 3.5vh;
     z-index: 500;
     overflow-x:auto;
     justify-content: flex-start;
 }
 
 .menu-item {
-    padding: 1.5vh 1vw 0 1vw;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -309,17 +517,14 @@ a {
 }
 
 .about-text-container {
-    width: calc(75vw - 30px);
     overflow-x: scroll;
 }
 
 .about-text {
-    width: 550px;
     margin-bottom: 30px;
 }
 
 .about-channel {
-    width: 550px;
     padding: 15px;
     color: black;
     background-color: grey;
@@ -337,13 +542,10 @@ a {
     border-top: 1px solid #3E3E3F;
     display: flex;
     flex-direction: column;
-    padding: 30px 30px 0px 30px;
     color: white;
 }
 
 .trailer-video-container {
-    width: 480px;
-    height: 290px;
     overflow: hidden;
     position: relative;
     margin-bottom: 20px;
@@ -368,11 +570,8 @@ a {
 
 .trailer-elements {
     display: flex;
-    flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 20px;
-    overflow-x:auto;
 }
 
 .block-elements {
@@ -384,10 +583,13 @@ a {
     overflow-x:auto;
 }
 
+.block-elements > .block-video {
+    flex-direction: column;
+}
+
 .block-video {
     background-color: #0F0E0E;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     gap: 5px;
@@ -436,8 +638,6 @@ a {
 }
 
 .small-video-thumbnail {
-    height: 130px;
-    width: 230px;
     position:relative;
     background-position: center;
     background-repeat: no-repeat;
@@ -456,8 +656,6 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    height: 130px;
-    width: 230px;
 }
 
 .duration {
@@ -476,12 +674,10 @@ a {
     color: rgb(255,255,255,0.8);
     font-size: 12px;
     position: relative;
-    top: 50px;
     border-radius: 2px;
     align-items: center;
     text-align: center;
     width: 45px;
-    left: 85px;
     background-color: #00000066;
     font-weight: bold;
 }
@@ -490,8 +686,6 @@ a {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 35vw;
-    height: 260px;
     overflow-y: scroll;
 }
 
@@ -525,7 +719,6 @@ a {
     font-size: 14px;
     color: white;
     font-weight: bold;
-    width: 230px;
     margin-top: 5px;
 }
 
@@ -541,10 +734,10 @@ a {
     opacity: 0.7;
     margin-bottom: 20px;
     border-radius: 2px;
+    display: inline-block;
 }
 
 .page {
-    padding: 30px;
     background-color: #0F0E0E;
     border-top: 1px solid #3E3E3F;
     height: auto;
