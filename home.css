@@ -124,6 +124,10 @@
         width: 75vw;
         height: calc(90vh - 40px);
     }
+
+    .playlist-cover {
+        height: 130px;
+    }
 }
 
 @media only screen and (max-aspect-ratio: 1/1) {
@@ -234,6 +238,10 @@
     .opening {
         width: 100vw;
         height: calc(100vh - 40px);
+    }
+
+    .playlist-cover {
+        height: 97.5px;
     }
 }
 
@@ -792,7 +800,6 @@ a {
 .playlist-cover {
     position: absolute;
     width: 80px;
-    height: 130px;
     background-color: rgb(0, 0, 0, 0.75);
     right: 0;
     bottom: 0;

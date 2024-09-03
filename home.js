@@ -3,7 +3,9 @@ var smallStartIndex = 0;
 function loadhome() {
     setTimeout(() => {
         document.getElementsByClassName('opening')[0].classList.add('hide');
-        document.getElementsByClassName('trailer-video')[0].play();
+        if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+            document.getElementsByClassName('trailer-video')[0].play();
+        }
         setTimeout(() => {
             document.getElementsByClassName('opening')[0].style.display = 'none';
         }, 1000);
@@ -229,8 +231,10 @@ function clickMenu(index) {
                         <div class="playlist-icon"></div>
                     </div>
                 </div>
-                <div class="small-video-title"></div>
-                <div class="video-sub" style="margin-bottom: 20px">VIEW FULL PLAYLIST</div>
+                <div style="display: flex; flex-direction: column; gap: 10px">
+                    <div class="small-video-title"></div>
+                    <div class="video-sub" style="margin-bottom: 20px">VIEW FULL PLAYLIST</div>
+                </div>
             </div>`;
             document.getElementsByClassName("small-video-thumbnail")[i].style.backgroundImage = `url(thumbnails/${playlists[i][1][0][0]})`;
             document.getElementsByClassName("small-video-title")[i].innerHTML = `${playlists[i][0]}`;
@@ -246,8 +250,10 @@ function clickMenu(index) {
                         <div class="playlist-icon"></div>
                     </div>
                 </div>
-                <div class="small-video-title"></div>
-                <div class="video-sub">VIEW FULL PLAYLIST</div>
+                <div>
+                    <div class="small-video-title"></div>
+                    <div class="video-sub">VIEW FULL PLAYLIST</div>
+                </div>
             </div>`;
             document.getElementsByClassName("small-video-thumbnail")[i + playlists.length - 1].style.backgroundImage = `url(skills/${skill_playlists[i][3]})`;
             document.getElementsByClassName("small-video-title")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][0]}`;

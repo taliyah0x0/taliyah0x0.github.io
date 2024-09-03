@@ -223,7 +223,7 @@ function openVideo(index) {
     `<div class="related-videos"></div>`;
 
     for (var i = 0; i < all[index][14].length; i++) {
-        if (all[index][15][i].substring(0, 4) == 'http') {
+        if (all[index][15][i].substring(0, 4) == 'http' || all[index][15][i].substring(0, 4) == 'cont') {
         document.getElementsByClassName("highlights-box")[0].innerHTML +=
         `<a href="${all[index][15][i]}" target="_blank"><strong class="hyperlink">0${i}:00</strong></a> &nbsp; ${all[index][14][i]}<br>`;
         } else if (files.includes(all[index][15][i].slice(-3).toLowerCase())) {

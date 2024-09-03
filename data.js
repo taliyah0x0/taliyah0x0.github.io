@@ -198,8 +198,8 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
 	    <br>❥ Streamline communications with 3rd-party companies and (inner-campus) clubs for big collabs: Levering Halloween 400+ attendees, Blue Jay Pocha 400+ attendees`,
         
         ['Leadership', 'Graphic Design'],
-        ['Spooky Levering Hall-oween Party at Hopkins!'],
-        ['https://www.youtube.com/watch?v=sYmPRYdeQyU'],
+        ['Spooky Levering Hall-oween Party at Hopkins!', 'Some of my original designs'],
+        ['https://www.youtube.com/watch?v=sYmPRYdeQyU', 'content/Hopkins Organization for Programming/designs.png'],
         ''
     ],
     ["IMG_5350.JPG", '🔉 LIVE', "Treasurer", '2022-09-05', 'Japanese American Students Association', 'dytG8M8cfBY', 1, "", "#jasa #events #japan",
