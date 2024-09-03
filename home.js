@@ -113,7 +113,7 @@ function loadhome() {
         </div>`;
 
         document.getElementsByClassName("trailer-video-container").innerHTML =
-        `<video autoplay controls muted loop class="trailer-video">
+        `<video controls muted loop class="trailer-video" autoplay playsinline>
             <source src="trailer.mp4" type="video/mp4">
         </video>`;
     }
@@ -250,7 +250,7 @@ function clickMenu(index) {
                         <div class="playlist-icon"></div>
                     </div>
                 </div>
-                <div>
+                <div style="display: flex; flex-direction: column; gap: 10px">
                     <div class="small-video-title"></div>
                     <div class="video-sub">VIEW FULL PLAYLIST</div>
                 </div>
