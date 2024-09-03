@@ -198,8 +198,8 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
 	    <br>❥ Streamline communications with 3rd-party companies and (inner-campus) clubs for big collabs: Levering Halloween 400+ attendees, Blue Jay Pocha 400+ attendees`,
         
         ['Leadership', 'Graphic Design'],
-        ['Spooky Levering Hall-oween Party at Hopkins!', 'Some of my original designs'],
-        ['Halloween.mp4', 'designs.png'],
+        ['Spooky Levering Hall-oween Party at Hopkins!'],
+        ['https://www.youtube.com/watch?v=sYmPRYdeQyU'],
         ''
     ],
     ["IMG_5350.JPG", '🔉 LIVE', "Treasurer", '2022-09-05', 'Japanese American Students Association', 'dytG8M8cfBY', 1, "", "#jasa #events #japan",
@@ -212,7 +212,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         ['Leadership'],
         ['2024 Japanese Spring Matsuri'],
-        ['matsuri.mp4'],
+        ['https://www.youtube.com/watch?v=dytG8M8cfBY'],
         ''
     ],
     ["pexels-pixabay-236663.jpg", '12 mos', 'Undergraduate Robotics Researcher', '2023-01-22', 'Dr. Li Terradynamics Lab', 'RG9TMn1FJzc', 67, "", "#meche #robotics #computervision",
