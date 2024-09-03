@@ -8,36 +8,43 @@ function loadhome() {
             document.getElementsByClassName('opening')[0].style.display = 'none';
         }, 1000);
     }, 1500);
-    for (var i = 0; i < ln.length; i++) {
+    for (var i = 0; i < fw.length; i++) {
         document.getElementsByClassName("block-elements")[0].innerHTML +=
-            `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="openVideo(${all.indexOf(w[fl[i]])})">
+            `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="openVideo(${all.indexOf(w[fw[i]])})">
                 <div class="video-thumbnail">
-                    <iframe src="https://www.youtube.com/embed/${w[fl[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${w[fl[i]][6]}"
+                    <iframe src="https://www.youtube.com/embed/${w[fw[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${w[fw[i]][6]}"
                 height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
                     <div class="clear"></div>
-                    <div class="duration">🔉 LIVE</div>
+                    <div class="duration"></div>
                 </div>
                 <div class="video-title"></div>
                 <div class="video-sub"></div>
                 <div class="video-tag">Work Experience</div>
             </div>`;
-        document.getElementsByClassName("clear")[i].style.backgroundImage = `url('thumbnails/${w[fl[i]][0]}')`;
+        document.getElementsByClassName("clear")[i].style.backgroundImage = `url('thumbnails/${w[fw[i]][0]}')`;
+        document.getElementsByClassName("duration")[i].innerHTML = `${w[fw[i]][1]}`;
         document.getElementsByClassName("duration")[i].style.width = "45px";
         document.getElementsByClassName("duration")[i].style.left = "100px";
-        document.getElementsByClassName("duration")[i].style.backgroundColor = "red";
         document.getElementsByClassName("duration")[i].style.fontWeight = "bold";
-        document.getElementsByClassName("video-title")[i].innerHTML = `${w[fl[i]][2]}`;
-
-        var startYear = parseInt(w[fl[i]][3].slice(0, 4));
-        var startMonth = parseInt(w[fl[i]][3].slice(5, 7));
-        var startDay = parseInt(w[fl[i]][3].slice(8, 10));
-        var ago = setAgo(startYear, startMonth, startDay);
-        document.getElementsByClassName("video-sub")[i].innerHTML = `${w[fl[i]][4]} • ${ago}`;
+        if (w[fw[i]][1] == '🔉 LIVE') {
+            document.getElementsByClassName("duration")[i].style.backgroundColor = "red";
+            document.getElementsByClassName("duration")[i].style.paddingTop = "0";
+            document.getElementsByClassName("duration")[i].style.paddingBottom = "0";
+            document.getElementsByClassName("video-sub")[i].innerHTML = `${w[fw[i]][4]}`;
+        } else {
+            document.getElementsByClassName("duration")[i].style.backgroundColor = "rgb(0,0,0,0.5)";
+            var startYear = parseInt(w[fw[i]][3].slice(0, 4));
+            var startMonth = parseInt(w[fw[i]][3].slice(5, 7));
+            var startDay = parseInt(w[fw[i]][3].slice(8, 10));
+            var ago = setAgo(startYear, startMonth, startDay);
+            document.getElementsByClassName("video-sub")[i].innerHTML = `${w[fw[i]][4]} • ${ago}`;
+        }
+        document.getElementsByClassName("video-title")[i].innerHTML = `${w[fw[i]][2]}`;
     }
     
     for (var i = 0; i < fp.length; i++) {
         document.getElementsByClassName("block-elements")[1].innerHTML +=
-            `<div class="block-video" onmouseenter="playvid(${i + ln.length})" onmouseleave="stopvid(${i + ln.length})" onclick="openVideo(${all.indexOf(p[fp[i]])})">
+            `<div class="block-video" onmouseenter="playvid(${i + fw.length})" onmouseleave="stopvid(${i + fw.length})" onclick="openVideo(${all.indexOf(p[fp[i]])})">
                 <div class="video-thumbnail">
                     <iframe src="https://www.youtube.com/embed/${p[fp[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${p[fp[i]][6]}"
                 height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
@@ -48,19 +55,19 @@ function loadhome() {
                 <div class="video-sub"></div>
                 <div class="video-tag">Project</div>
             </div>`;
-        document.getElementsByClassName("clear")[i + ln.length].style.backgroundImage = `url('thumbnails/fp/${p[fp[i]][0]}')`;
-        document.getElementsByClassName("duration")[i + ln.length].style.width = "40px";
-        document.getElementsByClassName("duration")[i + ln.length].style.left = "100px";
-        document.getElementsByClassName("duration")[i + ln.length].style.backgroundColor = "rgb(0,0,0,0.5)";
-        document.getElementsByClassName("duration")[i + ln.length].style.fontWeight = "bold";
-        document.getElementsByClassName("duration")[i + ln.length].innerHTML = `${p[fp[i]][1]}`;
-        document.getElementsByClassName("video-title")[i + ln.length].innerHTML = `${p[fp[i]][2]}`;
+        document.getElementsByClassName("clear")[i + fw.length].style.backgroundImage = `url('thumbnails/fp/${p[fp[i]][0]}')`;
+        document.getElementsByClassName("duration")[i + fw.length].style.width = "40px";
+        document.getElementsByClassName("duration")[i + fw.length].style.left = "100px";
+        document.getElementsByClassName("duration")[i + fw.length].style.backgroundColor = "rgb(0,0,0,0.5)";
+        document.getElementsByClassName("duration")[i + fw.length].style.fontWeight = "bold";
+        document.getElementsByClassName("duration")[i + fw.length].innerHTML = `${p[fp[i]][1]}`;
+        document.getElementsByClassName("video-title")[i + fw.length].innerHTML = `${p[fp[i]][2]}`;
 
         var startYear = parseInt(p[fp[i]][3].slice(0, 4));
         var startMonth = parseInt(p[fp[i]][3].slice(5, 7));
         var startDay = parseInt(p[fp[i]][3].slice(8, 10));
         var ago = setAgo(startYear, startMonth, startDay);
-        document.getElementsByClassName("video-sub")[i + ln.length].innerHTML = `${p[fp[i]][4]} • ${ago}`;
+        document.getElementsByClassName("video-sub")[i + fw.length].innerHTML = `${p[fp[i]][4]} • ${ago}`;
     }
 
     var blocks = document.getElementsByClassName("block-elements");
@@ -71,7 +78,7 @@ function loadhome() {
         </div>`;
     }
     
-    setInterval(setVideoStarts, 50000 / (ln.length + fp.length));
+    setInterval(setVideoStarts, 50000 / (fw.length + fp.length));
 }
 
 function setAgo(startYear, startMonth, startDay) {
@@ -139,7 +146,7 @@ function clickMenu(index) {
                 </div>
             </div>
             <div class="block">
-                <div class="block-title">Live now</div>
+                <div class="block-title">Featured work experiences</div>
                 <div class="block-elements">
                 </div>
             </div>
@@ -152,24 +159,25 @@ function clickMenu(index) {
 
     } else if (index == 1) {
         let container = document.getElementById("container");
-        total_load = Math.floor((container.offsetWidth - 60) / 240) * 2;
-        loadSmallVideos(all.slice(0, total_load), 'All');
+        //total_load = Math.fwoor((container.offsetWidth - 60) / 240) * 2;
+        //loadSmallVideos(all.slice(0, total_load), 'All');
+        loadSmallVideos(all, 'All');
         
 
-        let screen = document.getElementsByClassName("screen")[0];
+        /*let screen = document.getElementsByClassName("screen")[0];
         screen.addEventListener('scroll', function() {
             if (total_load < all.length) {
-                if (screen.scrollTop >= -200 + (total_load / Math.floor((container.offsetWidth - 60) / 240)) * 230) {
-                    let addition = Math.floor((container.offsetWidth - 60) / 240);
+                if (screen.scrollTop >= -200 + (total_load / Math.fwoor((container.offsetWidth - 60) / 240)) * 230) {
+                    let addition = Math.fwoor((container.offsetWidth - 60) / 240);
                     let together = total_load + addition;
                     loadMore(total_load, together);
                     total_load += addition;
                 }
             }
-        });
+        });*/
         
     } else if (index == 2) {
-        shuffle(skills);
+        shuffwe(skills);
         skillsOpen();
     } else if (index == 3) {
         document.getElementById("container").style.backgroundColor = "#0F0E0E";
@@ -247,7 +255,7 @@ const setVideoStarts = () => {
     var nowPlaying = $(video).find('iframe').attr('src');
     $(video).find('iframe').attr('src', nowPlaying);
     startIndex++;
-    if (startIndex == ln.length + fp.length) {
+    if (startIndex == fw.length + fp.length) {
         startIndex = 0;
     }
 };
@@ -286,7 +294,7 @@ function stopsmallvid(index) {
     document.getElementsByClassName("small-duration")[index].style.opacity = 1;
 }
 
-function loadMore(index_start, index_end) {
+/*function loadMore(index_start, index_end) {
     let list = all;
     if (list.length > index_end) {
         for (var i = index_start; i < index_end; i++) {
@@ -325,7 +333,7 @@ function loadMore(index_start, index_end) {
 
         setInterval(setSmallVideoStarts, 50000 / index_end);
     }
-}
+}*/
 
 function loadSmallVideos(list, list_name) {
     if (list_name != 'All') {
@@ -356,15 +364,17 @@ function loadSmallVideos(list, list_name) {
         }
         if (list[i][1] == '🔉 LIVE') {
             document.getElementsByClassName("small-duration")[i].style.backgroundColor = "red";
-            document.getElementsByClassName("small-duration")[i].style.color = "white";
+            document.getElementsByClassName("small-duration")[i].style.paddingTop = "0";
+            document.getElementsByClassName("small-duration")[i].style.paddingBottom = "0";
+            document.getElementsByClassName("video-sub")[i].innerHTML = `${list[i][4]}`;
+        } else {
+            var startYear = parseInt(list[i][3].slice(0, 4));
+            var startMonth = parseInt(list[i][3].slice(5, 7));
+            var startDay = parseInt(list[i][3].slice(8, 10));
+            var ago = setAgo(startYear, startMonth, startDay);
+            document.getElementsByClassName("video-sub")[i].innerHTML = `${list[i][4]} • ${ago}`;
         }
         document.getElementsByClassName("small-video-title")[i].innerHTML = `${list[i][2]}`;
-
-        var startYear = parseInt(list[i][3].slice(0, 4));
-        var startMonth = parseInt(list[i][3].slice(5, 7));
-        var startDay = parseInt(list[i][3].slice(8, 10));
-        var ago = setAgo(startYear, startMonth, startDay);
-        document.getElementsByClassName("video-sub")[i].innerHTML = `${list[i][4]} • ${ago}`;
     }
 
     if (list_name == 'All') {
