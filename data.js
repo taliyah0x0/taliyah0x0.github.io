@@ -1,6 +1,6 @@
 var fw = [0, 1, 2, 3]; // Featured work experiences (from work)
 var fp = [2, 5, 0, 4]; // Featured projects (from projects)
-var ln = [0, 1, 2, 3, 4]; // Live now (from work)
+var ln = [1, 2, 3, 4, 5]; // Live now (from work)
 
 var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4], Youtube Link [5], Video Start [6], Optional: Website [7] // Project Tags [8], Project Icon [9], Project Name [10], Optional: Project Video Link [11] // Project Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
     ["gamepigeon.png", '1 mo', "GamePigeon Bots & More - Fun Programming Project", '2024-06-19', 'Arduino/Python', '3ex0ym1oMgs', 0, "",
@@ -265,6 +265,22 @@ for (var i = 0; i < all.length - 1; i++) {
     }
 }
 
+var skills = [
+    ["3dprinting.jpg", "3D Printing", "2018-10-01"],
+    ["arduino.jpg", "Arduino", "2019-03-01"],
+    //["pexels-jibarofoto-1787235.jpg", "Photography", "2018-01-01"],
+    ["pexels-alexfu-1767783.jpg", "Video Editing", "2016-08-01"],
+    ["python.png", "Python", "2021-03-01"],
+    ["htmlcss.png", "HTML CSS", "2021-10-01"],
+    ["js.png", "Javascript", "2020-10-01"],
+    //["java.png", "Java", "2024-01-01"],
+    ["cad.png", "Computer-Aided Design", "2018-10-01"],
+    ["graphic.jpg", "Graphic Design", "2020-12-01"],
+    ["matlab.png", "Matlab", "2023-01-01"]
+]
+//skills.sort((a, b) => a[2].localeCompare(b[2]));
+
+var indices = Array.from({length: skills.length}, (_, i) => i);
 function shuffle(array) {
     let currentIndex = array.length;
   
@@ -280,21 +296,6 @@ function shuffle(array) {
         array[randomIndex], array[currentIndex]];
     }
 }
-
-var skills = [
-    ["3dprinting.jpg", "3D Printing", "2018-10-01"],
-    ["arduino.jpg", "Arduino", "2019-03-01"],
-    //["pexels-jibarofoto-1787235.jpg", "Photography", "2018-01-01"],
-    ["pexels-alexfu-1767783.jpg", "Video Editing", "2016-08-01"],
-    ["python.png", "Python", "2021-03-01"],
-    ["htmlcss.png", "HTML CSS", "2021-10-01"],
-    ["js.png", "Javascript", "2020-10-01"],
-    //["java.png", "Java", "2024-01-01"],
-    ["cad.png", "Computer-Aided Design", "2018-10-01"],
-    ["graphic.jpg", "Graphic Design", "2020-12-01"],
-    ["matlab.png", "Matlab", "2023-01-01"]
-]
-//skills.sort((a, b) => a[2].localeCompare(b[2]));
 
 var ln_play = [];
 for (var i = 0; i < ln.length; i++) {
@@ -336,7 +337,7 @@ for (var i = 0; i < skills.length; i++) {
         }
     }
     skill_playlists[i].push(skill_playlists[i][1].length);
-    skill_playlists[i].push(i);
+    skill_playlists[i].push(skills[i][0]);
 }
 
 skill_playlists.sort(function(a, b) {

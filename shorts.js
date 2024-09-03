@@ -1,3 +1,4 @@
+let current_experience = 0;
 function skillsOpen() {
     document.getElementById("container").innerHTML =  `<div class="page"></div>`;
     for (var i = 0; i < skills.length; i++) {
@@ -27,6 +28,7 @@ function shortsOut(index) {
 }
 
 function shortsOpen(index) {
+    current_experience = 0;
     if (index == skills.length) {
         index = 0;
     } else if (index == -1) {
@@ -37,13 +39,13 @@ function shortsOpen(index) {
     `<div class="shorts-view">
         <div class="shorts-back" onclick="skillsOpen()">←</div>
         <div class="shorts-footage">
-            <div class="footage-previous">↑</div>
-            <div class="footage-next">↓</div>
+            <div class="footage-previous" onclick="switchExperience(-1, '${skills[index][1]}')">↑</div>
+            <div class="footage-next" onclick="switchExperience(-2, '${skills[index][1]}')">↓</div>
         </div>
         <div class="shorts-comments">
             <div class="shorts-comments-padding">
                 <div class="shorts-comments-title-block">
-                    <div class="shorts-comments-title">Experiences</div>
+                    <div class="shorts-comments-title">${skills[index][1]} Experiences</div>
                     <div class="shorts-comments-count"></div>
                 </div>
             </div>
@@ -55,16 +57,17 @@ function shortsOpen(index) {
     let experiences = [];
     for (var i = 0; i < all.length; i++) {
         for (var j = 0; j < all[i][13].length; j++) {
-            if (all[i][13][j] == skills[index][1]) {
+            if (all[i][13][j] == skills[index][1] || all[i][13][j] == 'CAD' && skills[index][1] == 'Computer-Aided Design') {
                 experiences.push(all[i]);
             }
         }
     }
     document.getElementsByClassName("shorts-comments-count")[0].innerHTML = experiences.length;
 
+    setTimeout(() => {
     for (var i = 0; i < experiences.length; i++) {
         document.getElementsByClassName("shorts-comments-padding")[0].innerHTML +=
-        `<div class="shorts-comment-block">
+        `<div class="shorts-comment-block" id="regular-comment" onmouseover="switchExperience(${i}, '${skills[index][1]}')">
             <div class="video-profile-pic" style="margin-right: 0.5vw"></div>
             <div class="shorts-channel-comment">
                 <div class="shorts-channel-header">
@@ -81,7 +84,49 @@ function shortsOpen(index) {
         var startDay = parseInt(experiences[i][3].slice(8, 10));
         var ago = setAgo(startYear, startMonth, startDay);
         document.getElementsByClassName("shorts-channel-sub")[i].innerHTML = `${ago}`;
+
+        if (i == 0) {
+            document.getElementsByClassName("shorts-comment-block")[i].id = "highlight-comment";
+        }
+    }
+
+    document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = "";
+    if (skills[index][1] == 'Computer-Aided Design') {
+        document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = `url("skillscontent/CAD/${experiences.length - 1}.png")`;
+    } else if (skills[index][1] == 'Video Editing') {
+        document.getElementsByClassName("shorts-footage")[0].innerHTML += `
+        <video muted loop autoplay class="shorts-footage-video" src="skillscontent/Video Editing/${experiences.length - 1}.mp4"></video>`
+    }else {
+        document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = `url("skillscontent/${skills[index][1]}/${experiences.length - 1}.png")`;
     }
     
     document.getElementsByClassName("screen")[0].scrollTo(0, 250);
+    },200);
+}
+
+function switchExperience(index, skill) {
+    if (index == -1) {
+        index = current_experience - 1;
+    } else if (index == -2) {
+        index = current_experience + 1;
+    }
+    let experiences = document.getElementsByClassName("shorts-comment-block");
+    if (index == experiences.length) {
+        index = 0;
+    } else if (index == -1) {
+        index = experiences.length - 1;
+    }
+    for (var i = 0; i < experiences.length; i++) {
+        experiences[i].id = "regular-comment";
+    }
+    experiences[index].id = "highlight-comment";
+
+    if (skill == 'Computer-Aided Design') {
+        document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = `url("skillscontent/CAD/${experiences.length - index - 1}.png")`;
+    } else if (skill == 'Video Editing') {
+        document.getElementsByClassName("shorts-footage-video")[0].src = `skillscontent/Video Editing/${experiences.length - index - 1}.mp4`;
+    }else {
+        document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = `url("skillscontent/${skill}/${experiences.length - index - 1}.png")`;
+    }
+    current_experience = index;
 }

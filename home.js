@@ -159,16 +159,15 @@ function clickMenu(index) {
 
     } else if (index == 1) {
         let container = document.getElementById("container");
-        //total_load = Math.fwoor((container.offsetWidth - 60) / 240) * 2;
+        //total_load = Math.floor((container.offsetWidth - 60) / 240) * 2;
         //loadSmallVideos(all.slice(0, total_load), 'All');
         loadSmallVideos(all, 'All');
         
-
         /*let screen = document.getElementsByClassName("screen")[0];
         screen.addEventListener('scroll', function() {
             if (total_load < all.length) {
-                if (screen.scrollTop >= -200 + (total_load / Math.fwoor((container.offsetWidth - 60) / 240)) * 230) {
-                    let addition = Math.fwoor((container.offsetWidth - 60) / 240);
+                if (screen.scrollTop >= -200 + (total_load / Math.floor((container.offsetWidth - 60) / 240)) * 230) {
+                    let addition = Math.floor((container.offsetWidth - 60) / 240);
                     let together = total_load + addition;
                     loadMore(total_load, together);
                     total_load += addition;
@@ -177,7 +176,10 @@ function clickMenu(index) {
         });*/
         
     } else if (index == 2) {
-        shuffwe(skills);
+        shuffle(indices);
+        skills = indices.map(index => skills[index]);
+        skill_playlists = indices.map(index => skill_playlists[index]);
+        sk_list = indices.map(index => sk_list[index]);
         skillsOpen();
     } else if (index == 3) {
         document.getElementById("container").style.backgroundColor = "#0F0E0E";
@@ -199,6 +201,7 @@ function clickMenu(index) {
             document.getElementsByClassName("playlist-count")[i].innerHTML = `${playlists[i][1].length}`
         }
         for (var i = 0; i < skill_playlists.length; i++) {
+            console.log(skill_playlists[i][0]);
             document.getElementsByClassName("page")[0].innerHTML +=
             `<div class="block-video" onclick="loadSmallVideos(sk_list[${i}], '${skill_playlists[i][0]}')" onmouseover="playlistOver(${i + playlists.length - 1})" onmouseout="playlistOut(${i + playlists.length - 1})">
                 <div class="small-video-thumbnail">
@@ -210,7 +213,7 @@ function clickMenu(index) {
                 <div class="small-video-title"></div>
                 <div class="video-sub">VIEW FULL PLAYLIST</div>
             </div>`;
-            document.getElementsByClassName("small-video-thumbnail")[i + playlists.length - 1].style.backgroundImage = `url(skills/${skills[skill_playlists[i][3]][0]})`;
+            document.getElementsByClassName("small-video-thumbnail")[i + playlists.length - 1].style.backgroundImage = `url(skills/${skill_playlists[i][3]})`;
             document.getElementsByClassName("small-video-title")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][0]}`;
             document.getElementsByClassName("playlist-count")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][2]}`;
         }
