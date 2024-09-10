@@ -244,6 +244,12 @@ function openVideo(index) {
     document.getElementsByClassName("open-video")[0].style.height = larger + 'px';
 
     loadRelatedVideos(index, list);
+
+    if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+        let left = document.getElementsByClassName("left-panel")[0].offsetHeight;
+        console.log(left)
+        document.getElementsByClassName("right-panel")[0].style.top = (left + 240) + 'px';
+    }
     document.getElementsByClassName("screen")[0].scrollTo(0, 240);
 }
 
@@ -381,6 +387,7 @@ function next(index) {
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
     }
     play = 0;
+    document.getElementsByClassName("screen")[0].scrollTo(0, -500);
 }
 
 function previous(index) {
@@ -401,4 +408,5 @@ function previous(index) {
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
     }
     play = 0;
+    document.getElementsByClassName("screen")[0].scrollTo(0, -500);
 }
