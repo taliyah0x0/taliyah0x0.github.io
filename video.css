@@ -1,4 +1,4 @@
-@media only screen and (min-aspect-ratio: 1/1) {
+@media only screen and (min-aspect-ratio: 1/1) { /* For laptop */
     .open-video {
         padding: 30px;
         flex-direction: row;
@@ -84,7 +84,7 @@
     }
 }
 
-@media only screen and (max-aspect-ratio: 1/1) {
+@media only screen and (max-aspect-ratio: 1/1) { /* For phone */
     .open-video {
         padding: 20px;
         flex-direction: column;

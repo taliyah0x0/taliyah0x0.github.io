@@ -1,7 +1,118 @@
+@media only screen and (min-aspect-ratio: 1/1) { /* For laptop */
+    .shorts-view {
+        flex-direction: row;
+        width: calc(75vw - 30px);
+    }
+    
+    .shorts-footage {
+        height: 35vw;
+        width: 20vw;
+        border-radius: 20px 0 0 20px;
+    }
+
+    .shorts-comments {
+        height: 35vw;
+        width: 35vw;
+        border-radius: 0 20px 20px 0;
+    }
+
+    .shorts-channel-comment {
+        width: 26vw;
+    }
+
+    .shorts-comments-padding {
+        padding: 20px;
+    }
+
+    .shorts-channel-user {
+        width: 20vw;
+    }
+
+    .footage-previous {
+        top: 17vw;
+    }
+    
+    .footage-next {
+        top: calc(17vw + 40px);
+    }
+
+    .shorts-previous {
+        top: 17vw;
+        right: 4vw;
+    }
+    
+    .shorts-next {
+        top: calc(17vw + 60px);
+        right: 4vw;
+    }
+
+    .shorts-back {
+        left: 10px;
+        top: 10px;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 1/1) { /* For phone */
+    .shorts-view {
+        flex-direction: column;
+    }
+
+    .shorts-footage {
+        height: 70vh;
+        width: 40vh;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-top: 8vh;
+    }
+
+    .shorts-comments {
+        height: 70vh;
+        width: 40vh;
+        border-radius: 20px;
+        margin-bottom: 8vh;
+    }
+
+    .shorts-channel-comment {
+        width: 60vw;
+    }
+
+    .shorts-comments-padding {
+        padding: 10px;
+    }
+
+    .shorts-comments-title-block {
+        margin-left: 4vw;
+        margin-top: 3vw;
+    }
+
+    .shorts-channel-user {
+        width: 35vw;
+    }
+
+    .footage-previous {
+        top: 30vh;
+    }
+    
+    .footage-next {
+        top: calc(30vh + 40px);
+    }
+
+    .shorts-previous {
+        top: 0;
+    }
+    
+    .shorts-next {
+        top: calc(145vh + 40px);
+    }
+
+    .shorts-back {
+        left: 0;
+        top: 0;
+    }
+}
+
 .shorts-view {
-    width: calc(75vw - 30px);
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
@@ -10,31 +121,20 @@
 }
 
 .shorts-footage {
-    height: 70vh;
-    width: 20vw;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('skills/3dprinting.jpg');
-    border-radius: 20px 0 0 20px;
     position: relative;
 }
 
 .shorts-comments {
-    height: 70vh;
-    width: 35vw;
     display: flex;
     flex-direction: column;
     background-color: #212121;
-    border-radius: 0 20px 20px 0;
     overflow-y: scroll;
 }
 
-.shorts-comments-padding {
-    padding: 20px;
-}
-
-.shorts-comment-block {
+.shorts-comment-block, #regular-comment {
     display: flex;
     flex-direction: row;
     gap: 15px;
@@ -42,7 +142,7 @@
     border-radius: 20px;
 }
 
-.shorts-comment-block:hover {
+#highlight-comment {
     background-color: #282828;
 }
 
@@ -57,14 +157,12 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
-    width: 24vw;
 }
 
 .shorts-channel-user {
     color: white;
     font-size: 14px;
     font-weight: bold;
-    width: 17vw;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -136,14 +234,7 @@
     color: white;
     opacity: 0.5;
     transition: ease-in-out 0.3s;
-}
-
-.footage-previous {
-    top: 31vh;
-}
-
-.footage-next {
-    top: calc(31vh + 40px);
+    z-index: 5;
 }
 
 .footage-previous:hover, .footage-next:hover, .shorts-previous:hover, .shorts-next:hover, .shorts-back:hover {
@@ -156,7 +247,6 @@
     height: 50px;
     border-radius: 25px;
     position: absolute;
-    right: 4vw;
     background-color: grey;
     display: flex;
     align-items: center;
@@ -165,14 +255,7 @@
     color: white;
     opacity: 0.5;
     transition: ease-in-out 0.3s;
-}
-
-.shorts-previous {
-    top: 30vh;
-}
-
-.shorts-next {
-    top: calc(30vh + 60px);
+    z-index: 5;
 }
 
 .shorts-back {
@@ -180,8 +263,6 @@
     height: 50px;
     border-radius: 25px;
     position: absolute;
-    left: 10px;
-    top: 10px;
     background-color: grey;
     display: flex;
     align-items: center;
@@ -190,4 +271,11 @@
     color: white;
     opacity: 0.5;
     transition: ease-in-out 0.3s;
+}
+
+.shorts-footage-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }

@@ -10,7 +10,7 @@
     font-weight: bold;
 }
 
-@media only screen and (min-aspect-ratio: 1/1) {
+@media only screen and (min-aspect-ratio: 1/1) { /* For laptop */
     .banner {
         height: 25vh;
     }
@@ -130,14 +130,14 @@
     }
 }
 
-@media only screen and (max-aspect-ratio: 1/1) {
+@media only screen and (max-aspect-ratio: 1/1) { /* For phone */
     .banner {
         height: 18vh;
     }
 
     .screen {
         width: 100vw;
-        height: 95vh;
+        height: 90vh;
     }
 
     .laptop {
@@ -761,12 +761,42 @@ a {
     cursor: pointer;
 }
 
+@media only screen and (min-aspect-ratio: 1/1) {
+    .shorts-thumbnail {
+        width: 240px;
+        height: 400px;
+    }
+
+    .shorts-cover {
+        width: 240px;
+        height: 400px;
+    }
+
+    .shorts-title {
+        width: 240px;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 1/1) {
+    .shorts-thumbnail {
+        width: 42vw;
+        height: 70vw;
+    }
+
+    .shorts-cover {
+        width: 42vw;
+        height: 70vw;
+    }
+
+    .shorts-title {
+        width: 42vw;
+    }
+}
+
 .shorts-thumbnail {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 240px;
-    height: 400px;
     border-radius: 10px;
     position: relative;
 }
@@ -775,7 +805,6 @@ a {
     font-size: 18px;
     color: white;
     font-weight: bold;
-    width: 240px;
     margin-top: 10px;
 }
 
@@ -788,8 +817,6 @@ a {
 .shorts-cover {
     background-color: white;
     opacity: 0;
-    width: 240px;
-    height: 400px;
     border-radius: 10px;
     position: absolute;
     top: 0;
