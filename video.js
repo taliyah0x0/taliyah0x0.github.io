@@ -154,19 +154,35 @@ function openVideo(index) {
             </div>
         </div>`;
         
-        if (channel == "Typewanese & Tai-Ping") {
-            document.getElementsByClassName("video-cover")[0].innerHTML +=
-            `<div class="keyboard-popup">↑ Click here for keyboards!</div>`;
-        } else if (channel != "BobaWay" && channel != "Typewanese & Tai-Ping") {
-            document.getElementsByTagName("iframe")[0].style.position = "absolute";
-            document.getElementsByTagName("iframe")[0].width = "1610";
-            document.getElementsByTagName("iframe")[0].id = "setZoom";
-            document.getElementsByTagName("iframe")[0].height = "1100";
-            if (channel != "Auto Flöte Clean") {
-                document.getElementsByTagName("iframe")[0].style.top = "-50px";
-                document.getElementsByTagName("iframe")[0].width = "1620";
+        /*if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+            if (channel == "Typewanese & Tai-Ping") {
+                document.getElementsByClassName("video-cover")[0].innerHTML +=
+                `<div class="keyboard-popup">↑ Click here for keyboards!</div>`;
+            } else if (channel != "BobaWay" && channel != "Typewanese & Tai-Ping") {
+                document.getElementsByTagName("iframe")[0].style.position = "absolute";
+                document.getElementsByTagName("iframe")[0].width = "1610";
+                document.getElementsByTagName("iframe")[0].id = "setZoom";
+                document.getElementsByTagName("iframe")[0].height = "1100";
+                if (channel != "Auto Flöte Clean") {
+                    document.getElementsByTagName("iframe")[0].style.top = "-50px";
+                    document.getElementsByTagName("iframe")[0].width = "1620";
+                }
+            }*/
+        //} else {
+            if (channel == "Typewanese & Tai-Ping") {
+                document.getElementsByClassName("video-cover")[0].innerHTML +=
+                `<div class="keyboard-popup">↑ Click here for keyboards!</div>`;
+            } else if (channel != "BobaWay" && channel != "Typewanese & Tai-Ping") {
+                document.getElementsByTagName("iframe")[0].style.position = "absolute";
+                document.getElementsByTagName("iframe")[0].width = "1610";
+                document.getElementsByTagName("iframe")[0].id = "setZoom";
+                document.getElementsByTagName("iframe")[0].height = "1100";
+                if (channel != "Auto Flöte Clean") {
+                    document.getElementsByTagName("iframe")[0].style.top = "-50px";
+                    document.getElementsByTagName("iframe")[0].width = "1620";
+                }
             }
-        }
+        //}
         current_content = -1;
         play = 0;
     }

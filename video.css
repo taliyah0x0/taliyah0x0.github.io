@@ -2,6 +2,7 @@
     .open-video {
         padding: 30px;
         flex-direction: row;
+        overflow: scroll;
     }
 
     .iframe-container {
@@ -43,6 +44,7 @@
     .playbar {
         width: 580px;
         left: 10px;
+        bottom: 55px;
     }
 
     .video-profile {
@@ -81,25 +83,58 @@
 
     .moment-text {
         left: 120px;
+        font-size: 14px;
+        bottom: 28px;
+    }
+
+    .full-screen {
+        right: 15px;
+    }
+
+    .play, .full-screen, .previous, .next {
+        bottom: 25px;
+        width: 25px;
+        height: 25px;
+    }
+    
+    .heartplay {
+        left: 266px;
+        top: 130px;
+    }
+
+    iframe#setZoom {
+        zoom: 0.62;
+        -moz-transform: scale(0.62);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.62);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.62);
+        -webkit-transform-origin: 0 0;
+        left:0;
     }
 }
 
 @media only screen and (max-aspect-ratio: 1/1) { /* For phone */
+    .container {
+        width: 360px;
+        overflow-x: hidden;
+    }
+    
     .open-video {
-        padding: 20px;
+        padding: 15px;
         flex-direction: column;
     }
 
     .iframe-container {
-        top: 20px;
-        left: 20px;
+        top: 15px;
+        left: 15px;
         height: 216px;
         width: 360px;
     }
 
     .video-cover {
         width: 360px;
-        height: 226px;
+        height: 216px;
     }
 
     .bottom-bar {
@@ -125,7 +160,8 @@
     }
 
     .playbar {
-        width: 340px;
+        width: 360px;
+        bottom: 25px;
         left: 0;
     }
 
@@ -136,6 +172,7 @@
     .small-subscribe-button {
         font-size: 12px;
         padding: 5px;
+        margin-left: 8px;
     }
 
     .highlights-box {
@@ -150,6 +187,10 @@
         width: 360px;
     }
 
+    .play {
+        left: 5px;
+    }
+
     .previous {
         left: 30px;
     }
@@ -160,6 +201,34 @@
 
     .moment-text {
         left: 90px;
+        font-size: 11px;
+        bottom: 5px;
+    }
+
+    .full-screen {
+        right: 5px;
+    }
+
+    .play, .full-screen, .previous, .next {
+        bottom: 2px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .heartplay {
+        left: 147px;
+        top: 80px;
+    }
+
+    iframe#setZoom {
+        zoom: 0.4;
+        -moz-transform: scale(0.4);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.4);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.4);
+        -webkit-transform-origin: 0 0;
+        left:0;
     }
 }
 
@@ -167,7 +236,6 @@
     display: flex;
     position: relative;
     background-color: #0F0E0E;
-    overflow: scroll;
 }
 
 .cover {
@@ -182,8 +250,6 @@
 
 .video-cover {
     position: absolute;
-    left: 30px;
-    top: 30px;
     background-color: rgb(0,0,0,0.2);
     transition: ease-in-out 0.5s;
 }
@@ -205,7 +271,6 @@
     background-color: white;
     opacity: 0.5;
     position: absolute;
-    bottom: 55px;
 }
 
 .play {
@@ -223,7 +288,6 @@
 
 .full-screen {
     background-image: url('icons/icons8-full-screen-100.png');
-    right: 15px;
 }
 
 .play:hover, .previous:hover, .next:hover, .full-screen:hover {
@@ -231,23 +295,18 @@
 }
 
 .play, .full-screen, .previous, .next {
-    width: 25px;
-    height: 25px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    bottom: 25px;
     opacity: 0.8;
     transition: ease-in-out 0.2s;
     pointer-events: auto;
 }
 
 .moment-text {
-    font-size: 14px;
     color: white;
     position: absolute;
-    bottom: 28px;
     transition: ease-in-out 0.2s;
     pointer-events: auto;
 }
@@ -262,17 +321,6 @@
     color: white; 
     font-weight: bold;
     font-size: 12px;
-}
-
-iframe#setZoom {
-    zoom: 0.62;
-    -moz-transform: scale(0.62);
-    -moz-transform-origin: 0 0;
-    -o-transform: scale(0.62);
-    -o-transform-origin: 0 0;
-    -webkit-transform: scale(0.62);
-    -webkit-transform-origin: 0 0;
-    left:0;
 }
 
 .iframe-container {
@@ -388,8 +436,6 @@ iframe#setZoom {
     width: 68px;
     height: 48px;
     position: absolute;
-    left: 266px;
-    top: 130px;
 }
 
 .related-playlist {
