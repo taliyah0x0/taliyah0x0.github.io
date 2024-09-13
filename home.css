@@ -12,16 +12,16 @@
 
 @media only screen and (min-aspect-ratio: 1/1) { /* For laptop */
     .banner {
-        height: 25vh;
+        height: 20vh;
     }
 
     .screen {
-    width: 75vw;
-    height: 90vh;
-    padding: 0px 22px 0px 22px;
-    border-top: 2px solid silver;
-    border-left: 2px solid silver;
-    border-right: 2px solid silver;
+        width: 75vw;
+        height: 90vh;
+        padding: 0px 22px 0px 22px;
+        border-top: 2px solid silver;
+        border-left: 2px solid silver;
+        border-right: 2px solid silver;
     }
 
     .laptop {
@@ -36,19 +36,19 @@
     }
 
     .name {
-        font-size: 4vh;
+        font-size: 3vh;
         flex-direction: row;
         align-items: center;
         gap: 15px;
     }
 
     .name-banner {
-        font-size: 2.5vh;
+        font-size: 2vh;
         padding: 3px 10px 3px 10px;
     }
 
     .buttons {
-        font-size: 2.5vh;
+        font-size: 2vh;
     }
 
     .menu-item {
@@ -380,7 +380,7 @@ a {
 .profile {
     display: flex;
     align-items: center;
-    margin-left: 5vw;
+    margin-left: 3vw;
 }
 
 .profile-image {

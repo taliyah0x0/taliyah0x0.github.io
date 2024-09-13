@@ -39,13 +39,20 @@ function openVideo(index) {
     }
 
     let content_array = all[index][15];
+
+    let video_iframe_h = 428;
+    let video_iframe_w = 600;
+    if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+        video_iframe_h = 330;
+        video_iframe_w = 360;
+    }
     
     if (code.substring(0,8) != "https://" && files.includes(content_array[0].slice(-3).toLowerCase()) == false) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
                 <iframe src="https://www.youtube.com/embed/${code}?mute=1&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
-                    height="428" width="600" frameborder="0" allowfullscreen style="position:absolute; top:-60px;"></iframe>
+                    height="${video_iframe_h}" width="${video_iframe_w}" frameborder="0" allowfullscreen style="position:absolute; top:-60px;"></iframe>
             </div>
             <div class="cover"></div>
             <div class="video-cover" onclick="removeCover()">
@@ -75,7 +82,7 @@ function openVideo(index) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
-                <video height="428" autoplay muted>
+                <video width="${video_iframe_w}" height="${video_iframe_h}" autoplay muted playsinline>
                     <source src="content/${all[index][4]}/${content_array[0]}" type="video/mp4">
                 </video>
             </div>
@@ -127,7 +134,7 @@ function openVideo(index) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
-                <iframe src="${code}" height="360" width="600" frameborder="0" id="none" muted="yes"></iframe>
+                <iframe src="${code}" height="${video_iframe_h - 68}" width="${video_iframe_w}" frameborder="0" id="none" muted="yes"></iframe>
             </div>
             <div class="video-cover" onclick="pause()">
                 <div class="heartplay"></div>
@@ -153,36 +160,26 @@ function openVideo(index) {
                 </div>
             </div>
         </div>`;
-        
-        /*if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
-            if (channel == "Typewanese & Tai-Ping") {
-                document.getElementsByClassName("video-cover")[0].innerHTML +=
-                `<div class="keyboard-popup">↑ Click here for keyboards!</div>`;
-            } else if (channel != "BobaWay" && channel != "Typewanese & Tai-Ping") {
-                document.getElementsByTagName("iframe")[0].style.position = "absolute";
-                document.getElementsByTagName("iframe")[0].width = "1610";
-                document.getElementsByTagName("iframe")[0].id = "setZoom";
-                document.getElementsByTagName("iframe")[0].height = "1100";
-                if (channel != "Auto Flöte Clean") {
-                    document.getElementsByTagName("iframe")[0].style.top = "-50px";
-                    document.getElementsByTagName("iframe")[0].width = "1620";
-                }
-            }*/
-        //} else {
-            if (channel == "Typewanese & Tai-Ping") {
-                document.getElementsByClassName("video-cover")[0].innerHTML +=
-                `<div class="keyboard-popup">↑ Click here for keyboards!</div>`;
-            } else if (channel != "BobaWay" && channel != "Typewanese & Tai-Ping") {
-                document.getElementsByTagName("iframe")[0].style.position = "absolute";
-                document.getElementsByTagName("iframe")[0].width = "1610";
-                document.getElementsByTagName("iframe")[0].id = "setZoom";
-                document.getElementsByTagName("iframe")[0].height = "1100";
-                if (channel != "Auto Flöte Clean") {
-                    document.getElementsByTagName("iframe")[0].style.top = "-50px";
-                    document.getElementsByTagName("iframe")[0].width = "1620";
-                }
+
+        let web_iframe_h = 1100;
+        let web_iframe_w = 1610;
+        if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+            web_iframe_h = 630;
+            web_iframe_w = 960;
+        }
+        if (channel == "Typewanese & Tai-Ping") {
+            document.getElementsByClassName("video-cover")[0].innerHTML +=
+            `<div class="keyboard-popup">↑ Click here for keyboards!</div>`;
+        } else if (channel != "BobaWay" && channel != "Typewanese & Tai-Ping") {
+            document.getElementsByTagName("iframe")[0].style.position = "absolute";
+            document.getElementsByTagName("iframe")[0].width = web_iframe_w;
+            document.getElementsByTagName("iframe")[0].id = "setZoom";
+            document.getElementsByTagName("iframe")[0].height = web_iframe_h;
+            if (channel != "Auto Flöte Clean") {
+                document.getElementsByTagName("iframe")[0].style.top = "-50px";
+                document.getElementsByTagName("iframe")[0].width = web_iframe_w + 10;
             }
-        //}
+        }
         current_content = -1;
         play = 0;
     }
@@ -266,6 +263,11 @@ function openVideo(index) {
         console.log(left)
         document.getElementsByClassName("right-panel")[0].style.top = (left + 240) + 'px';
     }
+
+    let left_panel = document.getElementsByClassName("left-panel")[0].offsetHeight + document.getElementsByClassName("video-cover")[0].offsetHeight;
+    let right_panel = document.getElementsByClassName("right-panel")[0].offsetHeight;
+    document.getElementsByClassName("open-video")[0].style.height = (left_panel > right_panel) ? left_panel : right_panel + 'px';
+
     document.getElementsByClassName("screen")[0].scrollTo(0, 240);
 }
 
@@ -379,6 +381,10 @@ function loadRelatedVideos(index, in_list) {
             document.getElementsByClassName("video-sub")[related_videos].style.marginBottom = "0";
         }
     }
+
+    let left_panel = document.getElementsByClassName("left-panel")[0].offsetHeight + document.getElementsByClassName("video-cover")[0].offsetHeight;
+    let right_panel = document.getElementsByClassName("right-panel")[0].offsetHeight;
+    document.getElementsByClassName("open-video")[0].style.height = (left_panel > right_panel) ? left_panel : right_panel + 'px';
 }
 
 function goDescription() {
@@ -403,7 +409,6 @@ function next(index) {
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
     }
     play = 0;
-    document.getElementsByClassName("screen")[0].scrollTo(0, -500);
 }
 
 function previous(index) {
@@ -424,5 +429,4 @@ function previous(index) {
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
     }
     play = 0;
-    document.getElementsByClassName("screen")[0].scrollTo(0, -500);
 }

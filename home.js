@@ -111,11 +111,6 @@ function loadhome() {
                 </div>
             </a>
         </div>`;
-
-        document.getElementsByClassName("trailer-video-container").innerHTML =
-        `<video controls muted loop class="trailer-video" autoplay playsinline>
-            <source src="trailer.mp4" type="video/mp4">
-        </video>`;
     }
 }
 

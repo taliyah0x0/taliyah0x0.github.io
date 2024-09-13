@@ -219,14 +219,13 @@
         left: 147px;
         top: 80px;
     }
-
     iframe#setZoom {
-        zoom: 0.4;
-        -moz-transform: scale(0.4);
+        zoom: 0.62;
+        -moz-transform: scale(0.62);
         -moz-transform-origin: 0 0;
-        -o-transform: scale(0.4);
+        -o-transform: scale(0.62);
         -o-transform-origin: 0 0;
-        -webkit-transform: scale(0.4);
+        -webkit-transform: scale(0.62);
         -webkit-transform-origin: 0 0;
         left:0;
     }
@@ -236,6 +235,7 @@
     display: flex;
     position: relative;
     background-color: #0F0E0E;
+    height: 100vh;
 }
 
 .cover {

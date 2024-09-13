@@ -147,8 +147,9 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "johns_hopkins_biomedical_engineering_logo.jpeg", "Medical Device Design & Innovation", "https://www.bme.jhu.edu/",
 
-        `❥ Selected to lead a team of 8 undergrad students to develop a medical device with a clinical mentor over the course of one year
-        <br>❥ Shadowed minimally-invasive robotic surgery in the Johns Hopkins Bayview hospital`,
+        `❥ Selected to lead a team of undergrad students in developing a device to optimize lung cryobiopsy over the course of one year
+        <br>❥ Observed and analyzed shortcomings of the lung cryobiopsy procedure at the Johns Hopkins Hospital
+        <br>❥ Shadowed minimally-invasive robotic surgery at the Johns Hopkins Bayview Medical Center`,
     
         ['Leadership', 'Design Thinking'],
         ['Shadowing Da Vinci procedures at the hospital', 'Mindmapping observations and finding needs'],
@@ -184,8 +185,8 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         <br>❥ Interviewed and published on the World Journal, Taiwan Plus, Radio Taiwan International (BobaWay)`,
         
         ['Video Editing'],
-        ['Filming in the Community Kitchen'],
-        ['IMG_3617.mp4'],
+        ['Filming in the Community Kitchen', 'A recent vlog from the summer', 'Link to my Youtube Channel!'],
+        ['IMG_3617.mp4', '5.mp4', 'https://youtube.com/@taliyahengineering'],
         ''
     ],
     ["width_800.png", '🔉 LIVE', "Co-Chair of Marketing", '2022-10-30', 'Hopkins Organization for Programming', 'sYmPRYdeQyU', 3, "", "#jhuhop #events #staff",
