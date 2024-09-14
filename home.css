@@ -538,6 +538,7 @@ a {
 
 .container {
     background-color: #0F0E0E;
+    overflow-y: auto;
 }
 
 .block {

@@ -2,7 +2,6 @@
     .open-video {
         padding: 30px;
         flex-direction: row;
-        overflow: scroll;
     }
 
     .iframe-container {
@@ -220,12 +219,12 @@
         top: 80px;
     }
     iframe#setZoom {
-        zoom: 0.62;
-        -moz-transform: scale(0.62);
+        zoom: 0.64;
+        -moz-transform: scale(0.64);
         -moz-transform-origin: 0 0;
-        -o-transform: scale(0.62);
+        -o-transform: scale(0.64);
         -o-transform-origin: 0 0;
-        -webkit-transform: scale(0.62);
+        -webkit-transform: scale(0.64);
         -webkit-transform-origin: 0 0;
         left:0;
     }
@@ -236,6 +235,7 @@
     position: relative;
     background-color: #0F0E0E;
     height: 100vh;
+    overflow-y: auto;
 }
 
 .cover {
@@ -324,15 +324,16 @@
 }
 
 .iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    overflow: hidden; 
     position: absolute;
-    overflow: hidden;
     border-radius: 10px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     transition: ease-in-out 0.5s;
-    display: flex;
-    justify-content: center; 
 }
 
 .title {
@@ -588,4 +589,6 @@
 
 video {
     transition: ease-in-out 0.5s;
+    height: 100%;
+    width: auto;
 }

@@ -40,7 +40,7 @@ function openVideo(index) {
 
     let content_array = all[index][15];
 
-    let video_iframe_h = 428;
+    let video_iframe_h = 360;
     let video_iframe_w = 600;
     if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
         video_iframe_h = 330;
@@ -82,9 +82,7 @@ function openVideo(index) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
-                <video width="${video_iframe_w}" height="${video_iframe_h}" autoplay muted playsinline>
-                    <source src="content/${all[index][4]}/${content_array[0]}" type="video/mp4">
-                </video>
+                <video width="${video_iframe_w}" height="${video_iframe_h}" src="content/${all[index][4]}/${content_array[0]}" autoplay muted playsinline></video>
             </div>
             <div class="video-cover" onclick="pause()">
                 <div class="heartplay"></div>
@@ -134,7 +132,7 @@ function openVideo(index) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
-                <iframe src="${code}" height="${video_iframe_h - 68}" width="${video_iframe_w}" frameborder="0" id="none" muted="yes"></iframe>
+                <iframe src="${code}" height="${video_iframe_h}" width="${video_iframe_w}" frameborder="0" id="none" muted="yes"></iframe>
             </div>
             <div class="video-cover" onclick="pause()">
                 <div class="heartplay"></div>
