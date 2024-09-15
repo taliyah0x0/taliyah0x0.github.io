@@ -15,7 +15,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         ['https://youtube.com/watch?v=3ex0ym1oMgs', 'https://github.com/taliyah0x0/GamePigeon-Bots', 'https://www.instagram.com/reel/C9krfUhPmUc/', 'https://www.instagram.com/reel/C97r_HPv6YV/'],
         ''
     ],
-    ["typewanesethumbnail.png", '3 mos', "Typewanese/Tai-Ping - First Romanized Taiwanese Keyboard", '2023-08-01', 'Python/HTML/CSS/JS', 'jXlTl5RPKoY', 43, "https://bobaway.org",
+    ["typewanese.png", '3 mos', "Typewanese/Tai-Ping - First Romanized Taiwanese Keyboard", '2023-08-01', 'Python/HTML/CSS/JS', 'jXlTl5RPKoY', 43, "https://bobaway.org",
         "#taiwan #language #keyboard", "flav_9.png", "Typewanese & Tai-Ping", 'jXlTl5RPKoY',
         
         `I’ve been working hard to improve BobaWay’s speed and accuracy, but what about additional features? I present two newly programmed keyboards, Tai-Ping and Typewanese, that aim to make writing in Taiwanese romanization easy and efficient.`,
@@ -25,7 +25,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         ['https://bobaway.org', 'https://youtube.com/watch?v=jXlTl5RPKoY','https://github.com/taliyah0x0/BobaWay'],
         ''
     ],
-    ["bobawaythumbnail.png", '6 mos', 'BobaWay - First Taiwanese-English Translator', '2023-05-01', 'Python/HTML/CSS/JS', 'jH8sbQL_YpA', 31, "https://bobaway.org",
+    ["bobaway.png", '6 mos', 'BobaWay - First Taiwanese-English Translator', '2023-05-01', 'Python/HTML/CSS/JS', 'jH8sbQL_YpA', 31, "https://bobaway.org",
         "#taiwan #language #translator", "flav_9.png", "BobaWay", 'jH8sbQL_YpA',
         
         `To help other Taiwanese-American kids out there with immigrant parents, I created BobaWay, the Google Translate for English to Taiwanese. Open the web app on any device, input English sentences, and out pops the Taiwanese translation in audio form for learning perfect pronunciation.`,
@@ -35,7 +35,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         ['https://bobaway.org', 'https://github.com/taliyah0x0/BobaWay', 'https://www.taiwaneseamerican.org/2023/07/taliyah-huang-interview-bobaway/', 'https://www.youtube.com/watch?v=VlkX0hAB5Fw&t=27s', 'https://en.rti.org.tw/radio/programMessagePlayer/programId/1435/id/108711', 'https://www.worldjournal.com/wj/story/121359/7289244', 'https://talkingtaiwan.com/taliyah-huang-young-inventor-of-bobaway-online-translator-that-converts-english-to-taiwanese-ep-253/'],
         ''
     ],
-    ["emokeysthumbnail.png", '2 mos', 'Emokeys - Versatile Emoji Keyboard', '2023-07-01', 'Arduino/CAD/Python', 'wGvIvYGg-gg', 24, "",
+    ["emokeys.png", '2 mos', 'Emokeys - Versatile Emoji Keyboard', '2023-07-01', 'Arduino/CAD/Python', 'wGvIvYGg-gg', 24, "",
         "#keyboard #emoji #discord", "emokeys.png", "Emokeys", 'wGvIvYGg-gg',
        
         `Meet Emokeys, a macropad for typing emoji. Featuring 9 OLED displays that allow an infinite library of colorful characters, plus there's Discord mode where you can even input custom stickers and animated GIFs on your server!`,
@@ -45,7 +45,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         ['https://youtube.com/watch?v=wGvIvYGg-gg', 'https://cad.onshape.com/documents/45eebb0845694a7843d8376d/w/e79dddab06cb9b7714231f11/e/a79ad1a21bb95403dc9d6ce6?renderMode=0&uiState=66c17ed628764957d3512677','https://github.com/taliyah0x0/EMOKEYS', 'https://www.printables.com/model/532039-emokeys'],
         ''
     ],
-    ["circuitfulthumbnail.png", '2 mos', 'Circuitful - Colorful Circuit Diagramming', '2022-07-01', 'Javascript', '2UL5aBr_zVA', 121, "",
+    ["circuitful.png", '2 mos', 'Circuitful - Colorful Circuit Diagramming', '2022-07-01', 'Javascript', '2UL5aBr_zVA', 121, "",
         "#electronics #fritzing #arduino", "circuit.png", "Circuitful", '2UL5aBr_zVA',
         
         `Frustrated with the lack of keyboard shortcuts, graphics, and customization in circuit diagramming software like Fritzing and Tinkercad, I set off to program my own. Introducing Circuitful, the colorful circuit diagramming app.`,
@@ -55,7 +55,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         ['https://youtube.com/watch?v=2UL5aBr_zVA', 'https://github.com/taliyah0x0/circuitful'],
         ''
     ],
-    ["mousekythumbnail.png", '2 mos', 'Mouseky - Unique Keyboard Designed from Scratch', '2022-06-01', 'Arduino/CAD', '6V3gyArkQ38', 5, "",
+    ["mouseky.png", '2 mos', 'Mouseky - Unique Keyboard Designed from Scratch', '2022-06-01', 'Arduino/CAD', '6V3gyArkQ38', 5, "",
         "#3dprinting #integration #design", "mouseky.png", "Mouseky", '6V3gyArkQ38',
         
         `Meet the most high-tech keyboard ever designed! This is Mouseky, a split, wireless, 64-key masterpiece that has an integrated mouse packed with touchpad-equivalent features.`,
@@ -65,7 +65,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         ['https://youtube.com/watch?v=6V3gyArkQ38', 'https://youtube.com/watch?v=6V3gyArkQ38', 'https://www.printables.com/model/356141-mouseky', 'https://cad.onshape.com/documents/daeff293f435e04e10f71e4f/w/c092231cd4a00ebba90fb4d6/e/fa73797f2dd503dabaa65d9a?renderMode=0&uiState=66c5592a3a3d8b53dc998912'],
         ''
     ],
-    ["maxresdefault.webp", '8 mos', 'STEMables - Educational Tech Blocks', '2021-06-01', 'Arduino/CAD', 'TMdWpt-RRqY', 37, "https://bit.ly/stemables",
+    ["stemables.png", '8 mos', 'STEMables - Educational Tech Blocks', '2021-06-01', 'Arduino/CAD', 'TMdWpt-RRqY', 37, "https://bit.ly/stemables",
         "#electronics #programming #accessibletoys", "stemables.png", "STEMables", '6V3gyArkQ38',
         
         `Rearrangeable 3D-printed blocks to create an infinite number of smart circuit sensor systems. Mission for visually-impaired and dexterously-challenged kids to learn electronics and programming in a fun, easy, and accessible way.`,
@@ -75,7 +75,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         ['https://bit.ly/stemables', 'https://youtube.com/watch?v=6V3gyArkQ38'],
         ''
     ],
-    ["cpace.webp", '7 mos', 'CPACE - Assistive Technology for Quadriplegia', '2020-11-01', 'Arduino/CAD', '0uANgR1oOII', 25, "https://bit.ly/projectcpace",
+    ["cpace.png", '7 mos', 'CPACE - Assistive Technology for Quadriplegia', '2020-11-01', 'Arduino/CAD', '0uANgR1oOII', 25, "https://bit.ly/projectcpace",
         "#disabilitytech #phonecontrol #affordable", "cpace.png", "CPACE", '0uANgR1oOII',
         
         `How might we help a quadriplegic use the same technology we all use? Current solutions have limited apps and features, or cost tens of thousands of dollars! CPACE lets anyone easily plug in a smartphone or computer to start using! It tracks head motion to position a mouse on screen, and the bite sensor for clicking.`,
@@ -85,7 +85,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         ['https://bit.ly/projectcpace', 'https://youtube.com/watch?v=0uANgR1oOII'],
         ''
     ],
-    ["swanchair.webp", '1 mo', 'Swan Chair - Musical Throne', '2020-06-01', 'Arduino/CAD/Handicraft', 'jH6qUVLfZfc', 2, "",
+    ["swanchair.png", '1 mo', 'Swan Chair - Musical Throne', '2020-06-01', 'Arduino/CAD/Handicraft', 'jH6qUVLfZfc', 2, "",
         "#diy #woodworking #musicbox", "swan.png", "Swan Chair", 'jH6qUVLfZfc',
         
         `As one of the 24 participants selected for the Girls Garage summer program, I remember skipping sleep to go beyond basic woodworking as instructed, taking an unorthodox approach to design an Arduino-integrated that automatically drives a 3D resin-printed “Swan Lake” music box when sat upon.`,
@@ -118,7 +118,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
 ]
 
 var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4], Youtube Link [5], Video Start [6], Optional: Website [7], Location Tags [8] // Channel Icon [9], Channel Description [10], Channel Website [11] // Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
-    ["Moon-Surgical.jpg", '3 mos', 'Clinical Development Engineering Intern', '2024-06-03', 'Moon Surgical', 'sWpCpD1zYg8', 8, "", "#sancarlos #california", 
+    ["moonsurgical.jpg", '3 mos', 'Clinical Development Engineering Intern', '2024-06-03', 'Moon Surgical', 'sWpCpD1zYg8', 8, "", "#sancarlos #california", 
         
         "moonsurgical_logo.jpeg", "Medical Robotics, Haptics, & Computer Vision", "https://moonsurgical.com",
 
@@ -143,12 +143,12 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         I picked up on a lot of new skills such as learning how to cast silicon models and helping out with the whole process of conducting formative studies for FDA approval, while being able to contribute significantly with my experience in 3D modeling and surgical shadowing.
         It was amazing to see and be involved directly with the design process I had only learned about in class, from the user interviews and coded need statements to the research and prototypes!`,
     ],
-    ["pexels-ekamelev-813872.jpg", '🔉 LIVE', 'Undergraduate Design Team Leader', '2024-01-01', 'Johns Hopkins Biomedical Engineering', 'bzP4ZosYo3s', 0, "", "#baltimore #maryland", 
+    ["designteam.jpg", '🔉 LIVE', 'Undergraduate Design Team Leader', '2024-01-01', 'Johns Hopkins Biomedical Engineering', 'bzP4ZosYo3s', 0, "", "#baltimore #maryland", 
         
         "johns_hopkins_biomedical_engineering_logo.jpeg", "Medical Device Design & Innovation", "https://www.bme.jhu.edu/",
 
         `❥ Selected to lead a team of undergrad students in developing a device to optimize lung cryobiopsy over the course of one year
-        <br>❥ Observed and analyzed shortcomings of the lung cryobiopsy procedure at the Johns Hopkins Hospital
+        <br>❥ Observed and interviewed clinicians about the lung cryobiopsy procedure at the Johns Hopkins Hospital
         <br>❥ Shadowed minimally-invasive robotic surgery at the Johns Hopkins Bayview Medical Center`,
     
         ['Leadership', 'Design Thinking'],
@@ -156,7 +156,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['IMG_2393.mp4', 'mindmap.mp4'],
         ''
     ],
-    ["pexels-chevanon-302899.jpg", '🔉 LIVE', "Co-Founder, Business Development & Graphic Design", '2023-05-12', 'Higher Grounds Vending L.L.C.', 'mD-utJUMmkU', 0, "", "#baltimore #maryland", 
+    ["highergrounds.jpg", '🔉 LIVE', "Co-Founder, Business Development & Graphic Design", '2023-05-12', 'Higher Grounds Vending L.L.C.', 'mD-utJUMmkU', 0, "", "#baltimore #maryland", 
         
         "highergroundslogoblack.png", "Affordable, freshly-brewed coffee and tea at Johns Hopkins!", "https://instagram.com/highergroundsvending",
 
@@ -175,7 +175,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         Sourcing our fresh beverage-making vending machines directly from a manufacturer doesn't exactly show innovation, but it allowed us to quickly start operating as we continued to learn more and cater our products towards our target audience: College students.
         So far, it has been a great experience with the support of  Johns Hopkins' entrepreneurship programs and resources, as we are continuing to expand our reach and services across campus.`,
     ],
-    ["pexels-mediocrememories-1117132.jpg", '🔉 LIVE', "Content Creator", '2023-01-01', 'Taliyah Engineering', 'AJlgPpAQshM', 1, "", "#youtube #instagram #facebook #tiktok",
+    ["taliyahengineering.jpg", '🔉 LIVE', "Content Creator", '2023-01-01', 'Taliyah Engineering', 'AJlgPpAQshM', 1, "", "#youtube #instagram #facebook #tiktok",
         
         "IMG_5548.png", "Engineering student who loves to invent and create!", "https://youtube.com/@taliyahengineering",
 
@@ -186,10 +186,10 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         ['Video Editing'],
         ['Filming in the Community Kitchen', 'A recent vlog from the summer', 'Link to my Youtube Channel!'],
-        ['IMG_3617.mp4', '5.mp4', 'https://youtube.com/@taliyahengineering'],
+        ['IMG_3617.mp4', 'output2.mp4', 'https://youtube.com/@taliyahengineering'],
         ''
     ],
-    ["width_800.png", '🔉 LIVE', "Co-Chair of Marketing", '2022-10-30', 'Hopkins Organization for Programming', 'sYmPRYdeQyU', 3, "", "#jhuhop #events #staff",
+    ["hop.png", '🔉 LIVE', "Co-Chair of Marketing", '2022-10-30', 'Hopkins Organization for Programming', 'sYmPRYdeQyU', 3, "", "#jhuhop #events #staff",
         
         "hoplogo.png", "Events for students, by students", "https://instagram.com/jhuhop",
 
@@ -203,7 +203,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['https://www.youtube.com/watch?v=sYmPRYdeQyU', 'content/Hopkins Organization for Programming/designs.png'],
         ''
     ],
-    ["IMG_5350.JPG", '🔉 LIVE', "Treasurer", '2022-09-05', 'Japanese American Students Association', 'dytG8M8cfBY', 1, "", "#jasa #events #japan",
+    ["jasa.JPG", '🔉 LIVE', "Treasurer", '2022-09-05', 'Japanese American Students Association', 'dytG8M8cfBY', 1, "", "#jasa #events #japan",
         
         "jasa.jpg", "Celebrating and honoring all things Japanese 🇯🇵", "https://instagram.com/jhujasa",
 
@@ -216,7 +216,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['https://www.youtube.com/watch?v=dytG8M8cfBY'],
         ''
     ],
-    ["pexels-pixabay-236663.jpg", '12 mos', 'Undergraduate Robotics Researcher', '2023-01-22', 'Dr. Li Terradynamics Lab', 'RG9TMn1FJzc', 67, "", "#meche #robotics #computervision",
+    ["research.jpg", '12 mos', 'Undergraduate Robotics Researcher', '2023-01-22', 'Dr. Li Terradynamics Lab', 'RG9TMn1FJzc', 67, "", "#meche #robotics #computervision",
         
         "jhuwse.jpg", "Movement science at the interface of biology, robotics & physics", "https://li.me.jhu.edu/",
 
@@ -228,7 +228,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['climbing.mp4'],
         ''
     ],
-    ["magic.png", '5 mos', "3D Modeling/Animation", '2022-08-01', 'MagIC Lifescience Inc.', 'W6m0floaz-E', 3, "", "#blender #pcr #contract",
+    ["magiclifescience.png", '5 mos', "3D Modeling/Animation", '2022-08-01', 'MagIC Lifescience Inc.', 'W6m0floaz-E', 3, "", "#blender #pcr #contract",
         
         "1638399138601.jpeg", "Leveraging giant magnetoresistance to advance molecular diagnostics", "https://magiclifescience.com/",
 
@@ -240,7 +240,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['https://youtube.com/watch?v=W6m0floaz-E'],
         ''
     ],
-    ["virgo.png", '3 mos', "Bioengineering Team Intern", '2022-06-10', 'Stanford Institute of Medicine', '8GJGm3xvwq8', 0, "https://www.im-creator.com/free/teamsaturn/saturn", "#summerprogram #allergy #medtech",
+    ["saturn.png", '3 mos', "Bioengineering Team Intern", '2022-06-10', 'Stanford Institute of Medicine', '8GJGm3xvwq8', 0, "https://www.im-creator.com/free/teamsaturn/saturn", "#summerprogram #allergy #medtech",
         
         "stanford_university_logo.jpeg", "Center for Biodesign", "https://simr.stanford.edu/",
 
