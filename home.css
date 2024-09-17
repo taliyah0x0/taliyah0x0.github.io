@@ -17,7 +17,7 @@
 
     .screen {
         width: 75vw;
-        height: 100vh;
+        height: 97vh;
         padding: 0px 22px 0px 22px;
         border-top: 2px solid silver;
         border-left: 2px solid silver;
@@ -137,7 +137,7 @@
 
     .screen {
         width: 100vw;
-        height: 100vh;
+        height: 97vh;
     }
 
     .laptop {
@@ -237,7 +237,7 @@
 
     .opening {
         width: 100vw;
-        height: calc(100vh - 40px);
+        height: calc(97vh - 40px);
     }
 
     .playlist-cover {
