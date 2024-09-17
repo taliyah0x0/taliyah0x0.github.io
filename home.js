@@ -43,15 +43,15 @@ function loadhome() {
 
     setTimeout(() => {
         document.getElementsByClassName('opening')[0].classList.add('hide');
+        document.getElementsByClassName("trailer-video-container")[0].innerHTML =
+            `<video muted loop class="trailer-video" autoplay playsinline>
+                <source src="trailer.mp4" type="video/mp4">
+            </video>`;
         setTimeout(() => {
             document.getElementsByClassName('opening')[0].style.display = 'none';
             /*if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
                 document.getElementsByClassName('trailer-video')[0].play();
             }*/
-            document.getElementsByClassName("trailer-video-container")[0].innerHTML =
-            `<video controls muted loop class="trailer-video" autoplay playsinline>
-                <source src="trailer.mp4" type="video/mp4">
-            </video>`
         }, 1000);
     }, 1500);
     for (var i = 0; i < fw.length; i++) {
