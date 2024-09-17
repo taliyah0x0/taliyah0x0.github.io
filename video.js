@@ -40,10 +40,10 @@ function openVideo(index) {
 
     let content_array = all[index][15];
 
-    let video_iframe_h = 360;
+    let video_iframe_h = 455;
     let video_iframe_w = 600;
     if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
-        video_iframe_h = 330;
+        video_iframe_h = 310;
         video_iframe_w = 360;
     }
     
@@ -55,7 +55,7 @@ function openVideo(index) {
                     height="${video_iframe_h}" width="${video_iframe_w}" frameborder="0" allowfullscreen style="position:absolute; top:-60px;"></iframe>
             </div>
             <div class="cover"></div>
-            <div class="video-cover" onclick="removeCover()">
+            <div class="video-cover" onclick="removeCover('${code}')">
                 <div class="heartplay"></div>
             </div>
             <div class="left-panel">
@@ -278,7 +278,7 @@ function openVideo(index) {
 
 var play = 0;
 
-function removeCover() {
+function removeCover(code) {
     var video = document.getElementsByClassName("iframe-container")[0];
     var nowPlaying = $(video).find('iframe').attr('src');
     if (nowPlaying.substring(0, 15) == "https://www.you") {
@@ -287,6 +287,9 @@ function removeCover() {
     document.getElementsByClassName("heartplay")[0].style.display = "none";
     document.getElementsByClassName("video-cover")[0].style.backgroundColor = "rgb(0,0,0,0)";
     document.getElementsByClassName("video-cover")[0].style.pointerEvents = "none";
+    document.getElementsByClassName("video-cover")[0].innerHTML +=
+    `<a href="https://www.youtube.com/watch?v=${code}" target="_blank"><div class="full-screen"></div></a>`;
+    console.log("add")
 }
 
 function pause() {

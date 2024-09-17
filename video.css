@@ -13,12 +13,12 @@
 
     .video-cover {
         width: 600px;
-        height: 377px;
+        height: 360px;
     }
 
     .bottom-bar {
         width: 600px;
-        height: 57px;
+        height: 44px;
     }
 
     .title {
@@ -43,7 +43,7 @@
     .playbar {
         width: 580px;
         left: 10px;
-        bottom: 55px;
+        bottom: 42px;
     }
 
     .video-profile {
@@ -83,7 +83,7 @@
     .moment-text {
         left: 120px;
         font-size: 14px;
-        bottom: 28px;
+        bottom: 12px;
     }
 
     .full-screen {
@@ -91,14 +91,14 @@
     }
 
     .play, .full-screen, .previous, .next {
-        bottom: 25px;
+        bottom: 10px;
         width: 25px;
         height: 25px;
     }
     
     .heartplay {
         left: 266px;
-        top: 130px;
+        top: 144px;
     }
 
     iframe#setZoom {
@@ -215,8 +215,8 @@
     }
 
     .heartplay {
-        left: 147px;
-        top: 80px;
+        left: 146px;
+        top: 71px;
     }
     iframe#setZoom {
         zoom: 0.64;

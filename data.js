@@ -147,7 +147,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "johns_hopkins_biomedical_engineering_logo.jpeg", "Medical Device Design & Innovation", "https://www.bme.jhu.edu/",
 
-        `❥ Selected to lead a team of undergrad students in developing a device to optimize lung cryobiopsy over the course of one year
+        `❥ Selected to lead a team of undergrad students in developing a device to optimize lung cryobiopsy over 1.5 years
         <br>❥ Observed and interviewed clinicians about the lung cryobiopsy procedure at the Johns Hopkins Hospital
         <br>❥ Shadowed minimally-invasive robotic surgery at the Johns Hopkins Bayview Medical Center`,
     
@@ -232,7 +232,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "1638399138601.jpeg", "Leveraging giant magnetoresistance to advance molecular diagnostics", "https://magiclifescience.com/",
 
-        `❥ Created professionally-animated 3D simulation for demonstrating the startup company’s biotech product
+        `❥ Created professionally-animated 3D biosimulations for demonstrating the startup company’s biotech product
         <br>❥ Led team meetings and planning for  animation production`,
         
         ['CAD'],
@@ -244,7 +244,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "stanford_university_logo.jpeg", "Center for Biodesign", "https://simr.stanford.edu/",
 
-        `❥ Worked with a high school student team to create a medical device that addresses the issues of emergency allergy medication
+        `❥ Worked as a high school student team to create a medical device that addresses the issues of emergency allergy medication
         <br>❥ Responsible for CAD, 3D printing, animation, and website development`,
         
         ['CAD', '3D Printing', 'Web Design'],
