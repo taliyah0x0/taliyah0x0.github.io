@@ -43,13 +43,11 @@ function loadhome() {
 
     setTimeout(() => {
         document.getElementsByClassName('opening')[0].classList.add('hide');
-        if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
-            setTimeout(() => {
-                document.getElementsByClassName('trailer-video')[0].play();
-            }, 1000);
-        }
         setTimeout(() => {
             document.getElementsByClassName('opening')[0].style.display = 'none';
+            if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+                document.getElementsByClassName('trailer-video')[0].play();
+            }
         }, 1000);
     }, 1500);
     for (var i = 0; i < fw.length; i++) {
