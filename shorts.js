@@ -17,6 +17,13 @@ function skillsOpen() {
 
         document.getElementsByClassName("shorts-thumbnail")[i].style.backgroundImage = `url(skills/${skills[i][0]})`;
     }
+    currPage = 2;
+    window.addEventListener('resize', function() {
+        if (currPage == 2) {
+            skillsOpen();
+        }
+    });
+    window.location.hash = "#skills";
 }
 
 function shortsHover(index) {
@@ -102,6 +109,14 @@ function shortsOpen(index) {
     
     document.getElementsByClassName("screen")[0].scrollTo(0, 250);
     },200);
+
+    currPage = 3;
+    window.addEventListener('resize', function() {
+        if (currPage == 3) {
+            shortsOpen(index);
+        }
+    });
+    window.location.hash = `#${skills[index][0].substring(0, skills[index][0].length - 4)}`;
 }
 
 function switchExperience(index, skill) {

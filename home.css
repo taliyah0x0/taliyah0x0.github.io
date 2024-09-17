@@ -12,12 +12,12 @@
 
 @media only screen and (min-aspect-ratio: 1/1) { /* For laptop */
     .banner {
-        height: 20vh;
+        height: 22vh;
     }
 
     .screen {
         width: 75vw;
-        height: 90vh;
+        height: 100vh;
         padding: 0px 22px 0px 22px;
         border-top: 2px solid silver;
         border-left: 2px solid silver;
@@ -122,7 +122,7 @@
 
     .opening {
         width: 75vw;
-        height: calc(90vh - 40px);
+        height: calc(100vh - 40px);
     }
 
     .playlist-cover {
@@ -137,7 +137,7 @@
 
     .screen {
         width: 100vw;
-        height: 90vh;
+        height: 100vh;
     }
 
     .laptop {

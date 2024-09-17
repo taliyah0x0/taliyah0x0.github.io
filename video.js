@@ -258,7 +258,6 @@ function openVideo(index) {
 
     if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
         let left = document.getElementsByClassName("left-panel")[0].offsetHeight;
-        console.log(left)
         document.getElementsByClassName("right-panel")[0].style.top = (left + 240) + 'px';
     }
 
@@ -267,6 +266,14 @@ function openVideo(index) {
     document.getElementsByClassName("open-video")[0].style.height = (left_panel > right_panel) ? left_panel : right_panel + 'px';
 
     document.getElementsByClassName("screen")[0].scrollTo(0, 240);
+
+    currPage = 1;
+    window.addEventListener('resize', function() {
+        if (currPage == 1) {
+            openVideo(index);
+        }
+    });
+    window.location.hash = `#${all[index][0].substring(0, all[index][0].length - 4)}`;
 }
 
 var play = 0;

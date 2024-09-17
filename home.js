@@ -1,10 +1,52 @@
 var startIndex = 0;
 var smallStartIndex = 0;
+var currPage = 0;
+var firstLoad = 0;
+
 function loadhome() {
+    if (firstLoad == 0) {
+        let pathname = window.location.hash;
+        pathname = pathname.substring(1, pathname.length);
+        if (pathname.length > 0) {
+            switch (pathname) {
+                case "skills":
+                    skillsOpen();
+                    break;
+                case "experiences":
+                    loadSmallVideos(all, 'All');
+                    window.location.hash = "#experiences";
+                    break;
+                case "playlists":
+                    openPlaylists();
+                    break;
+                case "about":
+                    openAbout();
+                    break;
+                default:
+                    break;
+            }
+
+            for (var i = 0; i < all.length; i++) {
+                if (pathname == all[i][0].substring(0, all[i][0].length - 4)) {
+                    openVideo(i);
+                }
+            }
+
+            for (var i = 0; i < skills.length; i++) {
+                if (pathname == skills[i][0].substring(0, skills[i][0].length - 4)) {
+                    shortsOpen(i);
+                }
+            }
+        }
+        firstLoad = 1;
+    }
+
     setTimeout(() => {
         document.getElementsByClassName('opening')[0].classList.add('hide');
         if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
-            document.getElementsByClassName('trailer-video')[0].play();
+            setTimeout(() => {
+                document.getElementsByClassName('trailer-video')[0].play();
+            }, 1000);
         }
         setTimeout(() => {
             document.getElementsByClassName('opening')[0].style.display = 'none';
@@ -112,6 +154,14 @@ function loadhome() {
             </a>
         </div>`;
     }
+
+    currPage = 0;
+    window.addEventListener('resize', function() {
+        if (currPage == 0) {
+            window.location.reload();
+        }
+    });
+    window.location.hash = "";
 }
 
 function setAgo(startYear, startMonth, startDay) {
@@ -191,7 +241,7 @@ function clickMenu(index) {
         loadhome();
 
     } else if (index == 1) {
-        let container = document.getElementById("container");
+        //let container = document.getElementById("container");
         //total_load = Math.floor((container.offsetWidth - 60) / 240) * 2;
         //loadSmallVideos(all.slice(0, total_load), 'All');
         loadSmallVideos(all, 'All');
@@ -207,6 +257,7 @@ function clickMenu(index) {
                 }
             }
         });*/
+        window.location.hash = "#experiences";
         
     } else if (index == 2) {
         shuffle(indices);
@@ -214,49 +265,59 @@ function clickMenu(index) {
         skill_playlists = indices.map(index => skill_playlists[index]);
         sk_list = indices.map(index => sk_list[index]);
         skillsOpen();
+
     } else if (index == 3) {
-        document.getElementById("container").style.backgroundColor = "#0F0E0E";
-        document.getElementById("container").innerHTML =  `<div class="page"></div>`;
-        for (var i = 0; i < playlists.length - 1; i++) {
-            document.getElementsByClassName("page")[0].innerHTML += 
-            `<div class="block-video" onclick="loadSmallVideos(${playlists[i][2]}, '${playlists[i][0]}')" onmouseover="playlistOver(${i})" onmouseout="playlistOut(${i})">
-                <div class="small-video-thumbnail">
-                    <div class="playlist-cover">
-                        <div class="playlist-count"></div>
-                        <div class="playlist-icon"></div>
-                    </div>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 10px">
-                    <div class="small-video-title"></div>
-                    <div class="video-sub" style="margin-bottom: 20px">VIEW FULL PLAYLIST</div>
-                </div>
-            </div>`;
-            document.getElementsByClassName("small-video-thumbnail")[i].style.backgroundImage = `url(thumbnails/${playlists[i][1][0][0]})`;
-            document.getElementsByClassName("small-video-title")[i].innerHTML = `${playlists[i][0]}`;
-            document.getElementsByClassName("playlist-count")[i].innerHTML = `${playlists[i][1].length}`
-        }
-        for (var i = 0; i < skill_playlists.length; i++) {
-            console.log(skill_playlists[i][0]);
-            document.getElementsByClassName("page")[0].innerHTML +=
-            `<div class="block-video" onclick="loadSmallVideos(sk_list[${i}], '${skill_playlists[i][0]}')" onmouseover="playlistOver(${i + playlists.length - 1})" onmouseout="playlistOut(${i + playlists.length - 1})">
-                <div class="small-video-thumbnail">
-                    <div class="playlist-cover">
-                        <div class="playlist-count"></div>
-                        <div class="playlist-icon"></div>
-                    </div>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 10px">
-                    <div class="small-video-title"></div>
-                    <div class="video-sub">VIEW FULL PLAYLIST</div>
-                </div>
-            </div>`;
-            document.getElementsByClassName("small-video-thumbnail")[i + playlists.length - 1].style.backgroundImage = `url(skills/${skill_playlists[i][3]})`;
-            document.getElementsByClassName("small-video-title")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][0]}`;
-            document.getElementsByClassName("playlist-count")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][2]}`;
-        }
+        openPlaylists();
 
     } else if (index == 4) {
-        document.getElementById("container").innerHTML =  `
+        openAbout();
+    }
+}
+
+function openPlaylists() {
+    document.getElementById("container").style.backgroundColor = "#0F0E0E";
+    document.getElementById("container").innerHTML =  `<div class="page"></div>`;
+    for (var i = 0; i < playlists.length - 1; i++) {
+        document.getElementsByClassName("page")[0].innerHTML += 
+        `<div class="block-video" onclick="loadSmallVideos(${playlists[i][2]}, '${playlists[i][0]}')" onmouseover="playlistOver(${i})" onmouseout="playlistOut(${i})">
+            <div class="small-video-thumbnail">
+                <div class="playlist-cover">
+                    <div class="playlist-count"></div>
+                    <div class="playlist-icon"></div>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+                <div class="small-video-title"></div>
+                <div class="video-sub" style="margin-bottom: 20px">VIEW FULL PLAYLIST</div>
+            </div>
+        </div>`;
+        document.getElementsByClassName("small-video-thumbnail")[i].style.backgroundImage = `url(thumbnails/${playlists[i][1][0][0]})`;
+        document.getElementsByClassName("small-video-title")[i].innerHTML = `${playlists[i][0]}`;
+        document.getElementsByClassName("playlist-count")[i].innerHTML = `${playlists[i][1].length}`
+    }
+    for (var i = 0; i < skill_playlists.length; i++) {
+        document.getElementsByClassName("page")[0].innerHTML +=
+        `<div class="block-video" onclick="loadSmallVideos(sk_list[${i}], '${skill_playlists[i][0]}')" onmouseover="playlistOver(${i + playlists.length - 1})" onmouseout="playlistOut(${i + playlists.length - 1})">
+            <div class="small-video-thumbnail">
+                <div class="playlist-cover">
+                    <div class="playlist-count"></div>
+                    <div class="playlist-icon"></div>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+                <div class="small-video-title"></div>
+                <div class="video-sub">VIEW FULL PLAYLIST</div>
+            </div>
+        </div>`;
+        document.getElementsByClassName("small-video-thumbnail")[i + playlists.length - 1].style.backgroundImage = `url(skills/${skill_playlists[i][3]})`;
+        document.getElementsByClassName("small-video-title")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][0]}`;
+        document.getElementsByClassName("playlist-count")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][2]}`;
+    }
+    window.location.hash = "#playlists";
+}
+
+function openAbout() {
+    document.getElementById("container").innerHTML =  `
         <div class="block">
             <div class="about-text-container">
             <div class="block-title">About Me</div>
@@ -284,10 +345,10 @@ function clickMenu(index) {
         <br>Youtube: <a href="http://youtube.com/@taliyahengineering" target="_blank" class="hyperlink">https://youtube.com/@taliyahengineering</a>
         <br>Instagram: <a href="http://instagram.com/taliyahengineering" target="_blank" class="hyperlink">http://instagram.com/taliyahengineering</a>
         <br>Facebook: <a href="http://facebook.com/taliyahengineering" target="_blank" class="hyperlink">http://facebook.com/taliyahengineering</a>
-        <br>TikTok: <a href="http://tiktok.com/@taliyahengineering" target="_blank" class="hyperlink">http://tiktok.com/@taliyahengineering</a>`
-    }
+        <br>TikTok: <a href="http://tiktok.com/@taliyahengineering" target="_blank" class="hyperlink">http://tiktok.com/@taliyahengineering</a>`;
 
     document.getElementsByClassName("screen")[0].scrollTo(0, 250);
+    window.location.hash = "#about";
 }
 
 const setVideoStarts = () => {
