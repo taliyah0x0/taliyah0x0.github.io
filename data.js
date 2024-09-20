@@ -152,8 +152,8 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         <br>❥ Shadowed and analyzed multiple minimally-invasive Da Vinci robotic surgeries at the Johns Hopkins Bayview Medical Center`,
     
         ['Leadership', 'Design Thinking'],
-        ['Shadowing Da Vinci procedures at the hospital', 'Mindmapping observations and finding needs'],
-        ['IMG_2393.mp4', 'mindmap.mp4'],
+        ['Shadowing procedures at the hospital', 'Mindmapping observations and finding needs', 'I vlogged the intersession DT leader class!'],
+        ['IMG_2393.mp4', 'mindmap.mp4', 'https://www.youtube.com/watch?v=Hb0S-mTIlP0&t=75s'],
         ''
     ],
     ["highergrounds.jpg", '🔉 LIVE', "Co-Founder, Business Development & Graphic Design", '2023-05-12', 'Higher Grounds Vending L.L.C.', 'mD-utJUMmkU', 0, "", "#baltimore #maryland", 
