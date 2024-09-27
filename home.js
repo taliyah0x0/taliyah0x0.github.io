@@ -49,9 +49,6 @@ function loadhome() {
             </video>`;
         setTimeout(() => {
             document.getElementsByClassName('opening')[0].style.display = 'none';
-            /*if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
-                document.getElementsByClassName('trailer-video')[0].play();
-            }*/
         }, 1000);
     }, 1500);
     for (var i = 0; i < fw.length; i++) {
@@ -67,6 +64,12 @@ function loadhome() {
                 <div class="video-sub"></div>
                 <div class="video-tag">Work Experience</div>
             </div>`;
+        
+        if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+            document.getElementsByClassName("video-thumbnail")[i].innerHTML =
+            `<div class="clear"></div>
+            <div class="duration"></div>`;
+        }
         document.getElementsByClassName("clear")[i].style.backgroundImage = `url('thumbnails/${w[fw[i]][0]}')`;
         document.getElementsByClassName("duration")[i].innerHTML = `${w[fw[i]][1]}`;
         document.getElementsByClassName("duration")[i].style.width = "45px";
@@ -101,6 +104,11 @@ function loadhome() {
                 <div class="video-sub"></div>
                 <div class="video-tag">Project</div>
             </div>`;
+        if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+            document.getElementsByClassName("video-thumbnail")[i + fw.length].innerHTML =
+            `<div class="clear"></div>
+            <div class="duration"></div>`;
+        }
         document.getElementsByClassName("clear")[i + fw.length].style.backgroundImage = `url('thumbnails/fp/${p[fp[i]][0]}')`;
         document.getElementsByClassName("duration")[i + fw.length].style.width = "40px";
         document.getElementsByClassName("duration")[i + fw.length].style.left = "100px";
@@ -458,8 +466,14 @@ function loadSmallVideos(list, list_name) {
                     <div class="video-sub"></div>
                     <div class="video-tag"></div>
                 </div>
-            </div>`
-        
+            </div>`;
+
+        if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+            document.getElementsByClassName("small-video-thumbnail")[i].innerHTML =
+            `<div class="small-clear"></div>
+            <div class="small-duration"></div>`;
+        }
+
         document.getElementsByClassName("small-clear")[i].style.backgroundImage = `url('thumbnails/${list[i][0]}')`;
         document.getElementsByClassName("small-duration")[i].innerHTML = `${list[i][1]}`;
         if (p.includes(list[i])) {
