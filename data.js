@@ -72,7 +72,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
     
         ['Arduino', 'CAD', '3D Printing', 'Web Design'],
         ['Designed the project website', 'Filmed an ad-like video'],
-        ['https://bit.ly/stemables', 'https://youtube.com/watch?v=6V3gyArkQ38'],
+        ['http://bit.ly/stemables', 'https://youtube.com/watch?v=6V3gyArkQ38'],
         ''
     ],
     ["cpace.png", '7 mos', 'CPACE - Assistive Technology for Quadriplegia', '2020-11-01', 'Arduino/CAD', '0uANgR1oOII', 25, "https://bit.ly/projectcpace",
@@ -82,7 +82,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
 
         ['Arduino', 'CAD', '3D Printing', 'Web Design'],
         ['Designed the project website', 'Filmed an ad-like video'],
-        ['https://bit.ly/projectcpace', 'https://youtube.com/watch?v=0uANgR1oOII'],
+        ['http://bit.ly/projectcpace', 'https://youtube.com/watch?v=0uANgR1oOII'],
         ''
     ],
     ["swanchair.png", '1 mo', 'Swan Chair - Musical Throne', '2020-06-01', 'Arduino/CAD/Handicraft', 'jH6qUVLfZfc', 2, "",
