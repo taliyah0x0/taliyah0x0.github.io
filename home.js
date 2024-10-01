@@ -460,7 +460,7 @@ function stopsmallvid(index) {
 
 function loadSmallVideos(list, list_name) {
     if (list_name != 'All') {
-        document.getElementById("container").innerHTML =  `<div class="block-title" style="margin: 30px 0px 10px 30px;">${list_name}<div class="playlist-icon"></div></div><div class="page"></div>`;
+        document.getElementById("container").innerHTML =  `<div class="block-title" style="margin-left: 30px; padding-top: 30px">${list_name}<div class="playlist-icon"></div></div><div class="page"></div>`;
     } else {
         document.getElementById("container").innerHTML =  `<div class="page"></div>`;
     }
