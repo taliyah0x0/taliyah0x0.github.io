@@ -12,20 +12,19 @@ function loadhome() {
             switch (pathname) {
                 case "skills":
                     skipOut = 1;
-                    skillsOpen();
+                    clickMenu(2);
                     break;
                 case "experiences":
                     skipOut = 1;
-                    loadSmallVideos(all, 'All');
-                    window.location.hash = "#experiences";
+                    clickMenu(1);
                     break;
                 case "playlists":
                     skipOut = 1;
-                    openPlaylists();
+                    clickMenu(3);
                     break;
                 case "about":
                     skipOut = 1;
-                    openAbout();
+                    clickMenu(4);
                     break;
                 default:
                     break;
