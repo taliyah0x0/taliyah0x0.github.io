@@ -47,7 +47,7 @@ function openVideo(index) {
         video_iframe_w = 360;
     }
     
-    if (code.substring(0,8) != "https://" && files.includes(content_array[0].slice(-3).toLowerCase()) == false) {
+    if (code.substring(0,8) != "https://" && !files.includes(content_array[0].slice(-3).toLowerCase())) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
@@ -113,7 +113,7 @@ function openVideo(index) {
             </div>
         </div>`;
         
-        if (files.slice(0,2).includes(content_array[0].slice(-3).toLowerCase()) == false) {
+        if (!files.slice(0,2).includes(content_array[0].slice(-3).toLowerCase())) {
             document.getElementsByClassName('iframe-container')[0].style.backgroundImage = `url('content/${index}/${content_array[0]}')`;
             document.getElementsByTagName("video").style.opacity = 0;
         }

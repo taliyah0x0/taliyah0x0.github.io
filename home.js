@@ -5,6 +5,36 @@ var firstLoad = 0;
 var skipOut = 0;
 
 function loadhome() {
+    if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+        document.getElementsByClassName('header')[0].innerHTML =
+        `<div class="profile">
+            <div class="profile-image"></div>
+            <div class="name">
+                <div>Taliyah Huang</div>
+                <div class="name-banner">
+                    ✓ Looking for internships
+                </div>
+            </div>
+        </div>
+        <div class="sub">Surgical robotics • Software • Medical device engineering • Startups</div>
+        <div class="buttons">
+            <a href="https://www.linkedin.com/in/taliyah-huang/" target="_blank">
+                <div class="join-button">
+                    in
+                </div>
+            </a>
+            <a href="Taliyah_Huang_CV.pdf" target="_blank">
+                <div class="cv-button">
+                    cv
+                </div>
+            </a>
+            <a href="mailto:taliyahengineering@gmail.com" target="_blank">
+                <div class="subscribe-button">
+                    Contact Me
+                </div>
+            </a>
+        </div>`;
+    }
     if (firstLoad == 0) {
         let pathname = window.location.hash;
         pathname = pathname.substring(1, pathname.length);
@@ -144,37 +174,6 @@ function loadhome() {
         
         setInterval(setVideoStarts, 50000 / (fw.length + fp.length));
 
-        if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
-            document.getElementsByClassName('header')[0].innerHTML =
-            `<div class="profile">
-                <div class="profile-image"></div>
-                <div class="name">
-                    <div>Taliyah Huang</div>
-                    <div class="name-banner">
-                        ✓ Looking for internships
-                    </div>
-                </div>
-            </div>
-            <div class="sub">Surgical robotics • Software • Medical device engineering • Startups</div>
-            <div class="buttons">
-                <a href="https://www.linkedin.com/in/taliyah-huang/" target="_blank">
-                    <div class="join-button">
-                        in
-                    </div>
-                </a>
-                <a href="Taliyah_Huang_CV.pdf" target="_blank">
-                    <div class="cv-button">
-                        cv
-                    </div>
-                </a>
-                <a href="mailto:taliyahengineering@gmail.com" target="_blank">
-                    <div class="subscribe-button">
-                        Contact Me
-                    </div>
-                </a>
-            </div>`;
-        }
-
         currPage = 0;
         window.addEventListener('resize', function() {
             if (currPage == 0) {
@@ -267,7 +266,7 @@ function clickMenu(index) {
         //loadSmallVideos(all.slice(0, total_load), 'All');
         loadSmallVideos(all, 'All');
         
-        /*let screen = document.getElementsByClassName("screen")[0];
+        let screen = document.getElementsByClassName("screen")[0];
         screen.addEventListener('scroll', function() {
             if (total_load < all.length) {
                 if (screen.scrollTop >= -200 + (total_load / Math.floor((container.offsetWidth - 60) / 240)) * 230) {
@@ -277,7 +276,7 @@ function clickMenu(index) {
                     total_load += addition;
                 }
             }
-        });*/
+        });
         window.location.hash = "#experiences";
         
     } else if (index == 2) {
