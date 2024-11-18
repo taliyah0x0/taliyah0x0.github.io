@@ -216,6 +216,19 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['https://www.youtube.com/watch?v=dytG8M8cfBY'],
         ''
     ],
+    ["lab.jpg", '7 mos', 'User Interface and Experience Designer', '2023-05-22', 'Quest2Learn', 'X1B1jnD45sY', 0, "", "#figma #ar #design",
+        
+        "q2l.jpeg", "AR platform for laboratory science education", "https://quest2learn.notion.site/Quest2Learn-eb16a5657d9d41ff93c974c241db6ff8/",
+
+        `❥ Conducted user interviews to understand root problems in laboratory science education
+        <br>❥ Programmed Streamlit Python web application for dermatology education (Derm Discovery)
+        <br>❥ Designed an app interface in Figma for lab skills development tool featuring AR and AI (Quest2Learn AR + Lab Co-Pilot)`,
+        
+        ['Python', 'Graphic Design'],
+        ['Demo of interactive skin disorder education app', 'Demo of virtual lab interface', 'Demo of lab notebook and AI chatbot interface'],
+        ['skin.mp4', 'labview.mp4', 'copilot.mp4'],
+        ''
+    ],
     ["research.jpg", '12 mos', 'Undergraduate Robotics Researcher', '2023-01-22', 'Dr. Li Terradynamics Lab', 'RG9TMn1FJzc', 67, "", "#meche #robotics #computervision",
         
         "jhuwse.jpg", "Movement science at the interface of biology, robotics & physics", "https://li.me.jhu.edu/",
