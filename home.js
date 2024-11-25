@@ -63,6 +63,8 @@ function loadhome() {
             for (var i = 0; i < all.length; i++) {
                 if (pathname == all[i][0].substring(0, all[i][0].length - 4)) {
                     skipOut = 1;
+                    document.getElementsByClassName("menu-item")[0].id = "menu-item";
+                    document.getElementsByClassName("menu-item")[1].id = "highlight-item";
                     openVideo(i);
                 }
             }
@@ -70,6 +72,8 @@ function loadhome() {
             for (var i = 0; i < skills.length; i++) {
                 if (pathname == skills[i][0].substring(0, skills[i][0].length - 4)) {
                     skipOut = 1;
+                    document.getElementsByClassName("menu-item")[0].id = "menu-item";
+                    document.getElementsByClassName("menu-item")[2].id = "highlight-item";
                     shortsOpen(i);
                 }
             }
