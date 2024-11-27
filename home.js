@@ -237,13 +237,15 @@ function clickMenu(index) {
             <div class="block">
                 <div class="trailer-elements">
                     <div class="trailer-video-container">
-                        <a href="trailer.mp4" target="_blank"><video controls autoplay muted loop class="trailer-video">
+                        <a href="trailer.mp4" target="_blank">
+                            <video controls autoplay muted loop class="trailer-video">
                             <source src="trailer.mp4" type="video/mp4">
-                        </video></a>
+                            </video>
+                        </a>
                     </div>
                     <div class="trailer-text">
-                        <div class="trailer-video-title">Channel Trailer: Taliyah Huang</div>
-                        <div class="trailer-video-sub">Inventive trailblazer with a cheerful energy! • 19 years old</div>
+                        <a href="trailer.mp4" target="_blank"><div class="trailer-video-title">Channel Trailer: Taliyah Huang</div></a>
+                        <div class="trailer-video-sub">Inventive trailblazer with a cheerful energy! • 20 years old</div>
                         <div class="trailer-video-description">I’m a biomedical engineering student at Johns Hopkins University, while also pursuing minors that capture my interest for robotics, computer science, and entrepreneurship.
                             <br><br>As a high schooler, I discovered a passion for engineering, and spent years honing my creativity and innovation.
                             <br><br>I met my best friend who supported me, despite my failed assistive device I had worked on for months.
