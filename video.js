@@ -82,7 +82,7 @@ function openVideo(index) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
-                <video width="${video_iframe_w}" height="${video_iframe_h}" src="content/${all[index][4]}/${content_array[0]}" autoplay playsinline></video>
+                <video width="${video_iframe_w}" height="${video_iframe_h}" src="content/${all[index][4]}/${content_array[0]}" autoplay muted playsinline></video>
             </div>
             <div class="video-cover" onclick="pause()">
                 <div class="heartplay"></div>
