@@ -85,9 +85,9 @@ function loadhome() {
             document.getElementsByClassName('opening')[0].classList.add('hide');
             if (skipOut == 0) {
                 document.getElementsByClassName("trailer-video-container")[0].innerHTML =
-                    `<video muted loop class="trailer-video" autoplay playsinline>
+                    `<a href="trailer.mp4" target="_blank"><video muted loop class="trailer-video" autoplay playsinline>
                         <source src="trailer.mp4" type="video/mp4">
-                    </video>`;
+                    </video></a>`;
             }
             setTimeout(() => {
                 document.getElementsByClassName('opening')[0].style.display = 'none';

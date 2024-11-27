@@ -51,7 +51,7 @@ function openVideo(index) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
-                <iframe src="https://www.youtube.com/embed/${code}?mute=1&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+                <iframe src="https://www.youtube.com/embed/${code}?mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
                     height="${video_iframe_h}" width="${video_iframe_w}" frameborder="0" allowfullscreen style="position:absolute; top:-60px;"></iframe>
             </div>
             <div class="cover"></div>
@@ -82,7 +82,7 @@ function openVideo(index) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
-                <video width="${video_iframe_w}" height="${video_iframe_h}" src="content/${all[index][4]}/${content_array[0]}" autoplay muted playsinline></video>
+                <video width="${video_iframe_w}" height="${video_iframe_h}" src="content/${all[index][4]}/${content_array[0]}" autoplay playsinline></video>
             </div>
             <div class="video-cover" onclick="pause()">
                 <div class="heartplay"></div>
@@ -132,7 +132,7 @@ function openVideo(index) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
-                <iframe src="${code}" height="${video_iframe_h}" width="${video_iframe_w}" frameborder="0" id="none" muted="yes"></iframe>
+                <iframe src="${code}" height="${video_iframe_h}" width="${video_iframe_w}" frameborder="0" id="none" muted="no"></iframe>
             </div>
             <div class="video-cover" onclick="pause()">
                 <div class="heartplay"></div>
