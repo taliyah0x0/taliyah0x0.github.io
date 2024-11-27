@@ -237,9 +237,9 @@ function clickMenu(index) {
             <div class="block">
                 <div class="trailer-elements">
                     <div class="trailer-video-container">
-                        <video controls autoplay muted loop class="trailer-video">
+                        <a href="trailer.mp4" target="_blank"><video controls autoplay muted loop class="trailer-video">
                             <source src="trailer.mp4" type="video/mp4">
-                        </video>
+                        </video></a>
                     </div>
                     <div class="trailer-text">
                         <div class="trailer-video-title">Channel Trailer: Taliyah Huang</div>
