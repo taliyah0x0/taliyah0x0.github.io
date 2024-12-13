@@ -40,21 +40,25 @@ function loadhome() {
         pathname = pathname.substring(1, pathname.length);
         if (pathname.length > 0) {
             switch (pathname) {
-                case "skills":
-                    skipOut = 1;
-                    clickMenu(2);
-                    break;
                 case "experiences":
                     skipOut = 1;
                     clickMenu(1);
+                    break;
+                case "skills":
+                    skipOut = 1;
+                    clickMenu(2);
                     break;
                 case "playlists":
                     skipOut = 1;
                     clickMenu(3);
                     break;
-                case "about":
+                case "casestudies":
                     skipOut = 1;
                     clickMenu(4);
+                    break;
+                case "about":
+                    skipOut = 1;
+                    clickMenu(5);
                     break;
                 default:
                     break;
@@ -94,101 +98,137 @@ function loadhome() {
             }, 1000);
         }, 1500);
 
-    if (skipOut == 0) {
-        for (var i = 0; i < fw.length; i++) {
-            document.getElementsByClassName("block-elements")[0].innerHTML +=
-                `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="openVideo(${all.indexOf(w[fw[i]])})">
-                    <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/${w[fw[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${w[fw[i]][6]}"
-                    height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
-                        <div class="clear"></div>
-                        <div class="duration"></div>
-                    </div>
-                    <div class="video-title"></div>
-                    <div class="video-sub"></div>
-                    <div class="video-tag">Work Experience</div>
-                </div>`;
-            
-            if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
-                document.getElementsByClassName("video-thumbnail")[i].innerHTML =
-                `<div class="clear"></div>
-                <div class="duration"></div>`;
-            }
-            document.getElementsByClassName("clear")[i].style.backgroundImage = `url('thumbnails/${w[fw[i]][0]}')`;
-            document.getElementsByClassName("duration")[i].innerHTML = `${w[fw[i]][1]}`;
-            document.getElementsByClassName("duration")[i].style.width = "45px";
-            document.getElementsByClassName("duration")[i].style.left = "100px";
-            document.getElementsByClassName("duration")[i].style.fontWeight = "bold";
-            if (w[fw[i]][1] == '🔉 LIVE') {
-                document.getElementsByClassName("duration")[i].style.backgroundColor = "red";
-                document.getElementsByClassName("duration")[i].style.paddingTop = "0";
-                document.getElementsByClassName("duration")[i].style.paddingBottom = "0";
-                document.getElementsByClassName("video-sub")[i].innerHTML = `${w[fw[i]][4]}`;
-            } else {
-                document.getElementsByClassName("duration")[i].style.backgroundColor = "rgb(0,0,0,0.5)";
-                var startYear = parseInt(w[fw[i]][3].slice(0, 4));
-                var startMonth = parseInt(w[fw[i]][3].slice(5, 7));
-                var startDay = parseInt(w[fw[i]][3].slice(8, 10));
-                var ago = setAgo(startYear, startMonth, startDay);
-                document.getElementsByClassName("video-sub")[i].innerHTML = `${w[fw[i]][4]} • ${ago}`;
-            }
-            document.getElementsByClassName("video-title")[i].innerHTML = `${w[fw[i]][2]}`;
-        }
-        
-        for (var i = 0; i < fp.length; i++) {
-            document.getElementsByClassName("block-elements")[1].innerHTML +=
-                `<div class="block-video" onmouseenter="playvid(${i + fw.length})" onmouseleave="stopvid(${i + fw.length})" onclick="openVideo(${all.indexOf(p[fp[i]])})">
-                    <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/${p[fp[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${p[fp[i]][6]}"
-                    height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
-                        <div class="clear"></div>
-                        <div class="duration"></div>
-                    </div>
-                    <div class="video-title"></div>
-                    <div class="video-sub"></div>
-                    <div class="video-tag">Project</div>
-                </div>`;
-            if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
-                document.getElementsByClassName("video-thumbnail")[i + fw.length].innerHTML =
-                `<div class="clear"></div>
-                <div class="duration"></div>`;
-            }
-            document.getElementsByClassName("clear")[i + fw.length].style.backgroundImage = `url('thumbnails/fp/${p[fp[i]][0]}')`;
-            document.getElementsByClassName("duration")[i + fw.length].style.width = "40px";
-            document.getElementsByClassName("duration")[i + fw.length].style.left = "100px";
-            document.getElementsByClassName("duration")[i + fw.length].style.backgroundColor = "rgb(0,0,0,0.5)";
-            document.getElementsByClassName("duration")[i + fw.length].style.fontWeight = "bold";
-            document.getElementsByClassName("duration")[i + fw.length].innerHTML = `${p[fp[i]][1]}`;
-            document.getElementsByClassName("video-title")[i + fw.length].innerHTML = `${p[fp[i]][2]}`;
-
-            var startYear = parseInt(p[fp[i]][3].slice(0, 4));
-            var startMonth = parseInt(p[fp[i]][3].slice(5, 7));
-            var startDay = parseInt(p[fp[i]][3].slice(8, 10));
-            var ago = setAgo(startYear, startMonth, startDay);
-            document.getElementsByClassName("video-sub")[i + fw.length].innerHTML = `${p[fp[i]][4]} • ${ago}`;
-        }
-
-        var blocks = document.getElementsByClassName("block-elements");
-        for (var i = 0; i < blocks.length; i++) {
-            document.getElementsByClassName("block-elements")[i].innerHTML +=
-            `<div class="block-right" onclick="loadSmallVideos(${playlists[i][2]}, '${playlists[i][0]}')">
-                <img style="width: 50px; height: 50px;" src="icons/icons8-next-page-96.png">
-            </div>`;
-        }
-        
-        setInterval(setVideoStarts, 50000 / (fw.length + fp.length));
-
-        currPage = 0;
-        window.addEventListener('resize', function() {
-            if (currPage == 0) {
-                window.location.reload();
-            }
-        });
-        window.location.hash = "";
+    if (!skipOut) {
+        loadhomefull();
     }
+    window.addEventListener('resize', function() {
+        window.location.reload();
+    });
 }
 
-function setAgo(startYear, startMonth, startDay) {
+function loadhomefull() {
+    for (var i = 0; i < case_studies.length; i++) {
+        document.getElementsByClassName("block-elements")[0].innerHTML +=
+            `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="clickMenu(4)">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/${case_studies[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+                height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
+                    <div class="clear"></div>
+                    <div class="duration"></div>
+                </div>
+                <div class="video-title"></div>
+                <div class="video-sub"></div>
+                <div class="video-tag">Case Study</div>
+            </div>`;
+        
+        if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+            document.getElementsByClassName("video-thumbnail")[i].innerHTML =
+            `<div class="clear"></div>
+            <div class="duration"></div>`;
+        }
+        document.getElementsByClassName("clear")[i].style.backgroundImage = `url('community/${case_studies[i][4]}')`;
+        document.getElementsByClassName("duration")[i].innerHTML = `${case_studies[i][2]}`;
+        document.getElementsByClassName("duration")[i].style.width = "45px";
+        document.getElementsByClassName("duration")[i].style.left = "100px";
+        document.getElementsByClassName("duration")[i].style.fontWeight = "bold";
+
+        document.getElementsByClassName("duration")[i].style.backgroundColor = "rgb(0,0,0,0.5)";
+        var ago = setAgo(case_studies[i][3]);
+        document.getElementsByClassName("video-sub")[i].innerHTML = `${case_studies[i][6]} • ${ago}`;
+
+        document.getElementsByClassName("video-title")[i].innerHTML = `${case_studies[i][1]}`;
+    }
+    document.getElementsByClassName("block-elements")[0].innerHTML +=
+    `<div class="block-right" onclick="clickMenu(4)">
+        <img style="width: 50px; height: 50px;" src="icons/icons8-next-page-96.png">
+    </div>`;
+
+    for (var i = 0; i < fw.length; i++) {
+        document.getElementsByClassName("block-elements")[1].innerHTML +=
+            `<div class="block-video" onmouseenter="playvid(${i + case_studies.length})" onmouseleave="stopvid(${i + case_studies.length})" onclick="openVideo(${all.indexOf(w[fw[i]])})">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/${w[fw[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${w[fw[i]][6]}"
+                height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
+                    <div class="clear"></div>
+                    <div class="duration"></div>
+                </div>
+                <div class="video-title"></div>
+                <div class="video-sub"></div>
+                <div class="video-tag">Work Experience</div>
+            </div>`;
+        
+        if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+            document.getElementsByClassName("video-thumbnail")[i + case_studies.length].innerHTML =
+            `<div class="clear"></div>
+            <div class="duration"></div>`;
+        }
+        document.getElementsByClassName("clear")[i + case_studies.length].style.backgroundImage = `url('thumbnails/${w[fw[i]][0]}')`;
+        document.getElementsByClassName("duration")[i + case_studies.length].innerHTML = `${w[fw[i]][1]}`;
+        document.getElementsByClassName("duration")[i + case_studies.length].style.width = "45px";
+        document.getElementsByClassName("duration")[i + case_studies.length].style.left = "100px";
+        document.getElementsByClassName("duration")[i + case_studies.length].style.fontWeight = "bold";
+        if (w[fw[i]][1] == '🔉 LIVE') {
+            document.getElementsByClassName("duration")[i + case_studies.length].style.backgroundColor = "red";
+            document.getElementsByClassName("duration")[i + case_studies.length].style.paddingTop = "0";
+            document.getElementsByClassName("duration")[i + case_studies.length].style.paddingBottom = "0";
+            document.getElementsByClassName("video-sub")[i + case_studies.length].innerHTML = `${w[fw[i]][4]}`;
+        } else {
+            document.getElementsByClassName("duration")[i + case_studies.length].style.backgroundColor = "rgb(0,0,0,0.5)";
+            var ago = setAgo(w[fw[i]][3]);
+            document.getElementsByClassName("video-sub")[i + case_studies.length].innerHTML = `${w[fw[i]][4]} • ${ago}`;
+        }
+        document.getElementsByClassName("video-title")[i + case_studies.length].innerHTML = `${w[fw[i]][2]}`;
+    }
+    document.getElementsByClassName("block-elements")[1].innerHTML +=
+    `<div class="block-right" onclick="loadSmallVideos(${playlists[2][2]}, '${playlists[2][0]}')">
+        <img style="width: 50px; height: 50px;" src="icons/icons8-next-page-96.png">
+    </div>`;
+
+    for (var i = 0; i < fp.length; i++) {
+        document.getElementsByClassName("block-elements")[2].innerHTML +=
+            `<div class="block-video" onmouseenter="playvid(${i + fw.length + case_studies.length})" onmouseleave="stopvid(${i + fw.length + case_studies.length})" onclick="openVideo(${all.indexOf(p[fp[i]])})">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/${p[fp[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${p[fp[i]][6]}"
+                height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
+                    <div class="clear"></div>
+                    <div class="duration"></div>
+                </div>
+                <div class="video-title"></div>
+                <div class="video-sub"></div>
+                <div class="video-tag">Project</div>
+            </div>`;
+        if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+            document.getElementsByClassName("video-thumbnail")[i + fw.length + case_studies.length].innerHTML =
+            `<div class="clear"></div>
+            <div class="duration"></div>`;
+        }
+        document.getElementsByClassName("clear")[i + fw.length + case_studies.length].style.backgroundImage = `url('thumbnails/fp/${p[fp[i]][0]}')`;
+        document.getElementsByClassName("duration")[i + fw.length + case_studies.length].style.width = "40px";
+        document.getElementsByClassName("duration")[i + fw.length + case_studies.length].style.left = "100px";
+        document.getElementsByClassName("duration")[i + fw.length + case_studies.length].style.backgroundColor = "rgb(0,0,0,0.5)";
+        document.getElementsByClassName("duration")[i + fw.length + case_studies.length].style.fontWeight = "bold";
+        document.getElementsByClassName("duration")[i + fw.length + case_studies.length].innerHTML = `${p[fp[i]][1]}`;
+        document.getElementsByClassName("video-title")[i + fw.length + case_studies.length].innerHTML = `${p[fp[i]][2]}`;
+
+        var ago = setAgo(p[fp[i]][3]);
+        document.getElementsByClassName("video-sub")[i + fw.length + case_studies.length].innerHTML = `${p[fp[i]][4]} • ${ago}`;
+    }
+    document.getElementsByClassName("block-elements")[2].innerHTML +=
+    `<div class="block-right" onclick="loadSmallVideos(${playlists[1][2]}, '${playlists[1][0]}')">
+        <img style="width: 50px; height: 50px;" src="icons/icons8-next-page-96.png">
+    </div>`;
+    
+    document.getElementsByClassName("screen")[0].scrollTo(0, 0);
+    setInterval(setVideoStarts, 50000 / (fw.length + fp.length));
+    currPage = 0;
+    window.location.hash = "";
+}
+
+function setAgo(input) {
+    var startYear = parseInt(input.slice(0, 4));
+    var startMonth = parseInt(input.slice(5, 7));
+    var startDay = parseInt(input.slice(8, 10));
+
     var currentDate = new Date().toJSON();
     var currentYear = parseInt(currentDate.slice(0, 4));
     var currentMonth = parseInt(currentDate.slice(5, 7));
@@ -227,7 +267,7 @@ function setAgo(startYear, startMonth, startDay) {
 
 let total_load = 0;
 function clickMenu(index) {
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 6; i++) {
         document.getElementsByClassName("menu-item")[i].id = "menu-item";
     }
     document.getElementsByClassName("menu-item")[index].id = "highlight-item";
@@ -255,6 +295,11 @@ function clickMenu(index) {
                 </div>
             </div>
             <div class="block">
+                <div class="block-title">Featured design case studies</div>
+                <div class="block-elements">
+                </div>
+            </div>
+            <div class="block">
                 <div class="block-title">Featured work experiences</div>
                 <div class="block-elements">
                 </div>
@@ -264,15 +309,14 @@ function clickMenu(index) {
                 <div class="block-elements">
                 </div>
             </div>`;
-        loadhome();
-
+        loadhomefull();
+        
     } else if (index == 1) {
         //let container = document.getElementById("container");
         //total_load = Math.floor((container.offsetWidth - 60) / 240) * 2;
         //loadSmallVideos(all.slice(0, total_load), 'All');
-        loadSmallVideos(all, 'All');
         
-        let screen = document.getElementsByClassName("screen")[0];
+        /*let screen = document.getElementsByClassName("screen")[0];
         screen.addEventListener('scroll', function() {
             if (total_load < all.length) {
                 if (screen.scrollTop >= -200 + (total_load / Math.floor((container.offsetWidth - 60) / 240)) * 230) {
@@ -282,7 +326,9 @@ function clickMenu(index) {
                     total_load += addition;
                 }
             }
-        });
+        });*/
+
+        loadSmallVideos(all, 'All');
         window.location.hash = "#experiences";
         
     } else if (index == 2) {
@@ -296,13 +342,71 @@ function clickMenu(index) {
         openPlaylists();
 
     } else if (index == 4) {
+        openCaseStudies();
+
+    } else if (index == 5) {
         openAbout();
+    }
+}
+
+let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+function openCaseStudies() {
+    for (var i = 0; i < case_studies.length; i++) {
+        var startYear = parseInt(case_studies[i][3].slice(0, 4));
+        var startMonth = parseInt(case_studies[i][3].slice(5, 7));
+        let date = months[startMonth - 1] + " " + startYear;
+
+        document.getElementById("container").innerHTML =
+        `<div class="community-block">
+            <div class="community-pfp" onclick="toggleCloseAll(${i})"></div>
+            <div class="community-section">
+                <div class="community-title" onclick="toggleCloseAll(${i})">${case_studies[i][1]}<div style="color: lightgrey; font-weight: normal;">${date}</div></div>
+                <div class="community-text"></div>
+            </div>
+        </div>`;
+        document.getElementsByClassName("community-pfp")[i].style.backgroundImage = `url(channels/${case_studies[i][0]})`;
+
+        let text_box = document.getElementsByClassName("community-text")[0];
+        for (var j = 0; j < (case_studies[i].length - 7)/2; j++) {
+            text_box.innerHTML +=
+            `<strong onclick="toggleSection(${i}, ${j})" class="case_${i}">❥ ${case_studies[i][j * 2 + 7]}</strong>
+            <div class="text-section case_${i}">${case_studies[i][j * 2 + 8]}</div><br>`;
+            toggleSection(i, j);
+        }
+
+        toggleSection(i, 0);
+    }
+
+    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
+    window.location.hash = "#casestudies";
+}
+
+function toggleCloseAll(index) {
+    let items = document.getElementsByClassName(`case_${index}`);
+    for (var i = 2; i < items.length / 2; i += 2) {
+        items[i + 1].innerHTML = "";
+        items[i].innerHTML = "❥" + items[i].innerHTML.substring(1);
+    }
+    items[1].innerHTML = case_studies[index][index * 2 + 8];
+    items[0].innerHTML = "❤︎" + strong.innerHTML.substring(1);
+}
+
+function toggleSection(case_num, index) {
+    let items = document.getElementsByClassName(`case_${case_num}`);
+    console.log(items[index * 2 + 1].innerHTML)
+    if (items[index * 2 + 1].innerHTML == "") {
+        items[index * 2 + 1].innerHTML = case_studies[case_num][index * 2 + 8];
+        items[index * 2].innerHTML = "❤︎" + items[index * 2].innerHTML.substring(1);
+    } else {
+        items[index * 2 + 1].innerHTML = "";
+        items[index * 2].innerHTML = "❥" + items[index * 2].innerHTML.substring(1);
     }
 }
 
 function openPlaylists() {
     document.getElementById("container").style.backgroundColor = "#0F0E0E";
     document.getElementById("container").innerHTML =  `<div class="page"></div>`;
+    
     for (var i = 0; i < playlists.length - 1; i++) {
         document.getElementsByClassName("page")[0].innerHTML += 
         `<div class="block-video" onclick="loadSmallVideos(${playlists[i][2]}, '${playlists[i][0]}')" onmouseover="playlistOver(${i})" onmouseout="playlistOut(${i})">
@@ -335,10 +439,12 @@ function openPlaylists() {
                 <div class="video-sub">VIEW FULL PLAYLIST</div>
             </div>
         </div>`;
-        document.getElementsByClassName("small-video-thumbnail")[i + playlists.length - 1].style.backgroundImage = `url(skills/${skill_playlists[i][3]})`;
+        document.getElementsByClassName("small-video-thumbnail")[i + playlists.length - 1].style.backgroundImage = `url(${skill_playlists[i][3]})`;
         document.getElementsByClassName("small-video-title")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][0]}`;
         document.getElementsByClassName("playlist-count")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][2]}`;
     }
+
+    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
     window.location.hash = "#playlists";
 }
 
@@ -373,7 +479,7 @@ function openAbout() {
         <br>Facebook: <a href="http://facebook.com/taliyahengineering" target="_blank" class="hyperlink">http://facebook.com/taliyahengineering</a>
         <br>TikTok: <a href="http://tiktok.com/@taliyahengineering" target="_blank" class="hyperlink">http://tiktok.com/@taliyahengineering</a>`;
 
-    document.getElementsByClassName("screen")[0].scrollTo(0, 250);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
     window.location.hash = "#about";
 }
 
@@ -503,10 +609,7 @@ function loadSmallVideos(list, list_name) {
             document.getElementsByClassName("small-duration")[i].style.paddingBottom = "0";
             document.getElementsByClassName("video-sub")[i].innerHTML = `${list[i][4]}`;
         } else {
-            var startYear = parseInt(list[i][3].slice(0, 4));
-            var startMonth = parseInt(list[i][3].slice(5, 7));
-            var startDay = parseInt(list[i][3].slice(8, 10));
-            var ago = setAgo(startYear, startMonth, startDay);
+            var ago = setAgo(list[i][3]);
             document.getElementsByClassName("video-sub")[i].innerHTML = `${list[i][4]} • ${ago}`;
         }
         document.getElementsByClassName("small-video-title")[i].innerHTML = `${list[i][2]}`;
@@ -517,7 +620,7 @@ function loadSmallVideos(list, list_name) {
     } else {
         setInterval(setSmallVideoStarts, 50000 / list.length);
     }
-    document.getElementsByClassName("screen")[0].scrollTo(0, 250);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
 }
 
 function playlistOver(index) {
@@ -528,7 +631,7 @@ function playlistOut(index) {
     document.getElementsByClassName("playlist-cover")[index].style.width = "80px";
 }
 
-function openSearch() {
+/*function openSearch() {
     for (var i = 0; i < 5; i++) {
         document.getElementsByClassName("menu-item")[i].id = "menu-item";
     }
@@ -538,4 +641,4 @@ function openSearch() {
         <input type="text" class="search-input"></input>
     </div>`;
     document.getElementsByClassName("search-input")[0].focus();
-}
+}*/

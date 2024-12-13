@@ -2,10 +2,7 @@ let current_experience = 0;
 function skillsOpen() {
     document.getElementById("container").innerHTML =  `<div class="page"></div>`;
     for (var i = 0; i < skills.length; i++) {
-        var startYear = parseInt(skills[i][2].slice(0, 4));
-        var startMonth = parseInt(skills[i][2].slice(5, 7));
-        var startDay = parseInt(skills[i][2].slice(8, 10));
-        var ago = setAgo(startYear, startMonth, startDay);
+        var ago = setAgo(skills[i][2]);
         ago = ago.substring(0, ago.length - 4);
 
         document.getElementsByClassName("page")[0].innerHTML +=
@@ -24,6 +21,7 @@ function skillsOpen() {
         }
     });
     window.location.hash = "#skills";
+    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
 }
 
 function shortsHover(index) {
@@ -72,43 +70,41 @@ function shortsOpen(index) {
     document.getElementsByClassName("shorts-comments-count")[0].innerHTML = experiences.length;
 
     setTimeout(() => {
-    for (var i = 0; i < experiences.length; i++) {
-        document.getElementsByClassName("shorts-comments-padding")[0].innerHTML +=
-        `<div class="shorts-comment-block" id="regular-comment" onmouseover="switchExperience(${i}, '${skills[index][1]}')">
-            <div class="video-profile-pic" style="margin-right: 0.5vw"></div>
-            <div class="shorts-channel-comment">
-                <div class="shorts-channel-header">
-                    <div class="shorts-channel-user">${experiences[i][2]}</div>
-                    <div class="shorts-channel-sub"></div>
+        for (var i = 0; i < experiences.length; i++) {
+            document.getElementsByClassName("shorts-comments-padding")[0].innerHTML +=
+            `<div class="shorts-comment-block" id="regular-comment" onmouseover="switchExperience(${i}, '${skills[index][1]}')">
+                <div class="video-profile-pic" style="margin-right: 0.5vw"></div>
+                <div class="shorts-channel-comment">
+                    <div class="shorts-channel-header">
+                        <div class="shorts-channel-user">${experiences[i][2]}</div>
+                        <div class="shorts-channel-sub"></div>
+                    </div>
+                    <div class="shorts-comment">${experiences[i][12]}</div>
+                    <div class="learn-more" onclick="openVideo(${all.indexOf(experiences[i])})">Learn more ></div>
                 </div>
-                <div class="shorts-comment">${experiences[i][12]}</div>
-                <div class="learn-more" onclick="openVideo(${all.indexOf(experiences[i])})">Learn more ></div>
-            </div>
-        </div>`;
-        document.getElementsByClassName("video-profile-pic")[i].style.backgroundImage = `url('channels/${experiences[i][9]}')`;
-        var startYear = parseInt(experiences[i][3].slice(0, 4));
-        var startMonth = parseInt(experiences[i][3].slice(5, 7));
-        var startDay = parseInt(experiences[i][3].slice(8, 10));
-        var ago = setAgo(startYear, startMonth, startDay);
-        document.getElementsByClassName("shorts-channel-sub")[i].innerHTML = `${ago}`;
+            </div>`;
+            document.getElementsByClassName("video-profile-pic")[i].style.backgroundImage = `url('channels/${experiences[i][9]}')`;
 
-        if (i == 0) {
-            document.getElementsByClassName("shorts-comment-block")[i].id = "highlight-comment";
+            var ago = setAgo(experiences[i][3]);
+            document.getElementsByClassName("shorts-channel-sub")[i].innerHTML = `${ago}`;
+
+            if (i == 0) {
+                document.getElementsByClassName("shorts-comment-block")[i].id = "highlight-comment";
+            }
         }
-    }
 
-    document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = "";
-    if (skills[index][1] == 'Computer-Aided Design') {
-        document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = `url("skillscontent/CAD/${experiences.length - 1}.png")`;
-    } else if (skills[index][1] == 'Video Editing') {
-        document.getElementsByClassName("shorts-footage")[0].innerHTML += `
-        <video muted loop autoplay class="shorts-footage-video" src="skillscontent/Video Editing/${experiences.length - 1}.mp4"></video>`
-    }else {
-        document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = `url("skillscontent/${skills[index][1]}/${experiences.length - 1}.png")`;
-    }
-    
-    document.getElementsByClassName("screen")[0].scrollTo(0, 250);
-    },200);
+        document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = "";
+        if (skills[index][1] == 'Computer-Aided Design') {
+            document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = `url("skillscontent/CAD/${experiences.length - 1}.png")`;
+        } else if (skills[index][1] == 'Video Editing') {
+            document.getElementsByClassName("shorts-footage")[0].innerHTML += `
+            <video muted loop autoplay class="shorts-footage-video" src="skillscontent/Video Editing/${experiences.length - 1}.mp4"></video>`
+        }else {
+            document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = `url("skillscontent/${skills[index][1]}/${experiences.length - 1}.png")`;
+        }
+        
+        document.getElementsByClassName("screen")[0].scrollTo(0, 200);
+    }, 200);
 
     currPage = 3;
     window.addEventListener('resize', function() {

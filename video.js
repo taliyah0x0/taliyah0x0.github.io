@@ -12,14 +12,11 @@ function openVideo(index) {
     var title = all[index][2];
     var hashtags = all[index][8];
 
-    var startYear = parseInt(all[index][3].slice(0, 4));
-    var startMonth = parseInt(all[index][3].slice(5, 7));
-    var startDay = parseInt(all[index][3].slice(8, 10));
-    var ago = "Streamed ";
+    let ago = "";
     if (all[index][1] == '🔉 LIVE') {
-        ago = "Started streaming "
+        ago = "Started streaming ";
     }
-    ago += setAgo(startYear, startMonth, startDay);
+    ago += setAgo(all[index][3]);
 
     var channel;
     var channel_description;
@@ -265,7 +262,7 @@ function openVideo(index) {
     let right_panel = document.getElementsByClassName("right-panel")[0].offsetHeight;
     document.getElementsByClassName("open-video")[0].style.height = (left_panel > right_panel) ? left_panel : right_panel + 'px';
 
-    document.getElementsByClassName("screen")[0].scrollTo(0, 240);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
 
     currPage = 1;
     window.addEventListener('resize', function() {
@@ -381,10 +378,7 @@ function loadRelatedVideos(index, in_list) {
             
             document.getElementsByClassName("related-video-title")[related_videos].innerHTML = `${all[list[i]][2]}`;
 
-            var startYear = parseInt(all[list[i]][3].slice(0, 4));
-            var startMonth = parseInt(all[list[i]][3].slice(5, 7));
-            var startDay = parseInt(all[list[i]][3].slice(8, 10));
-            var ago = setAgo(startYear, startMonth, startDay);
+            var ago = setAgo(all[list[i]][3]);
             document.getElementsByClassName("video-sub")[related_videos].innerHTML = `${all[list[i]][4]}<br>• ${ago}`;
             document.getElementsByClassName("video-sub")[related_videos].style.marginBottom = "0";
         }

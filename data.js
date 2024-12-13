@@ -118,7 +118,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
 ]
 
 var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4], Youtube Link [5], Video Start [6], Optional: Website [7], Location Tags [8] // Channel Icon [9], Channel Description [10], Channel Website [11] // Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
-    ["moonsurgical.jpg", '3 mos', 'Clinical Development Engineering Intern', '2024-06-03', 'Moon Surgical', 'sWpCpD1zYg8', 8, "", "#sancarlos #california", 
+    ["moonsurgical.jpg", '3 mos', 'Clinical Development Engineering Intern', '2024-06-03', 'Moon Surgical', 'sWpCpD1zYg8', 8, "", "#sancarlos #summerintern", 
         
         "moonsurgical_logo.jpeg", "Medical Robotics, Haptics, & Computer Vision", "https://moonsurgical.com",
 
@@ -174,6 +174,19 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         90% of startups fail, with the majority being due to offering an unwanted product, so in order to avoid risks as I learn the ropes around financial accounting, funding, insurance, and more, I teamed up with 3 other highly-motivated students to found Higher Grounds Vending, L.L.C.
         Sourcing our fresh beverage-making vending machines directly from a manufacturer doesn't exactly show innovation, but it allowed us to quickly start operating as we continued to learn more and cater our products towards our target audience: College students.
         So far, it has been a great experience with the support of  Johns Hopkins' entrepreneurship programs and resources, as we are continuing to expand our reach and services across campus.`,
+    ],
+    ["designday.jpg", '🔉 LIVE', "President & Designer", '2023-11-15', 'Engineering Design Center Student Advisory Board', 'd2dpfmzsryY', 6, "https://engineering.jhu.edu/designcenter/", "#leadership #multidisciplinary #design",
+        
+        "jhuwse.jpg", "Supporting project-based learning across all engineering disciplines", "https://engineering.jhu.edu/designcenter/",
+
+        `❥ Designed and presented the 2024 JHU Design Day keynote speaker gift for the Founder of FIRST Robotics, Dean Kamen
+        <br>❥ Lead weekly meetings with a board of students who represent the 9 engineering departments at JHU to advise the construction of the future facility
+        <br>❥ Plan technocraft workshops to promote cocurricular engineering design resources at makerspaces`,
+
+        ['Leadership', 'CAD', 'Graphic Design'],
+        ['Presenting my self-designed award to Dean Kamen', 'Uniquely incorporated the FIRST Robotics logo and JHU Blue Jay in a multimaterial design', 'Successful first workshop!'],
+        ['2024-05-01.mp4', 'model.mov', 'sewncircuits.mp4'],
+        ''
     ],
     ["taliyahengineering.jpg", '🔉 LIVE', "Content Creator", '2023-01-01', 'Taliyah Engineering', 'AJlgPpAQshM', 1, "", "#youtube #instagram #facebook #tiktok",
         
@@ -253,7 +266,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['https://youtube.com/watch?v=W6m0floaz-E'],
         ''
     ],
-    ["saturn.png", '3 mos', "Bioengineering Team Intern", '2022-06-10', 'Stanford Institute of Medicine', '8GJGm3xvwq8', 0, "https://www.im-creator.com/free/teamsaturn/saturn", "#summerprogram #allergy #medtech",
+    ["saturn.png", '3 mos', "Bioengineering Team Intern", '2022-06-10', 'Stanford Institute of Medicine', '8GJGm3xvwq8', 0, "https://www.im-creator.com/free/teamsaturn/saturn", "#summerintern #allergy #medtech",
         
         "stanford_university_logo.jpeg", "Center for Biodesign", "https://simr.stanford.edu/",
 
@@ -265,6 +278,96 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['https://www.im-creator.com/free/teamsaturn/saturn', 'https://cad.onshape.com/documents/0539fa19643aa5ea69bea0c8/w/6b37b10aaf9fd72a722668ae/e/078abaceeb5841a0192c7ebb?renderMode=0&uiState=66b8506bc8af0930f4bf2dd5'],
         ''
     ],
+]
+
+// Channel Icon [0], Project Title [1], Duration [2], End Date [3], Thumbnail Image [4], Youtube Video [5], Skills [6], Section Name [i * 2 + 7], Section Text [i * 2 + 8]
+var case_studies = [
+    ["moonsurgical_logo.jpeg", "Constellation Destroyer -- Moon Surgical", "3 mos", "2024-08-16", "constellation/display.png", "8-r4F3nH55E", "CAD/3D Printing",
+
+        "PROJECT BACKGROUND",
+        `Moon Surgical is a well-developed French-American startup working on a surgical robotic assistant Maestro. Recently, they have began expanding the marketing of their product across the U.S.,
+        attending various conferences and events where interested surgeons can try out the system and the unique features it offers.
+        <br><br>However, without being able to actually perform a procedure, it can sometimes be difficult for a surgeon to truly understand how helpful Maestro can be, and single-use dissectable models cost
+        $400 a piece. Furthermore, as the Maestro systems were being rapidly onboarded at new hospitals, a realistic training kit that could be quickly set up and repeated for each surgeon and nurse was at a high demand.`,
+
+        "NEEDS DEFINITION",
+        `First, I started by identifying the needs criteria and their reasonings.
+        <li>Simulative: Trainees gain helpful experience toward a real procedure
+        <li>Affordable: Save costs for the company so they can easily conduct more demos and trainings
+        <li>Reusable: To further save costs, storage space, and minimize environmental impact
+        <li>Quick Set-Up: Availability of demo or training will not be limited by time
+        <li>Robust: Present a professional outlook that easily identifies the brand
+        
+        <br><br>From these needs, I further defined the design requirements:
+        <li>User should be prompted to exhibit similar actions to a real procedure, specifically:
+        <ol>
+            <li>Let go of laparascope to use both hands on active instruments, letting Maestro control it
+            <li>Enable High-Force mode to hold up a heavy object with Maestro
+            <li>Enable and disable ScoPilot at least twice to track hook vs. grasper across the screen
+            <li>Activities that intuitively suggest instrument exchange between a hook vs. shears vs. grasper
+        </ol>
+        <li>Manufacturing should cost at most $400, the price of the current competitor, the dissectable model
+        <li>Set-up should take at most 5 minutes for one person
+        <li>Model should fit inside the existing abdominal model used for demos, and be compatible
+        <li>Include a fun space-related element to align with Moon Surgical's theme and encourage interaction
+        <br>
+        <div class="community-image">
+            <img src="https://kotobuki-medical.myshopify.com/cdn/shop/products/gallbladder-injection-simulator.jpg?v=1681449846&width=1426">
+            <div>The $400 dissectable single-use cholecystectomy model was also tedious to set-up.</div>
+        </div>`,
+
+        "IDEATION & PROTOTYPING",
+        `Next, I researched the gold standard: How Intuitive Surgical trains new surgeons on their Da Vinci system.
+        <br>With SimNow, surgeons can play simulation games in virtual reality, from apple picking to practice grasper and shears manipulation, to more specific procedural simulations with tissue and blood.
+        <div class="community-image">
+            <img src="community/constellation/inspo.png">
+            <div>I filled my Notion board with images and links to existing products that inspired me</div>
+        </div>
+        <br>I was also inspired by Montessori kids activities, that promoted two-handed object manipulation with fun goals and themes. Lastly, I also took some inspiration from parrot trick accessories, coming with pre-determined intuitive tasks at a mini size.
+        My first concepts included boxes that had to be held open for the two-handed task inside, and after that came the idea of using the Maestro to keep a rubber band stretched while shoving toothpicks inside.
+        <div class="community-image">
+            <img src="community/constellation/sketches.png">
+        </div>
+        <br>I had even made animations and 3D printed prototypes, but that only made me realize that I needed to go back to the drawing board. It was clear there had to be multiple mini-games combined to enable the instrument exchange and other prompted tasks.
+        <div class="community-image">
+            <video src="community/constellation/0001-0820.mp4" autoplay="1" muted="1" loop="1"></video>
+            <div>My rough Blender animation, where the teal grasper would be attached to the Maestro's arm</div>
+        </div>
+        <br>Utilizing my CAD and 3D printing skills, I revised over and over, testing the ease-of-use with the Maestro and instruments myself, realizing how kinetic sand was too messy for a hook dissection simulation, and how the port placement would affect the difficulty of the game's completion.
+        <div class="community-image">
+            <img src="community/constellation/prototypes.png">
+        </div>`,
+
+        "FINAL PRODUCT",
+        `<div class="community-image">
+            <video src="community/constellation/IMG_8947.MOV" autoplay="1" muted="1" loop="1"></video>
+        </div>
+        <br>After weeks of effort, I presented the "Constellation Destroyer". The kit is lightweight and comes in one piece that can be easily slid and fit inside the abdominal case in seconds. The only disposable element is the rubber bands that must be replaced, and reusing the model consists of simply reinserting each of the spiral bands.
+        <div class="community-image">
+            <img src="community/constellation/final.png">
+        </div>
+        <br>I even designed a quick reference guide to graphically introduce the four steps to the game:
+        <li type="1">Lift up the silicone "night sky" with a grasper and have the Maestro hold it in place with High Force Mode
+        <li type="1">Using hook and shears, remove each of the rubber bands that link together the constellation
+        <li type="1">Using graspers, pull out each of the constellation bands from various angles
+        <li type="1">Enable ScoPilot to follow an active grasper to the other side of the map, where another active grasper opens the "black hole" lid, allowing the bands to be placed inside one by one
+        
+        <div class="community-image">
+            <img src="community/constellation/qrg.png">
+        </div>
+        <br>I had several Moon coworkers test out the game for the first time, and it would take an average 5-8 minutes to complete, which was perfect for a conference demo that is welcoming and doesn't frustrate users.
+        <div class="community-image">
+            <img src="community/constellation/testing.png">
+            <div>An intern friend on the left (Helin) and my manager on the right (Victoria) try the game I designed.</div>
+        </div>`,
+
+        "LESSONS LEARNED",
+        `This project challenged my creativity and I struggled a lot in the beginning to think of how I might incorporate all the different elements without overcomplicating something that should still be fun and intuitive. I was stuck on the box idea for so long, generating tons of 3D printed prototypes where all I could think about was how to design a sliding lid that allowed port flexibility, when I really should have been thinking <i>outside</i> the box. Talking with my coworkers also helped, as they inspired fresh ideas such as the multidimensional rubber band activity and elevated platform for instrument reach. Next steps are to conduct more testing with surgeons and non-surgeons, listen to their feedback, and improve.
+        <div class="community-image">
+            <video src="community/constellation/0816.mp4" autoplay="1" muted="1" loop="1"></video>
+            <div>Playing the game from start to finish!</div>
+        </div>`,
+    ]
 ]
 
 var all = p.concat(w);
@@ -290,7 +393,7 @@ var skills = [
     //["java.png", "Java", "2024-01-01"],
     ["cad.png", "Computer-Aided Design", "2018-10-01"],
     ["graphic.jpg", "Graphic Design", "2020-12-01"],
-    ["matlab.png", "Matlab", "2023-01-01"]
+    ["matlab.png", "Matlab", "2023-01-01"],
 ]
 //skills.sort((a, b) => a[2].localeCompare(b[2]));
 
@@ -338,6 +441,8 @@ var playlists = [
     ["All", all, "all", all_index]
 ];
 
+var non_shorts_skills = ["Leadership", "Business"]
+
 var skill_playlists = [];
 for (var i = 0; i < skills.length; i++) {
     skill_playlists.push([]);
@@ -351,7 +456,23 @@ for (var i = 0; i < skills.length; i++) {
         }
     }
     skill_playlists[i].push(skill_playlists[i][1].length);
-    skill_playlists[i].push(skills[i][0]);
+    skill_playlists[i].push("skills/" + skills[i][0]);
+}
+for (var i = 0; i < non_shorts_skills.length; i++) {
+    skill_playlists.push([]);
+    skill_playlists[i + skills.length].push(non_shorts_skills[i]);
+    skill_playlists[i + skills.length].push([]);
+    var thumbnail = "";
+    for (var j = 0; j < all.length; j++) {
+        for (var k = 0; k < all[j][13].length; k++) {
+            if (all[j][13][k] == non_shorts_skills[i]) {
+                skill_playlists[i + skills.length][1].push(j);
+                thumbnail = all[j][0];
+            }
+        }
+    }
+    skill_playlists[i + skills.length].push(skill_playlists[i + skills.length][1].length);
+    skill_playlists[i + skills.length].push("thumbnails/" + thumbnail);
 }
 
 skill_playlists.sort(function(a, b) {
