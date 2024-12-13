@@ -185,7 +185,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
 
         ['Leadership', 'CAD', 'Graphic Design'],
         ['Presenting my self-designed award to Dean Kamen', 'Uniquely incorporated the FIRST Robotics logo and JHU Blue Jay in a multimaterial design', 'Successful first workshop!'],
-        ['2024-05-01.mp4', 'model.mov', 'sewncircuits.mp4'],
+        ['2024-05-01.mp4', 'model.mp4', 'sewncircuits.mp4'],
         ''
     ],
     ["taliyahengineering.jpg", '🔉 LIVE', "Content Creator", '2023-01-01', 'Taliyah Engineering', 'AJlgPpAQshM', 1, "", "#youtube #instagram #facebook #tiktok",
