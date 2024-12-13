@@ -318,7 +318,7 @@ var case_studies = [
 
         "IDEATION & PROTOTYPING",
         `Next, I researched the gold standard: How Intuitive Surgical trains new surgeons on their Da Vinci system.
-        <br>With SimNow, surgeons can play simulation games in virtual reality, from apple picking to practice grasper and shears manipulation, to more specific procedural simulations with tissue and blood.
+        With SimNow, surgeons can play simulation games in virtual reality, from apple picking to practice grasper and shears manipulation, to more specific procedural simulations with tissue and blood.
         <div class="community-image">
             <img src="community/constellation/inspo.png">
             <div>I filled my Notion board with images and links to existing products that inspired me</div>

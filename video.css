@@ -83,7 +83,9 @@
     .moment-text {
         left: 120px;
         font-size: 14px;
-        bottom: 12px;
+        bottom: 0;
+        height: 44px;
+        width: 430px;
     }
 
     .full-screen {
@@ -201,7 +203,9 @@
     .moment-text {
         left: 90px;
         font-size: 11px;
-        bottom: 5px;
+        bottom: 0;
+        height: 24px;
+        width: 240px;
     }
 
     .full-screen {
@@ -309,6 +313,8 @@
     position: absolute;
     transition: ease-in-out 0.2s;
     pointer-events: auto;
+    display: flex;
+    align-items: center;
 }
 
 .keyboard-popup {
