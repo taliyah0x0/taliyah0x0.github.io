@@ -388,12 +388,11 @@ function toggleCloseAll(index) {
         items[i].innerHTML = "❥" + items[i].innerHTML.substring(1);
     }
     items[1].innerHTML = case_studies[index][index * 2 + 8];
-    items[0].innerHTML = "❤︎" + strong.innerHTML.substring(1);
+    items[0].innerHTML = "❤︎" + items[0].innerHTML.substring(1);
 }
 
 function toggleSection(case_num, index) {
     let items = document.getElementsByClassName(`case_${case_num}`);
-    console.log(items[index * 2 + 1].innerHTML)
     if (items[index * 2 + 1].innerHTML == "") {
         items[index * 2 + 1].innerHTML = case_studies[case_num][index * 2 + 8];
         items[index * 2].innerHTML = "❤︎" + items[index * 2].innerHTML.substring(1);

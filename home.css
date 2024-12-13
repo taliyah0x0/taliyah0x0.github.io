@@ -477,7 +477,7 @@ a {
     padding-right: 12vw;
     font-size: 2vh;
     position: sticky;
-    top: 3.5vh;
+    top: 3vh;
     z-index: 500;
     overflow-x:auto;
     justify-content: flex-start;
@@ -953,7 +953,7 @@ a {
 
 .community-title {
     color: white;
-    font-size: 2.5vh;
+    font-size: 22px;
     font-weight: bold;
     display: flex;
     flex-direction: row;
@@ -962,8 +962,8 @@ a {
 
 .community-text {
     color: lightgrey;
-    font-size: 2vh;
-    line-height: 2.5vh;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .community-text > strong {
@@ -982,7 +982,7 @@ ol {
     display: flex;
     width: 100%;
     align-items: center;
-    font-size: 1.7vh;
+    font-size: 13px;
     font-weight: bold;
     flex-direction: column;
     margin-top: 2vh;
