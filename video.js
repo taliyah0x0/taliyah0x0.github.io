@@ -126,6 +126,10 @@ function openVideo(index) {
             next(index);
         });
     } else {
+        if (channel == "Custom GamePigeon Games") {
+            button_text = "Try it out";
+            learn_more = "https://customgpgames.com"
+        }
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
@@ -262,7 +266,7 @@ function openVideo(index) {
     let right_panel = document.getElementsByClassName("right-panel")[0].offsetHeight;
     document.getElementsByClassName("open-video")[0].style.height = (left_panel > right_panel) ? left_panel : right_panel + 'px';
 
-    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 220);
 
     currPage = 1;
     window.addEventListener('resize', function() {
@@ -390,7 +394,7 @@ function loadRelatedVideos(index, in_list) {
 }
 
 function goDescription() {
-    document.getElementsByClassName("screen")[0].scrollTo(0, 675);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 220);
 }
 
 function next(index) {

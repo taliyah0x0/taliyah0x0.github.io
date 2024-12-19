@@ -21,7 +21,7 @@ function skillsOpen() {
         }
     });
     window.location.hash = "#skills";
-    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 220);
 }
 
 function shortsHover(index) {
@@ -103,7 +103,7 @@ function shortsOpen(index) {
             document.getElementsByClassName("shorts-footage")[0].style.backgroundImage = `url("skillscontent/${skills[index][1]}/${experiences.length - 1}.png")`;
         }
         
-        document.getElementsByClassName("screen")[0].scrollTo(0, 200);
+        document.getElementsByClassName("screen")[0].scrollTo(0, 220);
     }, 200);
 
     currPage = 3;

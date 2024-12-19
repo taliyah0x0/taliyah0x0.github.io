@@ -1,8 +1,19 @@
 var fw = [0, 1, 2, 3]; // Featured work experiences (from work)
-var fp = [2, 5, 0, 4]; // Featured projects (from projects)
-var ln = [1, 2, 3, 4, 5]; // Live now (from work)
+var fp = [3, 6, 1, 5]; // Featured projects (from projects)
 
 var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4], Youtube Link [5], Video Start [6], Optional: Website [7] // Project Tags [8], Project Icon [9], Project Name [10], Optional: Project Video Link [11] // Project Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
+    ["gpgames.png", '4 mos', "Custom GamePigeon Games - Anagrams & Word Hunt", '2024-12-15', 'HTML/CSS/JS', '3ex0ym1oMgs', 0, "https://customgpgames.com",
+        "#onlinegame #customization #phaserjs", "gpgames.jpg", "Custom GamePigeon Games", '3ex0ym1oMgs',
+
+        `This is my site, Custom GamePigeon Games, that let's anyone, even Android users, play Word Hunt and Anagrams with close to the exact same addicting graphics and game mechanics. But I didn't stop there, in the customization menu, you can change everything from the language, letter map, timer length, and more.
+        `,
+
+        ['HTML CSS', 'Javascript'],
+        ['Made a free site to play word games'],
+        ['https://customgpgames.com'],
+        ''
+
+    ],
     ["gamepigeon.png", '1 mo', "GamePigeon Bots & More - Fun Programming Project", '2024-06-19', 'Arduino/Python', '3ex0ym1oMgs', 0, "",
         "#hacks #wordhunt #imessage", "gamepigeon.jpg", "GamePigeon Bots & More", '3ex0ym1oMgs',
         
@@ -175,7 +186,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         Sourcing our fresh beverage-making vending machines directly from a manufacturer doesn't exactly show innovation, but it allowed us to quickly start operating as we continued to learn more and cater our products towards our target audience: College students.
         So far, it has been a great experience with the support of  Johns Hopkins' entrepreneurship programs and resources, as we are continuing to expand our reach and services across campus.`,
     ],
-    ["designday.jpg", '🔉 LIVE', "President & Designer", '2023-11-15', 'Engineering Design Center Student Advisory Board', 'd2dpfmzsryY', 6, "https://engineering.jhu.edu/designcenter/", "#leadership #multidisciplinary #design",
+    ["designday.jpg", '🔉 LIVE', "President & Lead Designer", '2023-11-15', 'Engineering Design Center Student Advisory Board', 'd2dpfmzsryY', 6, "https://engineering.jhu.edu/designcenter/", "#leadership #multidisciplinary #design",
         
         "jhuwse.jpg", "Supporting project-based learning across all engineering disciplines", "https://engineering.jhu.edu/designcenter/",
 
@@ -280,9 +291,16 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
     ],
 ]
 
+var ln = [];
+for (var i = 0; i < w.length; i++) {
+    if (w[i][1] == '🔉 LIVE') {
+        ln.push(i);
+    }
+}
+
 // Channel Icon [0], Project Title [1], Duration [2], End Date [3], Thumbnail Image [4], Youtube Video [5], Skills [6], Section Name [i * 2 + 7], Section Text [i * 2 + 8]
 var case_studies = [
-    ["moonsurgical_logo.jpeg", "Constellation Destroyer -- Moon Surgical", "3 mos", "2024-08-16", "constellation/display.png", "8-r4F3nH55E", "CAD/3D Printing",
+    ["moonsurgical_logo.jpeg", "🌟 Constellation Destroyer<br>-- Internship at Moon Surgical", "3 mos", "2024-08-16", "constellation/display.png", "8-r4F3nH55E", "CAD/3D Printing",
 
         "PROJECT BACKGROUND",
         `Moon Surgical is a well-developed French-American startup working on a surgical robotic assistant Maestro. Recently, they have began expanding the marketing of their product across the U.S.,
@@ -323,7 +341,7 @@ var case_studies = [
             <img src="community/constellation/inspo.png">
             <div>I filled my Notion board with images and links to existing products that inspired me</div>
         </div>
-        <br>I was also inspired by Montessori kids activities, that promoted two-handed object manipulation with fun goals and themes. Lastly, I also took some inspiration from parrot trick accessories, coming with pre-determined intuitive tasks at a mini size.
+        <br>I was also inspired by Montessori kids activities that promoted two-handed object manipulation with fun goals and themes. Lastly, I also took some inspiration from parrot trick accessories, coming with pre-determined intuitive tasks at a mini size.
         My first concepts included boxes that had to be held open for the two-handed task inside, and after that came the idea of using the Maestro to keep a rubber band stretched while shoving toothpicks inside.
         <div class="community-image">
             <img src="community/constellation/sketches.png">
@@ -367,12 +385,116 @@ var case_studies = [
             <video src="community/constellation/0816.mp4" autoplay="1" muted="1" loop="1"></video>
             <div>Playing the game from start to finish!</div>
         </div>`,
+    ],
+    ["moonsurgical_logo.jpeg", "🔧 Uterine Manipulation Model<br>-- Internship at Moon Surgical", "3 mos", "2024-08-16", "uterine/thumbnail.png", "_FzIKRg3c-o", "CAD/3D Printing",
+
+        "PROJECT BACKGROUND",
+        `Another independent design project I was assigned while interning at Moon Surgical was to create a basic uterus model for demoing purposes.
+        Moon Surgical recently announced their plan of expansion into the gynecologic surgery field, where the Maestro would be responsible for holding the uterine manipulator.
+        
+        <br><br>In a typical procedure, an assistant, usually a medical student, would need to crouch at the legs of the patient and insert the manipulator through the vagina to lift up the uterus so that the surgeon
+        has visibility of the surrounding tissue while they perform the minimally-invasive surgery. The uterus can sometimes be quite heavy, and the assistant would be required to hold the organ in an uncomfortable position anywhere from a few minutes to hours.
+        Not only is it easy to lose focus and energy as time goes on, leading to delays in the procedure and ergonomic harm on the body of the assistant, it can also be considered a waste to have such a highly-paid trained professional
+        doing a boring and undesired task.`,
+
+        "NEEDS DEFINITION",
+        `I settled on the following list of user needs, where the users would include both the clinical development engineers at Moon who conduct the demos, as well as surgeons curious to try it out themselves:
+        <li>Representation: Observers can easily connect the manipulation of the model to the depiction of an actual procedure.
+        <li>Affordability: There is a strict budget for demos and training, and this should be something easily mass-produceable at a low cost to the company.
+        <li>Ease-of-use: Observers can confidently understand how to use the model after watching the demo once or twice.
+
+        <br><br>With the novelty of the application of the Maestro for gynecologic surgeries, I started by learning everything I could about the minimally-invasive surgeries themselves.
+        Beginning from the medical conditions, their causes, symptoms, and solutions, to the OR setup and procedural steps, I consumed countless papers and videos I could find online.
+        
+        <br><br>We were also fortunate enough to meet with a several surgeons virtually to conduct interviews about their tool preferences conducting hysterectomies, myomectomies, and more.
+        I learned about many different brands and types of uterine manipulators, from plastic S-curves to metal poles, and how they are controlled by the assistant to
+        orient the uterus's position and angle for various kinds of procedures.
+
+        <div class="community-image">
+            <img src="https://www.mdpi.com/applsci/applsci-14-03851/article_deploy/html/images/applsci-14-03851-g002.png">
+            <div>According to the interviews and articles, retracting the uterus upward was the most important action of the uterine manipulator.</div>
+        </div>
+        
+        <br>The research paid off, and I defined the design requirements:
+        <li>The model must be able to simulate rotational manipulation in the pitch axis, and ideally roll and yaw axes as well.
+        <li>The model must be compatabile with the existing benchtop abdominal model for laparoscopic demos using the Maestro.
+        <li>The model must exhibit the shape and size of the typical female reproductive organs with a manipulator inside. (~10mm length, ~5mm width, ~2mm vagina)
+        <li>The model must be compatible with the 8 most common uterine manipulators identified. (RUMI II, Advincula Delineator, HOHL, MAUT 60, ElevatOR, VCare, ClearView, Cohen Acorn)
+        <li>The model must allow the tip of the uterine manipulator to reach the uterus, where the occluder cup is secured by the vagina.
+        
+        <div class="community-image">
+            <img src="community/uterine/manipulators.png">
+            <div>Some of the manipulators I was tasked with purchasing and researching (left to right): VCare, Advincula Delineator, MAUT 60, RUMI II</div>
+        </div>
+        `,
+
+        "IDEATION & PROTOTYPING",
+        `Ideation always begins with learning from the existing precedents. I discovered various silicone models of female anatomy for sale that were used by gynecologists in training,
+        however, while the size, shape, and texture of the vagina were accurately replicated, these models would not actually visualize the positioning of the uterus inside the abdomen.
+
+        <div class="community-image">
+            <img src="community/uterine/models.png">
+            <div>The models for sale were also often quite expensive.</div>
+        </div>
+
+        <br>At some point, I came across a video of someone creating a uterine manipulator training kit using a plastic water bottle covered with fabric inside of storage bin, and was inspired to make a more
+        professional version of it. All I would have to do is make a realistic uterus that would be attached to the inside of the existing abdomen model.
+       
+        <div class="community-image">
+            <video src="community/uterine/manipulate.mp4" autoplay="1" muted="1" loop="1"></video>
+            <div>Uterine Manipulator Simulation by Allen Huy Doan -- University of Arizona College of Medicine</div>
+        </div>
+
+        <br>In order to simulate the flexibility of the uterus, my first idea was to create a silicone casting of the organ. I designed and 3D printed the 3-piece mold, then waited for
+        the plastic to set. Unfortunately, the biggest problem was that the vagina had a much smaller diameter than the inner cavity of the uterus, preventing any of my attempts
+        to remove the mold. Furthermore, normally the vagina can open up to five times of its resting diameter, allowing the occluder cup of the uterine manipulator to fit inside. But the
+        silicone is not nearly stretchy enough, so I would need to find some other way to secure the occluder cup of the uterine manipulator.
+       
+        <div class="community-image">
+            <img src="community/uterine/casting.png">
+            <div>I used Blender to design the 3D printed mold for the silicone uterus, but the thin fallopian tubes would break off easily.</div>
+        </div>
+
+        <br>So, I decided to try printing the uterus itself in resin, although the most flexible resin we had in stock was only a fraction as flexible as the silicone, and since it is a see-through
+        material, we would be able to see the uterine manipulator's probe being inserted and the reach it has, which is an additional benefit I had not previously planned for. In order to optimize
+        the insertion of the uterine manipulator and the uterus's attachment to the abdomen skin, I also designed the supporting vagina at its most opened position to be secured to the outside
+        of the abdomen.
+        
+        <div class="community-image">
+            <img src="community/uterine/printing.png">
+            <div>In every iteration, I was adjusting the details for the pipe flange connector design and form of the vagina.</div>
+        </div>`,
+
+        "FINAL PRODUCT",
+        `The final product worked for the 8 uterine manipulators, wherein the user can easily insert and secure the manipulator's occluder cup at the vagina, control the pitch and yaw of the uterus,
+        and be able to see the effects via a laparascope inserted into the abdomen from the other end. The idea is to completely eliminate the need for an assistant, since the attending surgeon can
+        now manipulate the uterus directly and position it at exactly the orientation they would like, then release to let the Maestro hold it without any issue of fatigue. This improves the speed and
+        flow of the procedure, as the surgeon will feel less frustrated about needing to voice commands to a bored and tired med student.
+        
+        <div class="community-image">
+            <video src="community/uterine/final.mp4" autoplay="1" muted="1" loop="1"></video>
+            <div>The flexibility of the abdominal wall contributed to the easy manipulation of the uterus model.</div>
+        </div>
+
+        <br>The only milestone I was unsuccessful in reaching was the control of roll, and on top of that, I would also want to be able to better position the entire complex in a more anatomically
+        correct location, as the vagina is currently much too high and close to the abdomen. I didn't really have much of a choice as I had to use the existing abdomen model, but in the future,
+        I hope the other clinical development engineers at Moon will be able to use the CAD models I left behind to improve the anatomy.
+        
+        <div class="community-image">
+            <img src="community/uterine/demos.png">
+            <div>I tested each of the uterine manipulators to make sure they would nicely fit into the model.</div>
+        </div>`,
+
+        "LESSONS LEARNED",
+        `For this project, I think something important I learned is that sometimes not being able to achieve a design goal will allow other possibilities that were not thought of before.
+        While I wasn't able to replicate the tissue color and flexible nature of the vagina and uterus using silicone, the transparency and rigidity of the resin helped create a durable
+        model that could securely bind to the abdomen skin and allow the visibility of the uterus manipulator as it moves inside the uterus.`
     ]
 ]
 
 var all = p.concat(w);
 all.sort((a, b) => b[3].localeCompare(a[3]));
-for (var i = 0; i < all.length - 1; i++) {
+/*for (var i = 0; i < all.length - 1; i++) {
     for (var j = 0; j < all.length - 1; j++) {
         if (all[j][1] != '🔉 LIVE' && all[j + 1][1] == '🔉 LIVE') {
             var temp = all[j];
@@ -380,7 +502,7 @@ for (var i = 0; i < all.length - 1; i++) {
             all[j + 1] = temp;
         }
     }
-}
+}*/
 
 var skills = [
     ["3dprinting.jpg", "3D Printing", "2018-10-01"],

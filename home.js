@@ -3,6 +3,7 @@ var smallStartIndex = 0;
 var currPage = 0;
 var firstLoad = 0;
 var skipOut = 0;
+var menu_offset = 0;
 
 function loadhome() {
     if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
@@ -103,13 +104,15 @@ function loadhome() {
     }
     window.addEventListener('resize', function() {
         window.location.reload();
+        menu_offset = document.getElementsByClassName("menu")[0].getBoundingClientRect().top - document.getElementsByTagName("body")[0].getBoundingClientRect().top;
     });
+    menu_offset = document.getElementsByClassName("menu")[0].getBoundingClientRect().top - document.getElementsByTagName("body")[0].getBoundingClientRect().top;
 }
 
 function loadhomefull() {
     for (var i = 0; i < case_studies.length; i++) {
         document.getElementsByClassName("block-elements")[0].innerHTML +=
-            `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="clickMenu(4)">
+            `<div class="block-video" onmouseenter="playvid(${i})" onmouseleave="stopvid(${i})" onclick="openCaseStudies(${i})">
                 <div class="video-thumbnail">
                     <iframe src="https://www.youtube.com/embed/${case_studies[i][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
                 height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
@@ -139,7 +142,7 @@ function loadhomefull() {
         document.getElementsByClassName("video-title")[i].innerHTML = `${case_studies[i][1]}`;
     }
     document.getElementsByClassName("block-elements")[0].innerHTML +=
-    `<div class="block-right" onclick="clickMenu(4)">
+    `<div class="block-right" onclick="openCaseStudies(0)">
         <img style="width: 50px; height: 50px;" src="icons/icons8-next-page-96.png">
     </div>`;
 
@@ -174,9 +177,9 @@ function loadhomefull() {
             document.getElementsByClassName("video-sub")[i + case_studies.length].innerHTML = `${w[fw[i]][4]}`;
         } else {
             document.getElementsByClassName("duration")[i + case_studies.length].style.backgroundColor = "rgb(0,0,0,0.5)";
-            var ago = setAgo(w[fw[i]][3]);
-            document.getElementsByClassName("video-sub")[i + case_studies.length].innerHTML = `${w[fw[i]][4]} • ${ago}`;
         }
+        var ago = setAgo(w[fw[i]][3]);
+        document.getElementsByClassName("video-sub")[i + case_studies.length].innerHTML = `${w[fw[i]][4]} • ${ago}`;
         document.getElementsByClassName("video-title")[i + case_studies.length].innerHTML = `${w[fw[i]][2]}`;
     }
     document.getElementsByClassName("block-elements")[1].innerHTML +=
@@ -342,7 +345,7 @@ function clickMenu(index) {
         openPlaylists();
 
     } else if (index == 4) {
-        openCaseStudies();
+        openCaseStudies(0);
 
     } else if (index == 5) {
         openAbout();
@@ -350,23 +353,30 @@ function clickMenu(index) {
 }
 
 let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-function openCaseStudies() {
+function openCaseStudies(index) {
+    for (var i = 0; i < 5; i++) {
+        document.getElementsByClassName("menu-item")[i].id = "menu-item";
+    }
+    document.getElementsByClassName("menu-item")[4].id = "highlight-item";
+
+    document.getElementById("container").innerHTML = "";
     for (var i = 0; i < case_studies.length; i++) {
         var startYear = parseInt(case_studies[i][3].slice(0, 4));
         var startMonth = parseInt(case_studies[i][3].slice(5, 7));
         let date = months[startMonth - 1] + " " + startYear;
 
-        document.getElementById("container").innerHTML =
+        document.getElementById("container").innerHTML +=
         `<div class="community-block">
             <div class="community-pfp" onclick="toggleCloseAll(${i})"></div>
             <div class="community-section">
-                <div class="community-title" onclick="toggleCloseAll(${i})">${case_studies[i][1]}<div style="color: lightgrey; font-weight: normal;">${date}</div></div>
+                <div class="community-title" onclick="toggleCloseAll(${i})">${case_studies[i][1]}<div class="community-date">${date}</div></div>
                 <div class="community-text"></div>
+                <div class="community-show" onclick="toggleShow(${i})">SHOW MORE</div>
             </div>
         </div>`;
         document.getElementsByClassName("community-pfp")[i].style.backgroundImage = `url(channels/${case_studies[i][0]})`;
 
-        let text_box = document.getElementsByClassName("community-text")[0];
+        let text_box = document.getElementsByClassName("community-text")[i];
         for (var j = 0; j < (case_studies[i].length - 7)/2; j++) {
             text_box.innerHTML +=
             `<strong onclick="toggleSection(${i}, ${j})" class="case_${i}">❥ ${case_studies[i][j * 2 + 7]}</strong>
@@ -376,19 +386,44 @@ function openCaseStudies() {
 
         toggleSection(i, 0);
     }
-
-    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
+    
+    document.getElementsByClassName("screen")[0].scrollTo(0, 220 + document.getElementsByClassName("community-block")[0].getBoundingClientRect().height * index);
     window.location.hash = "#casestudies";
+}
+
+function toggleShow(index) {
+    let items = document.getElementsByClassName(`case_${index}`);
+    flag = 0;
+    for (var i = 1; i < items.length; i += 2) {
+        if (items[i].innerHTML == "") {
+            toggleOpenAll(index);
+            document.getElementsByClassName("community-show")[index].innerHTML = "SHOW LESS";
+            flag = 1;
+            break;
+        }
+    }
+    if (!flag) {
+        toggleCloseAll(index);
+    }
 }
 
 function toggleCloseAll(index) {
     let items = document.getElementsByClassName(`case_${index}`);
-    for (var i = 2; i < items.length / 2; i += 2) {
+    for (var i = 2; i < items.length; i += 2) {
         items[i + 1].innerHTML = "";
         items[i].innerHTML = "❥" + items[i].innerHTML.substring(1);
     }
     items[1].innerHTML = case_studies[index][index * 2 + 8];
     items[0].innerHTML = "❤︎" + items[0].innerHTML.substring(1);
+    document.getElementsByClassName("community-show")[index].innerHTML = "SHOW MORE";
+}
+
+function toggleOpenAll(index) {
+    toggleCloseAll(index);
+    let items = document.getElementsByClassName(`case_${index}`);
+    for (var i = 1; i < items.length / 2; i++) {
+        toggleSection(index, i);
+    }
 }
 
 function toggleSection(case_num, index) {
@@ -417,7 +452,7 @@ function openPlaylists() {
             </div>
             <div style="display: flex; flex-direction: column; gap: 10px">
                 <div class="small-video-title"></div>
-                <div class="video-sub" style="margin-bottom: 20px">VIEW FULL PLAYLIST</div>
+                <div class="small-video-sub" style="margin-bottom: 20px">VIEW FULL PLAYLIST</div>
             </div>
         </div>`;
         document.getElementsByClassName("small-video-thumbnail")[i].style.backgroundImage = `url(thumbnails/${playlists[i][1][0][0]})`;
@@ -435,7 +470,7 @@ function openPlaylists() {
             </div>
             <div style="display: flex; flex-direction: column; gap: 10px">
                 <div class="small-video-title"></div>
-                <div class="video-sub">VIEW FULL PLAYLIST</div>
+                <div class="small-video-sub">VIEW FULL PLAYLIST</div>
             </div>
         </div>`;
         document.getElementsByClassName("small-video-thumbnail")[i + playlists.length - 1].style.backgroundImage = `url(${skill_playlists[i][3]})`;
@@ -443,7 +478,7 @@ function openPlaylists() {
         document.getElementsByClassName("playlist-count")[i + playlists.length - 1].innerHTML = `${skill_playlists[i][2]}`;
     }
 
-    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 220);
     window.location.hash = "#playlists";
 }
 
@@ -461,12 +496,12 @@ function openAbout() {
             </div>
             </div>
         </div>`;
-        document.getElementsByClassName("about-text")[0].innerHTML = `Hello! My name is Taliyah. I am an inventor, entrepreneur, and a junior studying biomedical engineering with a passion for mechatronics. I'm particularly interested in med tech startups in the robotics field!
+        document.getElementsByClassName("about-text")[0].innerHTML = `Hello! My name is Taliyah. I am an inventor, entrepreneur, and a junior studying biomedical engineering and computer science with a passion for clinical development and surgical robotics at Johns Hopkins University.
         <br><br>❤︎❤︎❤︎
         <br>Current Education
         <br>Johns Hopkins University (2022 - Present)
-        <br>Major ❥ Biomedical Engineering, B.S.
-        <br>Minors ❥ Robotics, Computer Science, Entrepreneurship & Management
+        <br>Majors ❥ B.S. Biomedical Engineering, B.S. Computer Science
+        <br>Minors ❥ Robotics, Entrepreneurship & Management
         <br><br>❤︎❤︎❤︎
         <br>Contact me:
         <br>❥ <a href="mailto:thuang57@jhu.edu" target="_blank" class="hyperlink">thuang57@jhu.edu</a>
@@ -478,7 +513,7 @@ function openAbout() {
         <br>Facebook: <a href="http://facebook.com/taliyahengineering" target="_blank" class="hyperlink">http://facebook.com/taliyahengineering</a>
         <br>TikTok: <a href="http://tiktok.com/@taliyahengineering" target="_blank" class="hyperlink">http://tiktok.com/@taliyahengineering</a>`;
 
-    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 220);
     window.location.hash = "#about";
 }
 
@@ -584,7 +619,7 @@ function loadSmallVideos(list, list_name) {
                 </div>
                 <div>
                     <div class="small-video-title"></div>
-                    <div class="video-sub"></div>
+                    <div class="small-video-sub"></div>
                     <div class="video-tag"></div>
                 </div>
             </div>`;
@@ -606,11 +641,10 @@ function loadSmallVideos(list, list_name) {
             document.getElementsByClassName("small-duration")[i].style.backgroundColor = "red";
             document.getElementsByClassName("small-duration")[i].style.paddingTop = "0";
             document.getElementsByClassName("small-duration")[i].style.paddingBottom = "0";
-            document.getElementsByClassName("video-sub")[i].innerHTML = `${list[i][4]}`;
-        } else {
-            var ago = setAgo(list[i][3]);
-            document.getElementsByClassName("video-sub")[i].innerHTML = `${list[i][4]} • ${ago}`;
+            document.getElementsByClassName("small-video-sub")[i].innerHTML = `${list[i][4]}`;
         }
+        var ago = setAgo(list[i][3]);
+        document.getElementsByClassName("small-video-sub")[i].innerHTML = `${list[i][4]} • ${ago}`;
         document.getElementsByClassName("small-video-title")[i].innerHTML = `${list[i][2]}`;
     }
 
@@ -619,7 +653,7 @@ function loadSmallVideos(list, list_name) {
     } else {
         setInterval(setSmallVideoStarts, 50000 / list.length);
     }
-    document.getElementsByClassName("screen")[0].scrollTo(0, 200);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 220);
 }
 
 function playlistOver(index) {
