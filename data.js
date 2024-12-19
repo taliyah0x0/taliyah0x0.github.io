@@ -3,7 +3,7 @@ var fp = [3, 6, 1, 5]; // Featured projects (from projects)
 
 var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4], Youtube Link [5], Video Start [6], Optional: Website [7] // Project Tags [8], Project Icon [9], Project Name [10], Optional: Project Video Link [11] // Project Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
     ["gpgames.png", '4 mos', "Custom GamePigeon Games - Anagrams & Word Hunt", '2024-12-15', 'HTML/CSS/JS', '3ex0ym1oMgs', 0, "https://customgpgames.com",
-        "#onlinegame #customization #phaserjs", "gpgames.jpg", "Custom GamePigeon Games", '3ex0ym1oMgs',
+        "#onlinegame #customization #phaserjs", "gamepigeon.jpg", "Custom GamePigeon Games", '3ex0ym1oMgs',
 
         `This is my site, Custom GamePigeon Games, that let's anyone, even Android users, play Word Hunt and Anagrams with close to the exact same addicting graphics and game mechanics. But I didn't stop there, in the customization menu, you can change everything from the language, letter map, timer length, and more.
         `,
