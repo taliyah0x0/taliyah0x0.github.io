@@ -100,6 +100,11 @@
         height: 130px;
         width: 230px;
     }
+
+    .small-video-sub {
+        width: 220px;
+        font-size: 10px;
+    }
     
     .small-clear {
         height: 130px;
@@ -212,6 +217,11 @@
         height: 97.5px;
         width: 172.5px;
         margin-right: 5px;
+    }
+
+    .small-video-sub {
+        width: 167.5px;
+        font-size: 10px;
     }
 
     .small-clear {
@@ -633,6 +643,10 @@ a {
     position:relative;
 }
 
+.video-sub {
+    width: 265px;
+}
+
 .clear {
     background-position: center;
     background-repeat: no-repeat;
@@ -729,8 +743,7 @@ a {
     margin-top: 5px;
 }
 
-.video-sub {
-    font-size: 10px;
+.video-sub, .small-video-sub {
     color: grey;
 }
 
@@ -957,7 +970,22 @@ a {
     font-weight: bold;
     display: flex;
     flex-direction: row;
-    gap: 2vh;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.community-date {
+    color: lightgrey;
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 4px;
+    margin-right: 2vw;
+}
+
+.community-show {
+    color: lightgrey;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .community-text {
@@ -970,7 +998,7 @@ a {
     color: white;
 }
 
-.community-text > strong:hover, .community-title:hover, .community-pfp:hover {
+.community-text > strong:hover, .community-title:hover, .community-pfp:hover, .community-show:hover {
     cursor: pointer;
 }
 
@@ -980,7 +1008,7 @@ ol {
 
 .community-image {
     display: flex;
-    width: 100%;
+    width: 90%;
     align-items: center;
     font-size: 13px;
     font-weight: bold;
@@ -988,4 +1016,5 @@ ol {
     margin-top: 2vh;
     gap: 0.5vh;
     margin-bottom: 0;
+    text-align: center;
 }
