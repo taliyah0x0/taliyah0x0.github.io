@@ -186,7 +186,7 @@ function openVideo(index) {
             document.getElementsByTagName("iframe")[0].width = web_iframe_w;
             document.getElementsByTagName("iframe")[0].id = "setZoom";
             document.getElementsByTagName("iframe")[0].height = web_iframe_h;
-            if (channel != "Auto Flöte Clean") {
+            if (channel != "Auto Flöte Clean" && channel != "Higher Grounds Vending L.L.C.") {
                 document.getElementsByTagName("iframe")[0].style.top = "-50px";
                 document.getElementsByTagName("iframe")[0].width = web_iframe_w + 10;
             }
@@ -305,6 +305,7 @@ function pause() {
         if (current_content >= 0) document.getElementsByTagName("video")[0].pause(); // if the iframe is a slideshow, pause the video
         setTimeout (() => { play = 0; }, 10);
     } else { // if we were paused earlier, switch to playing
+        document.getElementsByClassName("heartplay")[0].style.display = "none";
         document.getElementsByClassName("play")[0].style.backgroundImage = "url('icons/icons8-pause-90.png')";
         document.getElementsByClassName("video-cover")[0].style.backgroundColor = "rgb(0,0,0,0)";
         document.getElementsByClassName("video-cover")[0].style.pointerEvents = "none";

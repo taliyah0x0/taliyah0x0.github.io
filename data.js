@@ -167,9 +167,9 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['1006.mp4', 'mindmap.mp4', 'https://www.youtube.com/watch?v=Hb0S-mTIlP0&t=75s'],
         ''
     ],
-    ["highergrounds.jpg", '🔉 LIVE', "Co-Founder, Business Development & Graphic Design", '2023-05-12', 'Higher Grounds Vending L.L.C.', 'mD-utJUMmkU', 0, "", "#baltimore #maryland", 
+    ["highergrounds.jpg", '🔉 LIVE', "Co-Founder, Business Development & Graphic Design", '2023-05-12', 'Higher Grounds Vending L.L.C.', 'mD-utJUMmkU', 0, "https://highergroundsvending.com", "#baltimore #maryland", 
         
-        "highergroundslogoblack.png", "Affordable, freshly-brewed coffee and tea at Johns Hopkins!", "https://instagram.com/highergroundsvending",
+        "highergroundslogoblack.png", "Affordable, freshly-brewed coffee and tea at Johns Hopkins!", "https://highergroundsvending.com",
 
         `❥ Developed and secured a detailed business contract with Hopkins Dining to install and operate fresh café vending machines on the Homewood campus
         <br>❥ Collected feedback from 200+ user surveys and customer interviews
@@ -178,8 +178,8 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         <br>❥ Design all promotional graphics for machine and marketing use`,
         
         ['Business', 'Graphic Design'],
-        ['2 vending machines so far at JHU!', 'Won $5,000 as top audience pick', 'My advertisement flyer designs'],
-        ['IMG_9319.mp4', '1717214730861.jpg', 'hgv_flyers.png'],
+        ['Designed and programmed the website', 'Manage social media content'],
+        ['https://highergroundsvending.com', 'https://instagram.com/highergroundsvending'],
         `<strong>How this aligns with my career goals:</strong>
         <br>With my ultimate dream being a successful startup founder, I want to start gaining experience about growing a business from the ground up.
         90% of startups fail, with the majority being due to offering an unwanted product, so in order to avoid risks as I learn the ropes around financial accounting, funding, insurance, and more, I teamed up with 3 other highly-motivated students to found Higher Grounds Vending, L.L.C.
