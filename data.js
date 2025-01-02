@@ -2,15 +2,23 @@ var fw = [0, 1, 2, 3]; // Featured work experiences (from work)
 var fp = [3, 6, 1, 5]; // Featured projects (from projects)
 
 var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4], Youtube Link [5], Video Start [6], Optional: Website [7] // Project Tags [8], Project Icon [9], Project Name [10], Optional: Project Video Link [11] // Project Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15] // Career Relation [16]
-    ["gpgames.png", '4 mos', "Custom GamePigeon Games - Anagrams & Word Hunt", '2024-12-15', 'HTML/CSS/JS', '3ex0ym1oMgs', 0, "https://customgpgames.com",
-        "#onlinegame #customization #phaserjs", "gamepigeon.jpg", "Custom GamePigeon Games", '3ex0ym1oMgs',
+    ["gpgames.jpg", '4 mos', "Custom GamePigeon Games - Anagrams & Word Hunt", '2024-12-15', 'HTML/CSS/JS', 'JZl_vHY_--o', 0, "https://customgpgames.com",
+        "#wordhunt #anagrams #phaserjs", "gamepigeon.jpg", "Custom GamePigeon Games", 'JZl_vHY_--o',
 
         `This is my site, Custom GamePigeon Games, that let's anyone, even Android users, play Word Hunt and Anagrams with close to the exact same addicting graphics and game mechanics. But I didn't stop there, in the customization menu, you can change everything from the language, letter map, timer length, and more.
+        <br><br>Try it here: <a href="http://customgpgames.com" target="_blank" class="hyperlink">http://customgpgames.com</a> Or also here: <a href="http://customgpgames.netlify.app" target="_blank" class="hyperlink">http://customgpgames.netlify.app</a>
+
+        <br><br>Customizable features for playing Anagrams and Word Hunt:
+        <li>Pick your own letters or use the generator
+        <li>Design the map (leave some letter boxes blank)
+        <li>Languages (English, Spanish, French, Japanese currently supported)
+        <li>Timer length or even having a timer at all
+        <br><br>Great for Android and laptop users, or GamePigeon pros who need a training tool!
         `,
 
         ['HTML CSS', 'Javascript'],
-        ['Made a free site to play word games'],
-        ['https://customgpgames.com'],
+        ['Made a site to play word games with extreme customization', 'Produced a video showcasing design process', 'Source code on GitHub'],
+        ['https://customgpgames.com', 'https://youtu.be/JZl_vHY_--o', 'https://github.com/taliyah0x0/CustomGPGames'],
         ''
 
     ],
