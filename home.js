@@ -248,6 +248,8 @@ function setAgo(input) {
     var currentMonth = parseInt(currentDate.slice(5, 7));
     var currentDay = parseInt(currentDate.slice(8, 10));
 
+    console.log()
+
     var ago = "";
     if (currentYear - startYear == 0) {
         if (currentMonth - startMonth == 0) {
@@ -259,7 +261,7 @@ function setAgo(input) {
         } else {
             var start = startMonth * 30 + startDay;
             var current = currentMonth * 30 + currentDay;
-            var roundMonth = Math.round((current - start)/30);
+            var roundMonth = Math.floor((current - start)/30);
             if (roundMonth == 1) {
                 ago = `${roundMonth} month ago`;
             } else {
@@ -269,13 +271,29 @@ function setAgo(input) {
     } else {
         var start = startYear * 12 + startMonth;
         var current = currentYear * 12 + currentMonth;
-        var roundYear = Math.round((current - start)/12);
-        if (roundYear == 1) {
+        var roundYear = Math.floor((current - start)/12);
+        if (roundYear == 0) {
+            var start = startMonth * 30 + startDay;
+            var current = (currentMonth + 12) * 30 + currentDay;
+            var roundMonth = Math.floor((current - start)/30);
+            if (roundMonth == 0) {
+                if ((currentDay + 30) - startDay == 1) {
+                    ago = `${(currentDay + 30) - startDay} day ago`;
+                } else {
+                    ago = `${(currentDay + 30) - startDay} days ago`;
+                }
+            } else if (roundMonth == 1) {
+                ago = `${roundMonth} month ago`;
+            } else {
+                ago = `${roundMonth} months ago`;
+            }
+        } else if (roundYear == 1) {
             ago = `${roundYear} year ago`;
         } else {
             ago = `${roundYear} years ago`;
         }
     }
+    console.log(ago)
     return ago;
 }
 
