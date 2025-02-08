@@ -89,6 +89,7 @@ function openVideo(index) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
+                <iframe src="" height="1100" width="1610" frameborder="0" id="setZoom" muted="no" style="position: absolute;"></iframe>
                 <video width="${video_iframe_w}" height="${video_iframe_h}" src="content/${all[index][4]}/${content_array[0]}" autoplay muted playsinline></video>
             </div>
             <div class="video-cover" onclick="pause()">
@@ -136,10 +137,6 @@ function openVideo(index) {
             next(index);
         });
     } else { // if we should embed a website as the main iframe
-        if (channel == "Custom GamePigeon Games") {
-            button_text = "Try it out";
-            learn_more = "https://customgpgames.com"
-        }
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
@@ -186,7 +183,7 @@ function openVideo(index) {
             document.getElementsByTagName("iframe")[0].width = web_iframe_w;
             document.getElementsByTagName("iframe")[0].id = "setZoom";
             document.getElementsByTagName("iframe")[0].height = web_iframe_h;
-            if (channel != "Auto Flöte Clean" && channel != "Higher Grounds Vending L.L.C.") {
+            if (channel != "Auto Flöte Clean" && channel != "Higher Grounds Vending L.L.C." && channel != "Youth Innovate" && channel != "Design Tech High School") {
                 document.getElementsByTagName("iframe")[0].style.top = "-50px";
                 document.getElementsByTagName("iframe")[0].width = web_iframe_w + 10;
             }
@@ -398,7 +395,7 @@ function loadRelatedVideos(index, in_list) {
 
 // function scrolls the page down to the description after clicking on SHOW MORE in the highlights box
 function goDescription() {
-    document.getElementsByClassName("screen")[0].scrollTo(0, 220);
+    document.getElementsByClassName("screen")[0].scrollTo(0, 220 + document.getElementsByClassName("description")[0].getBoundingClientRect().top);
 }
 
 // function switches to the next item in the slideshow
@@ -411,13 +408,20 @@ function next(index) {
     document.getElementsByClassName("moment-text")[0].innerHTML = all[index][14][current_content];
     
     if (files.slice(0,2).includes(all[index][15][current_content].slice(-3).toLowerCase())) { // if next is a video
+        document.getElementsByTagName("iframe")[0].src = "";
         document.getElementsByTagName("video")[0].src = `content/${all[index][4]}/${all[index][15][current_content]}`;
         document.getElementsByTagName("video")[0].style.opacity = 1;
         document.getElementsByClassName('iframe-container')[0].style.backgroundImage = "";
-    } else { // if next is a photo
+    } else if (files.slice(2,4).includes(all[index][15][current_content].slice(-3).toLowerCase())) { // if next is a photo
+        document.getElementsByTagName("iframe")[0].src = "";
         document.getElementsByClassName("iframe-container")[0].style.backgroundImage = `url("content/${all[index][4]}/${all[index][15][current_content]}")`;
         document.getElementsByTagName("video")[0].style.opacity = 0;
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
+    } else {
+        document.getElementsByTagName("iframe")[0].src = `${all[index][15][current_content]}`;
+        document.getElementsByTagName("video")[0].style.opacity = 0;
+        document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
+        document.getElementById("full-screen").href = `${all[index][15][current_content]}`;
     }
     play = 0;
 }
@@ -432,13 +436,20 @@ function previous(index) {
     document.getElementsByClassName("moment-text")[0].innerHTML = all[index][14][current_content];
 
     if (files.slice(0,2).includes(all[index][15][current_content].slice(-3).toLowerCase())) { // if next is a video
+        document.getElementsByTagName("iframe")[0].src = "";
         document.getElementsByTagName("video")[0].src = `content/${all[index][4]}/${all[index][15][current_content]}`;
         document.getElementsByTagName("video")[0].style.opacity = 1;
         document.getElementsByClassName('iframe-container')[0].style.backgroundImage = "";
-    } else { // if next is a photo
+    } else if (files.slice(2,4).includes(all[index][15][current_content].slice(-3).toLowerCase())) { // if next is a photo
+        document.getElementsByTagName("iframe")[0].src = "";
         document.getElementsByClassName("iframe-container")[0].style.backgroundImage = `url("content/${all[index][4]}/${all[index][15][current_content]}")`;
         document.getElementsByTagName("video")[0].style.opacity = 0;
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
+    } else {
+        document.getElementsByTagName("iframe")[0].src = `${all[index][15][current_content]}`;
+        document.getElementsByTagName("video")[0].style.opacity = 0;
+        document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
+        document.getElementById("full-screen").href = `${all[index][15][current_content]}`;
     }
     play = 0;
 }

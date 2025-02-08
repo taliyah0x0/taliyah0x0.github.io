@@ -21,7 +21,7 @@ function loadhome() {
                 </div>
             </div>
         </div>
-        <div class="sub">Surgical robotics • Software • Medical device engineering • Startups</div>
+        <div class="sub">Surgical Robotics • Mechatronics • Software Development • Startups</div>
         <div class="buttons">
             <a href="https://www.linkedin.com/in/taliyah-huang/" target="_blank">
                 <div class="join-button">

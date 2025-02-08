@@ -166,7 +166,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "johns_hopkins_biomedical_engineering_logo.jpeg", "Medical Device Design & Innovation", "https://www.bme.jhu.edu/",
 
-        `❥ Selected to lead a team of undergrad students in developing a device to optimize lung cryobiopsy over 1.5 years
+        `❥ Selected to lead a team of 8 undergrad students in the practical application of design controls to develop a device that optimizes the novel lung cryobiopsy procedure
         <br>❥ Observed the Ion robotic bronchoscope and interviewed clinicians about the lung cryobiopsy procedure at the Johns Hopkins Hospital
         <br>❥ Shadowed and analyzed multiple minimally-invasive Da Vinci robotic surgeries at the Johns Hopkins Bayview Medical Center`,
     
@@ -295,6 +295,43 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['CAD', '3D Printing', 'Web Design'],
         ['Website design & development was all me', 'Did the CAD for several prototypes'],
         ['https://www.im-creator.com/free/teamsaturn/saturn', 'https://cad.onshape.com/documents/0539fa19643aa5ea69bea0c8/w/6b37b10aaf9fd72a722668ae/e/078abaceeb5841a0192c7ebb?renderMode=0&uiState=66b8506bc8af0930f4bf2dd5'],
+        ''
+    ],
+    ["disabilitylab.jpg", '12 mos', "Assistive Technology Researcher & Website Designer", '2021-05-20', 'Dr. Nakamura Rad Mad Lab @ UC Berkeley', 'TMdWpt-RRqY', 21, "https://disabilitylab.berkeley.edu/", "#highschoolintern #coding #3dprinting",
+        
+        "disability_lab_logo.jpeg", "Disability Tech Lab", "https://disabilitylab.berkeley.edu/",
+
+        `❥ Core member of Team Sensible Computing: Designing for the inclusion of blind people in tactile screen-less programming, responsible for creative ideation and 3D printed prototypes
+        <br>❥ Designed the new disability bear logo and managed the lab website`,
+        
+        ['CAD', '3D Printing', 'Web Design'],
+        ['Devised and designed several 3D printed prototypes', 'Version with Aruco markers for computer vision tracking',"My website and logo design still hasn't changed much over these years"],
+        ['3dprototypes.mov', 'IMG_4155.MOV', 'https://disabilitylab.berkeley.edu/'],
+        ''
+    ],
+    ["dtech.jpg", '9 mos', "School Website Manager & Photographer", '2021-08-20', 'Design Tech High School', 'ukeE4uAr0CY', 0, "https://designtechhighschool.org/", "#highschoolintern #photography #webdesign",
+        
+        "design_tech_high_oracle_logo.jpeg", "Design Thinking Oriented Charter Education", "https://designtechhighschool.org/",
+
+        `❥ Trusted with full redesigning and editing authority of my high school's public websites
+        <br>❥ Updated graphics to be more visually-appealing and used personal photography to replace out-dated pictures`,
+        
+        ['Web Design'],
+        ["The main website I worked on hasn't changed much over these years"],
+        ['https://designtechhighschool.org/'],
+        ''
+    ],
+    ["youthinnovate.png", '1 yr', "Founder & Educator", '2020-05-20', 'Youth Innovate', 'r6amWh9J5cs', 0, "https://taliyahengineering.wixsite.com/youthinnovate", "#highschoolbusiness #CAD #origami",
+        
+        "youthinnovate.jpg", "STEM & Design for Youth, Taught by Youth", "https://taliyahengineering.wixsite.com/youthinnovate",
+
+        `❥ Accumulated 300+ hours of elementary and middle school summer programs and semester courses in various art and STEM subjects through hands-on projects and real-world technical skills
+        <br>❥ Taught design thinking based CAD virtually to over 100 students throughout the course of the COVID quarantine
+        <br>❥ Organized all accounting, marketing, course-planning, and logistics with on-time materials delivery`,
+        
+        ['Web Design'],
+        ["My website showcases many impressive student works!"],
+        ['https://taliyahengineering.wixsite.com/youthinnovate'],
         ''
     ],
 ]
