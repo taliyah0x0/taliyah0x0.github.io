@@ -306,7 +306,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         ['CAD', '3D Printing', 'Web Design'],
         ['Devised and designed several 3D printed prototypes', 'Version with Aruco markers for computer vision tracking',"My website and logo design still hasn't changed much over these years"],
-        ['3dprototypes.mov', 'IMG_4155.MOV', 'https://disabilitylab.berkeley.edu/'],
+        ['3dprototypes.mp4', 'IMG_4155.mp4', 'https://disabilitylab.berkeley.edu/'],
         ''
     ],
     ["dtech.jpg", '9 mos', "School Website Manager & Photographer", '2021-08-20', 'Design Tech High School', 'ukeE4uAr0CY', 0, "https://designtechhighschool.org/", "#highschoolintern #photography #webdesign",
