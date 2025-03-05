@@ -84,16 +84,6 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         ['https://youtube.com/watch?v=6V3gyArkQ38', 'https://youtube.com/watch?v=6V3gyArkQ38', 'https://www.printables.com/model/356141-mouseky', 'https://cad.onshape.com/documents/daeff293f435e04e10f71e4f/w/c092231cd4a00ebba90fb4d6/e/fa73797f2dd503dabaa65d9a?renderMode=0&uiState=66c5592a3a3d8b53dc998912'],
         ''
     ],
-    ["stemables.png", '8 mos', 'STEMables - Educational Tech Blocks', '2021-06-01', 'Arduino/CAD', 'TMdWpt-RRqY', 37, "https://bit.ly/stemables",
-        "#electronics #programming #accessibletoys", "stemables.png", "STEMables", '6V3gyArkQ38',
-        
-        `Rearrangeable 3D-printed blocks to create an infinite number of smart circuit sensor systems. Mission for visually-impaired and dexterously-challenged kids to learn electronics and programming in a fun, easy, and accessible way.`,
-    
-        ['Arduino', 'CAD', '3D Printing', 'Web Design'],
-        ['Designed the project website', 'Filmed an ad-like video'],
-        ['http://bit.ly/stemables', 'https://youtube.com/watch?v=6V3gyArkQ38'],
-        ''
-    ],
     ["cpace.png", '7 mos', 'CPACE - Assistive Technology for Quadriplegia', '2020-11-01', 'Arduino/CAD', '0uANgR1oOII', 25, "https://bit.ly/projectcpace",
         "#disabilitytech #phonecontrol #affordable", "cpace.png", "CPACE", '0uANgR1oOII',
         
