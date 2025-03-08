@@ -156,9 +156,10 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "johns_hopkins_biomedical_engineering_logo.jpeg", "Medical Device Design & Innovation", "https://www.bme.jhu.edu/",
 
-        `❥ Selected to lead a team of 8 undergrad students in the practical application of design controls to develop a device that optimizes the novel lung cryobiopsy procedure
-        <br>❥ Observed the Ion robotic bronchoscope and interviewed clinicians about the lung cryobiopsy procedure at the Johns Hopkins Hospital
-        <br>❥ Shadowed and analyzed multiple minimally-invasive Da Vinci robotic surgeries at the Johns Hopkins Bayview Medical Center`,
+        `❥ Selected to lead a team of 8 undergrad students in developing a device to optimize lung cryobiopsy via standard design controls practice
+        ❥ Responsible for CAD and 3D printing of prototypes, meeting logistics, and quality checking of documentation
+        ❥ Observed the Ion robotic bronchoscope and interviewed pulmonologists, nurses, and pathologists at the Johns Hopkins Hospital
+        ❥ Shadowed and analyzed multiple minimally-invasive Da Vinci robotic surgeries at the Johns Hopkins Bayview Medical Center`,
     
         ['Leadership', 'Design Thinking'],
         ['Holding the single-use cryoprobe', 'Mindmapping observations and finding needs', 'I vlogged the intersession DT leader class!'],
