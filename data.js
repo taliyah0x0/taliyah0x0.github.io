@@ -84,6 +84,16 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
         ['https://youtube.com/watch?v=6V3gyArkQ38', 'https://youtube.com/watch?v=6V3gyArkQ38', 'https://www.printables.com/model/356141-mouseky', 'https://cad.onshape.com/documents/daeff293f435e04e10f71e4f/w/c092231cd4a00ebba90fb4d6/e/fa73797f2dd503dabaa65d9a?renderMode=0&uiState=66c5592a3a3d8b53dc998912'],
         ''
     ],
+    ["stemables.png", '8 mos', 'STEMables - Educational Tech Blocks', '2021-06-01', 'Arduino/CAD', 'TMdWpt-RRqY', 37, "https://bit.ly/stemables",
+        "#electronics #programming #accessibletoys", "stemables.png", "STEMables", '6V3gyArkQ38',
+
+        `Rearrangeable 3D-printed blocks to create an infinite number of smart circuit sensor systems. Mission for visually-impaired and dexterously-challenged kids to learn electronics and programming in a fun, easy, and accessible way.`,
+
+        ['Arduino', 'CAD', '3D Printing', 'Web Design'],
+        ['Designed the project website', 'Filmed an ad-like video'],
+        ['http://bit.ly/stemables', 'https://youtube.com/watch?v=6V3gyArkQ38'],
+        ''
+    ],
     ["cpace.png", '7 mos', 'CPACE - Assistive Technology for Quadriplegia', '2020-11-01', 'Arduino/CAD', '0uANgR1oOII', 25, "https://bit.ly/projectcpace",
         "#disabilitytech #phonecontrol #affordable", "cpace.png", "CPACE", '0uANgR1oOII',
         
@@ -127,6 +137,15 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
 ]
 
 var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4], Youtube Link [5], Video Start [6], Optional: Website [7], Location Tags [8] // Channel Icon [9], Channel Description [10], Channel Website [11] // Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
+    ["prosthetic.jpg", '🔉 LIVE', 'Undergraduate Researcher', '2025-01-27', 'Dr. Brown HAMR Lab', 'FXrFQbHTQgs', 0, "", "#meche #robotics #perception",
+        "jhuwse.jpg", "Haptics and Medical Robotics Lab", "https://hamrlab.lcsr.jhu.edu",
+        `❥ Computational modeling and user studies to understand human perception of damping for surgical robotics and stroke rehabilitation
+        <br>❥ Designing a novel system of modular blocks for kids to learn electronics and programming in a fun and accessible way`,
+        ['CAD', '3D Printing', 'Matlab', 'Python', 'Arduino', 'Video Editing'],
+        ['Working with eye-tracking for damping perception user study'],
+        ['IMG_9094.MOV'],
+        ''
+    ],
     ["moonsurgical.jpg", '3 mos', 'Clinical Development Engineering Intern', '2024-06-03', 'Moon Surgical', 'sWpCpD1zYg8', 8, "", "#sancarlos #summerintern", 
         
         "moonsurgical_logo.jpeg", "Medical Robotics, Haptics, & Computer Vision", "https://moonsurgical.com",
@@ -156,25 +175,26 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "johns_hopkins_biomedical_engineering_logo.jpeg", "Medical Device Design & Innovation", "https://www.bme.jhu.edu/",
 
-        `❥ Selected to lead a team of 8 undergrad students in developing a device to optimize lung cryobiopsy via standard design controls practice
-        ❥ Responsible for CAD and 3D printing of prototypes, meeting logistics, and quality checking of documentation
-        ❥ Observed the Ion robotic bronchoscope and interviewed pulmonologists, nurses, and pathologists at the Johns Hopkins Hospital
-        ❥ Shadowed and analyzed multiple minimally-invasive Da Vinci robotic surgeries at the Johns Hopkins Bayview Medical Center`,
+        `❥ Led a team of 8 students in developing a device to optimize lung cryobiopsy sample tissue removal with standard design controls practice
+        <br>❥ Responsible for mechanical design, CAD and 3D printing of prototypes, meeting logistics, and quality checking of documentation
+        <br>❥ Observed cryobiopsy procedures and interviewed pulmonologists, nurses, and pathologists at the Johns Hopkins Hospital
+        <br>❥ Currently undergoing meetings with Johns Hopkins Technology Ventures and Erbe America to patent and license the device
+        <br>❥ Conducted V&V testing with live swine, presenting positive data at the 2025 Interventional Pulmonology Conference at Johns Hopkins`,
     
         ['Leadership', 'Design Thinking'],
-        ['Holding the single-use cryoprobe', 'Mindmapping observations and finding needs', 'I vlogged the intersession DT leader class!'],
-        ['1006.mp4', 'mindmap.mp4', 'https://www.youtube.com/watch?v=Hb0S-mTIlP0&t=75s'],
+        ['Presenting at the poster session on Design Day', 'Holding the single-use cryoprobe', 'Mindmapping observations and finding needs'],
+        ['dday.jpg', '1006.mp4', 'mindmap.mp4'],
         ''
     ],
-    ["highergrounds.jpg", '🔉 LIVE', "Co-Founder, Business Development & Graphic Design", '2023-05-12', 'Higher Grounds Vending L.L.C.', 'mD-utJUMmkU', 0, "https://highergroundsvending.com", "#baltimore #maryland", 
+    ["highergrounds.jpg", '🔉 LIVE', "Co-Founder, Business Development & Marketing", '2023-05-12', 'Higher Grounds Vending L.L.C.', 'mD-utJUMmkU', 0, "https://highergroundsvending.com", "#baltimore #maryland", 
         
         "highergroundslogoblack.png", "Affordable, freshly-brewed coffee and tea at Johns Hopkins!", "https://highergroundsvending.com",
 
-        `❥ Developed and secured a detailed business contract with Hopkins Dining to install and operate fresh café vending machines on the Homewood campus
-        <br>❥ Collected feedback from 200+ user surveys and customer interviews
-        <br>❥ Selected to participate in FFU Summer Incubator, JHU I-Corps, and FFU Fuel Startup Accelerators
+        `❥ Secured business contracts with Hopkins Dining to install and operate two fresh café vending machines on the Homewood campus so far
         <br>❥ Received $10,000+ in non-dilutive grants
-        <br>❥ Design all promotional graphics for machine and marketing use`,
+        <br>❥ Selected and participated in FFU Summer Incubator, JHU I-Corps, and FFU Fuel Startup Accelerators
+        <br>❥ Collected feedback from 500+ user surveys, customer interviews, and tabling interactions
+        <br>❥ Designed all machine graphics and manage social media presence to support continuous popularity and sales`,
         
         ['Business', 'Graphic Design'],
         ['Designed and programmed the website', 'Manage social media content'],
@@ -189,13 +209,14 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "jhuwse.jpg", "Supporting project-based learning across all engineering disciplines", "https://engineering.jhu.edu/designcenter/",
 
-        `❥ Designed and presented the 2024 JHU Design Day keynote speaker gift for the Founder of FIRST Robotics, Dean Kamen
+        `❥ Designed and presented the 2025 JHU Design Day keynote speaker gift for the Vice President of Research at Intuitive Surgical, Rich Mahoney
+        <br>❥ Designed and presented the 2024 JHU Design Day keynote speaker gift for the Founder of FIRST Robotics, Dean Kamen
         <br>❥ Lead weekly meetings with a board of students who represent the 9 engineering departments at JHU to advise the construction of the future facility
         <br>❥ Plan technocraft workshops to promote cocurricular engineering design resources at makerspaces`,
 
         ['Leadership', 'CAD', 'Graphic Design'],
-        ['Presenting my self-designed award to Dean Kamen', 'Uniquely incorporated the FIRST Robotics logo and JHU Blue Jay in a multimaterial design', 'Successful first workshop!'],
-        ['2024-05-01.mp4', 'model.mp4', 'sewncircuits.mp4'],
+        ['Designed a surgical robotics inspired blue jay award for Intuitive', 'Presenting my self-designed award to Dean Kamen', 'Uniquely incorporated the FIRST Robotics logo and JHU Blue Jay in a multimaterial design', 'Successful first workshop!'],
+        ['award.jpg', '2024-05-01.mp4', 'model.mp4', 'sewncircuits.mp4'],
         ''
     ],
     ["taliyahengineering.jpg", '🔉 LIVE', "Content Creator", '2023-01-01', 'Taliyah Engineering', 'AJlgPpAQshM', 1, "", "#youtube #instagram #facebook #tiktok",
@@ -212,12 +233,12 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['IMG_3617.mp4', 'output2.mp4', 'https://youtube.com/@taliyahengineering'],
         ''
     ],
-    ["hop.png", '🔉 LIVE', "Co-Chair of Marketing", '2022-10-30', 'Hopkins Organization for Programming', 'sYmPRYdeQyU', 3, "", "#jhuhop #events #staff",
+    ["hop.png", '🔉 LIVE', "Co-President", '2022-10-30', 'Hopkins Organization for Programming', 'sYmPRYdeQyU', 3, "", "#jhuhop #events #staff",
         
         "hoplogo.png", "Events for students, by students", "https://instagram.com/jhuhop",
 
         `❥ Organize and promote the biggest student engagement events on campus
-	    <br>❥ Lead graphics team to post event flyers and news daily (24’-25’)
+	    <br>❥ Lead Marketing team to manage daily social media and post event flyers (24’-25’)
 	    <br>❥ Lead Nights @ Hopkins team to plan and staff weekly competitions, treasure hunts, off-campus trips, trivia nights, and more (23’-24’)
 	    <br>❥ Streamline communications with 3rd-party companies and (inner-campus) clubs for big collabs: Levering Halloween 400+ attendees, Blue Jay Pocha 400+ attendees`,
         
@@ -252,12 +273,12 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['skin.mp4', 'labview.mp4', 'copilot.mp4'],
         ''
     ],
-    ["research.jpg", '12 mos', 'Undergraduate Robotics Researcher', '2023-01-22', 'Dr. Li Terradynamics Lab', 'RG9TMn1FJzc', 67, "", "#meche #robotics #computervision",
+    ["research.jpg", '12 mos', 'Undergraduate Researcher', '2023-01-22', 'Dr. Li Terradynamics Lab', 'RG9TMn1FJzc', 67, "", "#meche #robotics #computervision",
         
         "jhuwse.jpg", "Movement science at the interface of biology, robotics & physics", "https://li.me.jhu.edu/",
 
         `❥ Use Python and Matlab to analyze climbing mechanism of mountain goats and humans for model robot development
-        <br>❥ Work cross-functionally with PhD students of different disciplines and give weekly presentations`,
+        <br>❥ Work with PhD students and give weekly presentations`,
         
         ['Python', 'Matlab'],
         ['Tracking human climbing poses from videos'],
@@ -280,7 +301,8 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "stanford_university_logo.jpeg", "Center for Biodesign", "https://simr.stanford.edu/",
 
-        `❥ Worked as a high school student team to create a medical device that addresses the issues of emergency allergy medication
+        `❥ Recieved an 8-week stipend to participate in the Stanford Institute of Medicine Research program at the Center for Biodesign
+        <br>❥ Worked as a high school student team to create a unique medical device that addresses the issues of emergency allergy medication
         <br>❥ Responsible for CAD, 3D printing, animation, and website development`,
         
         ['CAD', '3D Printing', 'Web Design'],
