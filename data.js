@@ -137,8 +137,8 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
 ]
 
 var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4], Youtube Link [5], Video Start [6], Optional: Website [7], Location Tags [8] // Channel Icon [9], Channel Description [10], Channel Website [11] // Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
-    ["prosthetic.jpg", '🔉 LIVE', 'Undergraduate Researcher', '2025-01-27', 'Dr. Brown HAMR Lab', 'FXrFQbHTQgs', 0, "", "#meche #robotics #perception",
-        "jhuwse.jpg", "Haptics and Medical Robotics Lab", "https://hamrlab.lcsr.jhu.edu",
+    ["prosthetic.jpg", '🔉 LIVE', 'Undergraduate Researcher', '2025-01-27', 'Dr. Brown Haptics and Medical Robotics Lab', 'FXrFQbHTQgs', 0, "", "#meche #robotics #perception",
+        "jhuwse.jpg", "Diving into the perception of touch, surgical robotics, prosthetics, and more", "https://hamrlab.lcsr.jhu.edu",
         `❥ Computational modeling and user studies to understand human perception of damping for surgical robotics and stroke rehabilitation
         <br>❥ Designing a novel system of modular blocks for kids to learn electronics and programming in a fun and accessible way`,
         ['CAD', '3D Printing', 'Matlab', 'Python', 'Arduino', 'Video Editing'],
