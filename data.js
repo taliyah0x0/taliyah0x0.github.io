@@ -137,7 +137,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
 ]
 
 var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4], Youtube Link [5], Video Start [6], Optional: Website [7], Location Tags [8] // Channel Icon [9], Channel Description [10], Channel Website [11] // Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
-    ["dog.jpg", '🔉 LIVE', 'Senior Testing and Production Co-Op', '2025-06-18', 'Kubanda Cryotherapy', '5JsyRglwdVM', 4, "https://kubandacryotherapy.com", "#quality #production #cad",
+    ["dog.jpg", '🔉 LIVE', 'Senior Testing and Production Co-Op', '2025-06-17', 'Kubanda Cryotherapy', '5JsyRglwdVM', 4, "https://kubandacryotherapy.com", "#quality #production #cad",
         "kubanda.png", "Minimally invasive tumor treatment for pets", "https://kubandacryotherapy.com",
         
         `❥ Created detailed technical drawings for welding of custom cryogenic nozzle components
@@ -146,7 +146,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         <br>❥ Developed 80+ page detailed instruction book with annotated visual guides for complete mechanical device assembly
         <br>❥ Built multiple working devices from scratch and responsible for training employees at 3rd-party manufacturer`,
 
-        ['CAD', '3D Printing', 'Video Editing'],
+        ['CAD', '3D Printing', 'Video Editing','Graphic Design'],
         ['Developed work instructions book for device build', 'Created technical drawings on SolidWorks'],
         ['instructions.png','drawing.png'],
         ''
@@ -161,7 +161,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         <br>❥ Initiated and currently manage HAMR Lab’s Instagram and LinkedIn social media accounts, sharing research and outreach updates
         <br>❥ Showcase engineering projects at youth STEM outreach events with local organizations such as Camp B’More and Barclay Elementary School`,
 
-        ['CAD', '3D Printing', 'Matlab', 'Python', 'Arduino', 'Video Editing'],
+        ['3D Printing', 'Matlab', 'Python', 'Arduino', 'Video Editing'],
         ['Showcasing my STEM projects to local youth','Presenting my poster at 2025 Malone Healthcare Symposium','Working with eye-tracking for damping perception user study','Giant robotic hand that I worked on'],
         ['volunteering.mp4','poster.jpg','IMG_9094.MOV','hand.mov'],
         ''
@@ -292,7 +292,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['skin.mp4', 'labview.mp4', 'copilot.mp4'],
         ''
     ],
-    ["research.jpg", '12 mos', 'Undergraduate Researcher', '2023-01-22', 'Dr. Li Terradynamics Lab', 'RG9TMn1FJzc', 67, "", "#meche #robotics #computervision",
+    ["research.jpg", '12 mos', 'Undergraduate Research Assistant', '2023-01-22', 'Dr. Li Terradynamics Lab', 'RG9TMn1FJzc', 67, "", "#meche #robotics #computervision",
         
         "jhuwse.jpg", "Movement science at the interface of biology, robotics & physics", "https://li.me.jhu.edu/",
 
