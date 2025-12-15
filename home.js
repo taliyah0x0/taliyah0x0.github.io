@@ -21,7 +21,7 @@ function loadhome() {
                 </div>
             </div>
         </div>
-        <div class="sub">Surgical Robotics • Mechatronics • Software Development • Startups</div>
+        <div class="sub">Medical Robotics • Cryogenics • Software Development • Startups</div>
         <div class="buttons">
             <a href="https://www.linkedin.com/in/taliyah-huang/" target="_blank">
                 <div class="join-button">
@@ -248,8 +248,6 @@ function setAgo(input) {
     var currentMonth = parseInt(currentDate.slice(5, 7));
     var currentDay = parseInt(currentDate.slice(8, 10));
 
-    console.log()
-
     var ago = "";
     if (currentYear - startYear == 0) {
         if (currentMonth - startMonth == 0) {
@@ -293,7 +291,6 @@ function setAgo(input) {
             ago = `${roundYear} years ago`;
         }
     }
-    console.log(ago)
     return ago;
 }
 

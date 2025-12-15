@@ -137,13 +137,33 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
 ]
 
 var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4], Youtube Link [5], Video Start [6], Optional: Website [7], Location Tags [8] // Channel Icon [9], Channel Description [10], Channel Website [11] // Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
+    ["dog.jpg", '🔉 LIVE', 'Senior Testing and Production Co-Op', '2025-06-18', 'Kubanda Cryotherapy', '5JsyRglwdVM', 4, "https://kubandacryotherapy.com", "#quality #production #cad",
+        "kubanda.png", "Minimally invasive tumor treatment for pets", "https://kubandacryotherapy.com",
+        
+        `❥ Created detailed technical drawings for welding of custom cryogenic nozzle components
+        <br>❥ Troubleshooted device failures and analyzed testing data to advise next design approach
+        <br>❥ Designed custom 3D-printed fixtures and developed training videos for quality testing of a cryogenic cancer treatment device for veterinarians
+        <br>❥ Developed 80+ page detailed instruction book with annotated visual guides for complete mechanical device assembly
+        <br>❥ Built multiple working devices from scratch and responsible for training employees at 3rd-party manufacturer`,
+
+        ['CAD', '3D Printing', 'Video Editing'],
+        ['Developed work instructions book for device build', 'Created technical drawings on SolidWorks'],
+        ['instructions.png','drawing.png'],
+        ''
+    ],
     ["prosthetic.jpg", '🔉 LIVE', 'Undergraduate Researcher', '2025-01-27', 'Dr. Brown Haptics and Medical Robotics Lab', 'FXrFQbHTQgs', 0, "", "#meche #robotics #perception",
         "jhuwse.jpg", "Diving into the perception of touch, surgical robotics, prosthetics, and more", "https://hamrlab.lcsr.jhu.edu",
-        `❥ Computational modeling and user studies to understand human perception of damping for surgical robotics and stroke rehabilitation
-        <br>❥ Designing a novel system of modular blocks for kids to learn electronics and programming in a fun and accessible way`,
+
+        `❥ Computational modeling and user studies to understand the visual perception of dynamics for stroke rehabilitation and surgical robotics
+        <br>❥ Submitted first-author manuscript to PLOS Computational Biology peer-reviewed journal
+        <br>❥ Presented at the poster session for the 2025 Malone Healthcare Symposium
+        <br>❥ Integrated actuating motors for macro-scaled prosthetic hand and assembled with 3D-printed stand
+        <br>❥ Initiated and currently manage HAMR Lab’s Instagram and LinkedIn social media accounts, sharing research and outreach updates
+        <br>❥ Showcase engineering projects at youth STEM outreach events with local organizations such as Camp B’More and Barclay Elementary School`,
+
         ['CAD', '3D Printing', 'Matlab', 'Python', 'Arduino', 'Video Editing'],
-        ['Working with eye-tracking for damping perception user study'],
-        ['IMG_9094.MOV'],
+        ['Showcasing my STEM projects to local youth','Presenting my poster at 2025 Malone Healthcare Symposium','Working with eye-tracking for damping perception user study','Giant robotic hand that I worked on'],
+        ['volunteering.mp4','poster.jpg','IMG_9094.MOV','hand.mov'],
         ''
     ],
     ["moonsurgical.jpg", '3 mos', 'Clinical Development Engineering Intern', '2024-06-03', 'Moon Surgical', 'sWpCpD1zYg8', 8, "", "#sancarlos #summerintern", 
@@ -158,8 +178,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         <br>In addition to helping the team with the larger goals, I was appointed to lead 2 mini-projects:
         <br>❥ Developed a unique interactive demo and training game for Maestro's commercial launch
         <br>❥ Designed and casted a custom gynecologic model for the uterine manipulator project
-        <br><a class="hyperlink" href="https://www.loom.com/share/c5ea53e5298745968c4ba81aad5822cd" target="_blank">Recording of my slides presentation</a>
-        `,
+        <br><a class="hyperlink" href="https://www.loom.com/share/c5ea53e5298745968c4ba81aad5822cd" target="_blank">Recording of my slides presentation</a>`,
 
         ['CAD', '3D Printing', 'Graphic Design', 'Design Thinking'],
         ['Conducting 15 surgeon usability studies', 'Designing a creative demo game', 'Shadowing surgical procedures at hospitals', '3D modeling & installing a custom uterus model'],
@@ -190,11 +209,11 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         
         "highergroundslogoblack.png", "Affordable, freshly-brewed coffee and tea at Johns Hopkins!", "https://highergroundsvending.com",
 
-        `❥ Secured business contracts with Hopkins Dining to install and operate two fresh café vending machines on the Homewood campus so far
-        <br>❥ Received $10,000+ in non-dilutive grants
-        <br>❥ Selected and participated in FFU Summer Incubator, JHU I-Corps, and FFU Fuel Startup Accelerators
-        <br>❥ Collected feedback from 500+ user surveys, customer interviews, and tabling interactions
-        <br>❥ Designed all machine graphics and manage social media presence to support continuous popularity and sales`,
+        `❥ Secured contracts with Hopkins Dining to install and operate three fresh café vending machines on the Homewood campus so far
+        <br>❥ Collected feedback from 500+ user surveys and customer interviews to identify students’ need for fresh, convenient, affordable caffeine
+        <br>❥ Selected to participate in FFU Summer Incubator, JHU I-Corps, and FFU Fuel Startup Accelerators, receiving $11,000 in non-dilutive grants
+        <br>❥ Innovated with menu offerings and marketing strategies, achieving thousands of dollars in monthly sales and giving back to the community through charity collaborations
+        <br>❥ Design all promotional graphics for vending machine and marketing use, manage social media and website development`,
         
         ['Business', 'Graphic Design'],
         ['Designed and programmed the website', 'Manage social media content'],

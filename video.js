@@ -122,7 +122,7 @@ function openVideo(index) {
         </div>`;
         
         if (!files.slice(0,2).includes(content_array[0].slice(-3).toLowerCase())) { // if we're startng with a photo
-            document.getElementsByClassName('iframe-container')[0].style.backgroundImage = `url('content/${index}/${content_array[0]}')`;
+            document.getElementsByClassName('iframe-container')[0].style.backgroundImage = `url('content/${channel}/${content_array[0]}')`;
             document.getElementsByTagName("video").style.opacity = 0;
         }
         document.getElementsByClassName("heartplay")[0].style.display = "none";
