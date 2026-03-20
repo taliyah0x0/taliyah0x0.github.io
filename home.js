@@ -17,7 +17,7 @@ function loadhome() {
             <div class="name">
                 <div>Taliyah Huang</div>
                 <div class="name-banner">
-                    ✓ Looking for internships
+                    ✓ Looking for jobs
                 </div>
             </div>
         </div>
@@ -553,7 +553,7 @@ function openAbout() {
         document.getElementsByClassName("about-text")[0].innerHTML = `Hello! My name is Taliyah. I am an inventor, entrepreneur, and a senior studying biomedical engineering and computer science with a passion for clinical development and surgical robotics at Johns Hopkins University.
         <br><br>❤︎❤︎❤︎
         <br>Current Education
-        <br>Johns Hopkins University (2022 - Present)
+        <br>Johns Hopkins University (August 2022 - May 2026)
         <br>Majors ❥ B.S. Biomedical Engineering, B.S. Computer Science
         <br>Minors ❥ Robotics, Entrepreneurship & Management
         <br><br>❤︎❤︎❤︎

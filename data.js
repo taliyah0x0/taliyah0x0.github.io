@@ -137,7 +137,7 @@ var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4],
 ]
 
 var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4], Youtube Link [5], Video Start [6], Optional: Website [7], Location Tags [8] // Channel Icon [9], Channel Description [10], Channel Website [11] // Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15]
-    ["dog.jpg", '🔉 LIVE', 'Senior Testing and Production Co-Op', '2025-06-17', 'Kubanda Cryotherapy', '5JsyRglwdVM', 4, "https://kubandacryotherapy.com", "#quality #production #cad",
+    ["dog.jpg", '8 mos', 'Senior Testing and Production Co-Op', '2025-06-17', 'Kubanda Cryotherapy', '5JsyRglwdVM', 4, "https://kubandacryotherapy.com", "#quality #production #cad",
         "kubanda.png", "Minimally invasive tumor treatment for pets", "https://kubandacryotherapy.com",
         
         `❥ Created detailed technical drawings for welding of custom cryogenic nozzle components
@@ -157,13 +157,14 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         `❥ Computational modeling and user studies to understand the visual perception of dynamics for stroke rehabilitation and surgical robotics
         <br>❥ Submitted first-author manuscript to PLOS Computational Biology peer-reviewed journal
         <br>❥ Presented at the poster session for the 2025 Malone Healthcare Symposium
+        <br>❥ Designing novel ball-jointed prosthetic hand for enhanced dexterity and naturalistic movement
         <br>❥ Integrated actuating motors for macro-scaled prosthetic hand and assembled with 3D-printed stand
         <br>❥ Initiated and currently manage HAMR Lab’s Instagram and LinkedIn social media accounts, sharing research and outreach updates
         <br>❥ Showcase engineering projects at youth STEM outreach events with local organizations such as Camp B’More and Barclay Elementary School`,
 
         ['3D Printing', 'Matlab', 'Python', 'Arduino', 'Video Editing'],
-        ['Showcasing my STEM projects to local youth','Presenting my poster at 2025 Malone Healthcare Symposium','Working with eye-tracking for damping perception user study','Giant robotic hand that I worked on'],
-        ['volunteering.mp4','poster.jpg','IMG_9094.MOV','hand.mov'],
+        ['Showcasing prosthetic hand project to local youth','Presenting my poster at 2025 Malone Healthcare Symposium','Working with eye-tracking for damping perception user study','Redesigning thumb actuation','Preprint available on bioRxiv!'],
+        ['volunteering.mp4','poster.jpg','IMG_9094.MOV','hand.mov','https://www.biorxiv.org/content/10.64898/2026.03.02.708982v1'],
         ''
     ],
     ["moonsurgical.jpg", '3 mos', 'Clinical Development Engineering Intern', '2024-06-03', 'Moon Surgical', 'sWpCpD1zYg8', 8, "", "#sancarlos #summerintern", 
