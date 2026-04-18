@@ -350,8 +350,8 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         <br>❥ Updated graphics to be more visually-appealing and used personal photography to replace out-dated pictures`,
         
         ['Web Design'],
-        ["The main website I worked on hasn't changed much over these years"],
-        ['https://designtechhighschool.org/'],
+        ["Some of my school life photo highlights", "More of my photos"],
+        ['photos1.mp4','photos2.mp4'],
         ''
     ],
     ["youthinnovate.png", '1 yr', "Founder & Educator", '2020-05-20', 'Youth Innovate', 'r6amWh9J5cs', 0, "https://taliyahengineering.wixsite.com/youthinnovate", "#highschoolbusiness #CAD #origami",
