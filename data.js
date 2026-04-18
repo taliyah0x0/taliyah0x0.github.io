@@ -1,5 +1,5 @@
 var fw = [0, 1, 2, 3]; // Featured work experiences (from work)
-var fp = [3, 6, 1, 5]; // Featured projects (from projects)
+var fp = [6, 1, 5, 3]; // Featured projects (from projects)
 
 var p = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Skills [4], Youtube Link [5], Video Start [6], Optional: Website [7] // Project Tags [8], Project Icon [9], Project Name [10], Optional: Project Video Link [11] // Project Description [12] // Skill Tags [13] // Highlights [14] // Highlights Links/Images [15] // Career Relation [16]
     ["gpgames.jpg", '4 mos', "Custom GamePigeon Games - Anagrams & Word Hunt", '2024-12-15', 'HTML/CSS/JS', 'JZl_vHY_--o', 0, "https://customgpgames.com",
@@ -249,8 +249,8 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         <br>❥ Interviewed and published on the World Journal, Taiwan Plus, Radio Taiwan International (BobaWay)`,
         
         ['Video Editing'],
-        ['Filming in the Community Kitchen', 'A recent vlog from the summer', 'Link to my Youtube Channel!'],
-        ['IMG_3617.mp4', 'output2.mp4', 'https://youtube.com/@taliyahengineering'],
+        ['Filming in the Community Kitchen', 'Mouseky spotlighted by Official Arduino', 'A recent vlog from the summer', 'Link to my Youtube Channel!'],
+        ['IMG_3617.mp4', 'https://x.com/arduino/status/1624162373991911424', 'output2.mp4', 'https://youtube.com/@taliyahengineering'],
         ''
     ],
     ["hop.png", '🔉 LIVE', "Co-President", '2022-10-30', 'Hopkins Organization for Programming', 'sYmPRYdeQyU', 3, "", "#jhuhop #events #staff",
