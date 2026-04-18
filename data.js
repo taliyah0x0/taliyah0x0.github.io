@@ -154,17 +154,17 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
     ["prosthetic.jpg", '🔉 LIVE', 'Undergraduate Researcher', '2025-01-27', 'Dr. Brown Haptics and Medical Robotics Lab', 'FXrFQbHTQgs', 0, "", "#meche #robotics #perception",
         "jhuwse.jpg", "Diving into the perception of touch, surgical robotics, prosthetics, and more", "https://hamrlab.lcsr.jhu.edu",
 
-        `❥ Computational modeling and user studies to understand the visual perception of dynamics for stroke rehabilitation and surgical robotics
+        `❥ Project 1: Computational modeling and user studies to understand the visual perception of dynamics for stroke rehabilitation and surgical robotics
         <br>❥ Submitted first-author manuscript to PLOS Computational Biology peer-reviewed journal
         <br>❥ Presented at the poster session for the 2025 Malone Healthcare Symposium
-        <br>❥ Designing novel ball-jointed prosthetic hand for enhanced dexterity and naturalistic movement
-        <br>❥ Integrated actuating motors for macro-scaled prosthetic hand and assembled with 3D-printed stand
+        <br>❥ Presented at the poster session for the 2026 Neural Control of Movement Conference in Kobe, Japan
+        <br>❥ Project 2: Designing novel ball-jointed prosthetic hand for enhanced dexterity and naturalistic movement
         <br>❥ Initiated and currently manage HAMR Lab’s Instagram and LinkedIn social media accounts, sharing research and outreach updates
         <br>❥ Showcase engineering projects at youth STEM outreach events with local organizations such as Camp B’More and Barclay Elementary School`,
 
         ['3D Printing', 'Matlab', 'Python', 'Arduino', 'Video Editing'],
-        ['Showcasing prosthetic hand project to local youth','Presenting my poster at 2025 Malone Healthcare Symposium','Working with eye-tracking for damping perception user study','Redesigning thumb actuation','Preprint available on bioRxiv!'],
-        ['volunteering.mp4','poster.jpg','IMG_9094.MOV','hand.mov','https://www.biorxiv.org/content/10.64898/2026.03.02.708982v1'],
+        ['Finished wiring up actuation lines for ball-jointed prosthetic hand design','Showcasing prosthetic hand project to local youth','Presenting my poster at 2025 Malone Healthcare Symposium','Working with eye-tracking for damping perception user study','Preprint available on bioRxiv!'],
+        ['hand.mov','volunteering.mp4','poster.jpg','IMG_9094.MOV','https://www.biorxiv.org/content/10.64898/2026.03.02.708982v1'],
         ''
     ],
     ["moonsurgical.jpg", '3 mos', 'Clinical Development Engineering Intern', '2024-06-03', 'Moon Surgical', 'sWpCpD1zYg8', 8, "", "#sancarlos #summerintern", 
