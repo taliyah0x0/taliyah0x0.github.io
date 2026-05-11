@@ -235,8 +235,8 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         <br>❥ Plan technocraft workshops to promote cocurricular engineering design resources at makerspaces`,
 
         ['Leadership', 'CAD', 'Graphic Design'],
-        ['Designed a surgical robotics inspired blue jay award for Intuitive', 'Presenting my self-designed award to Dean Kamen', 'Uniquely incorporated the FIRST Robotics logo and JHU Blue Jay in a multimaterial design', 'Successful first workshop!'],
-        ['award.jpg', '2024-05-01.mp4', 'model.mp4', 'sewncircuits.mp4'],
+        ['Successful multimaterial award designed for Carol Reiley', 'My Blender file','Presenting my award to Rich Mahoney', 'Final version for Rich Mahoney on Onshape','Presenting my self-designed award to Dean Kamen', 'Uniquely incorporated the FIRST Robotics logo and JHU Blue Jay in a multimaterial design', 'Successful first workshop!'],
+        ['IMG_8948.mov', 'carol.mov', 'award.jpg', 'rich.mov', '2024-05-01.mp4', 'model.mp4', 'sewncircuits.mp4'],
         ''
     ],
     ["taliyahengineering.jpg", '🔉 LIVE', "Content Creator", '2023-01-01', 'Taliyah Engineering', 'AJlgPpAQshM', 1, "", "#youtube #instagram #facebook #tiktok",
