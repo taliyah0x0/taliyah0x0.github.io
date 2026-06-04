@@ -58,7 +58,7 @@ function openVideo(index) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
             <div class="iframe-container">
-                <iframe src="https://www.youtube.com/embed/${code}?mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+                <iframe src="https://www.youtube.com/embed/${code}?mute=0&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
                     height="${video_iframe_h}" width="${video_iframe_w}" frameborder="0" allowfullscreen style="position:absolute; top:-60px;"></iframe>
             </div>
             <div class="cover"></div>
@@ -419,6 +419,40 @@ function next(index) {
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
     } else {
         document.getElementsByTagName("iframe")[0].src = `${all[index][15][current_content]}`;
+        document.getElementsByTagName("iframe")[0].src.addEventListener('load', () => {
+            let isWorking = false;
+            console.log("TRYING TO ACCESS IFRAME CONTENT")
+            
+            try {
+                // Try to read a property from the cross-origin window
+                const internalWindow = extIframe.contentWindow;
+                
+                // If it successfully loaded the external domain, 
+                // reading its location will immediately throw a CORS error.
+                const testAccess = internalWindow.location.href; 
+                
+                // If it didn't throw an error, it means the page is about:blank 
+                // or a local error page, meaning the real website didn't load.
+                if (testAccess === "about:blank" || testAccess === "") {
+                    isWorking = false;
+                    console.log("Loaded page is blank or an error page.");
+                }
+                console.log("IS WORKING")
+            } catch (error) {
+                // A "Permission denied" or CORS error means the external page 
+                // loaded successfully and the browser is protecting it!
+                if (error.message.includes("blocked") || error.name === "SecurityError") {
+                    isWorking = true;
+                }
+                console.log("ERROR: " + error.message);
+            }
+
+            if (!isWorking) {
+                console.error("External iframe failed to load.");
+            } else {
+                console.log("External iframe is working.");
+            }
+        });
         document.getElementsByTagName("video")[0].style.opacity = 0;
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
         document.getElementById("full-screen").href = `${all[index][15][current_content]}`;
