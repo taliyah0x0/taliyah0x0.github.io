@@ -158,7 +158,7 @@ function loadhomefull() {
             `<div class="block-video" onmouseenter="playvid(${i + case_studies.length})" onmouseleave="stopvid(${i + case_studies.length})" onclick="openVideo(${all.indexOf(w[fw[i]])})">
                 <div class="video-thumbnail">
                     <iframe src="https://www.youtube.com/embed/${w[fw[i]][5]}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&start=${w[fw[i]][6]}"
-                height="275" width="275" frameborder="0" style="position:absolute;"></iframe>
+                height="275" width="275" frameborder="0" style="position:absolute; pointer-events: none;"></iframe>
                     <div class="clear"></div>
                     <div class="duration"></div>
                 </div>

@@ -419,7 +419,7 @@ function next(index) {
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
     } else {
         document.getElementsByTagName("iframe")[0].src = `${all[index][15][current_content]}`;
-        document.getElementsByTagName("iframe")[0].src.addEventListener('load', () => {
+        document.getElementsByTagName("iframe")[0].addEventListener('load', () => {
             let isWorking = false;
             console.log("TRYING TO ACCESS IFRAME CONTENT")
             
