@@ -225,7 +225,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         Sourcing our fresh beverage-making vending machines directly from a manufacturer doesn't exactly show innovation, but it allowed us to quickly start operating as we continued to learn more and cater our products towards our target audience: College students.
         So far, it has been a great experience with the support of  Johns Hopkins' entrepreneurship programs and resources, as we are continuing to expand our reach and services across campus.`,
     ],
-    ["designday.jpg", '🔉 LIVE', "President & Lead Designer", '2023-11-15', 'Engineering Design Center Student Advisory Board', 'd2dpfmzsryY', 6, "https://engineering.jhu.edu/designcenter/", "#leadership #multidisciplinary #design",
+    ["designday.jpg", '2.5 yrs', "President & Lead Designer", '2023-11-15', 'Engineering Design Center Student Advisory Board', 'd2dpfmzsryY', 6, "https://engineering.jhu.edu/designcenter/", "#leadership #multidisciplinary #design",
         
         "jhuwse.jpg", "Supporting project-based learning across all engineering disciplines", "https://engineering.jhu.edu/designcenter/",
 
@@ -253,7 +253,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['IMG_3617.mp4', 'https://x.com/arduino/status/1624162373991911424', 'output2.mp4', 'https://youtube.com/@taliyahengineering'],
         ''
     ],
-    ["hop.png", '🔉 LIVE', "Co-President", '2022-10-30', 'Hopkins Organization for Programming', 'sYmPRYdeQyU', 3, "", "#jhuhop #events #staff",
+    ["hop.png", '4 yrs', "Co-President", '2022-10-30', 'Hopkins Organization for Programming', 'sYmPRYdeQyU', 3, "", "#jhuhop #events #staff",
         
         "hoplogo.png", "Events for students, by students", "https://instagram.com/jhuhop",
 
@@ -267,7 +267,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['https://www.youtube.com/watch?v=sYmPRYdeQyU', 'content/Hopkins Organization for Programming/designs.png'],
         ''
     ],
-    ["jasa.JPG", '🔉 LIVE', "Treasurer", '2022-09-05', 'Japanese American Students Association', 'dytG8M8cfBY', 1, "", "#jasa #events #japan",
+    ["jasa.JPG", '4 yrs', "Treasurer", '2022-09-05', 'Japanese American Students Association', 'dytG8M8cfBY', 1, "", "#jasa #events #japan",
         
         "jasa.jpg", "Celebrating and honoring all things Japanese 🇯🇵", "https://instagram.com/jhujasa",
 
@@ -317,7 +317,7 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         ['https://youtube.com/watch?v=W6m0floaz-E'],
         ''
     ],
-    ["saturn.png", '3 mos', "Bioengineering Team Intern", '2022-06-10', 'Stanford Institute of Medicine', '8GJGm3xvwq8', 0, "https://www.im-creator.com/free/teamsaturn/saturn", "#summerintern #allergy #medtech",
+    ["saturn.png", '3 mos', "Bioengineering Team Intern", '2022-06-10', 'Stanford Institute of Medicine', '8GJGm3xvwq8', 0, "https://med.stanford.edu/simr.html", "#summerintern #allergy #medtech",
         
         "stanford_university_logo.jpeg", "Center for Biodesign", "https://simr.stanford.edu/",
 
@@ -325,9 +325,9 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         <br>❥ Worked as a high school student team to create a unique medical device that addresses the issues of emergency allergy medication
         <br>❥ Responsible for CAD, 3D printing, animation, and website development`,
         
-        ['CAD', '3D Printing', 'Web Design'],
-        ['Website design & development was all me', 'Did the CAD for several prototypes'],
-        ['https://www.im-creator.com/free/teamsaturn/saturn', 'https://cad.onshape.com/documents/0539fa19643aa5ea69bea0c8/w/6b37b10aaf9fd72a722668ae/e/078abaceeb5841a0192c7ebb?renderMode=0&uiState=66b8506bc8af0930f4bf2dd5'],
+        ['CAD', '3D Printing'],
+        ['My CAD and 3D animation work', 'Team Saturn and mentors', 'Our final research poster', 'Product ad made by Johnathan'],
+        ['Blender_anim.MOV', 'TeamSaturn.png', 'poster.png', 'Product_ad.mp4'],
         ''
     ],
     ["disabilitylab.jpg", '12 mos', "Assistive Technology Researcher & Website Designer", '2021-05-20', 'Dr. Nakamura Rad Mad Lab @ UC Berkeley', 'TMdWpt-RRqY', 21, "https://disabilitylab.berkeley.edu/", "#highschoolintern #coding #3dprinting",
@@ -572,15 +572,6 @@ var case_studies = [
 
 var all = p.concat(w);
 all.sort((a, b) => b[3].localeCompare(a[3]));
-/*for (var i = 0; i < all.length - 1; i++) {
-    for (var j = 0; j < all.length - 1; j++) {
-        if (all[j][1] != '🔉 LIVE' && all[j + 1][1] == '🔉 LIVE') {
-            var temp = all[j];
-            all[j] = all[j + 1];
-            all[j + 1] = temp;
-        }
-    }
-}*/
 
 var skills = [
     ["3dprinting.jpg", "3D Printing", "2018-10-01"],

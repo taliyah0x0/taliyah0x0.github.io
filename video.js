@@ -46,8 +46,8 @@ function openVideo(index) {
     let content_array = all[index][15];
 
     // set the iframe dimensions
-    let video_iframe_h = 455;
-    let video_iframe_w = 600;
+    let video_iframe_h = 500;//455;
+    let video_iframe_w = 650;//600;
     if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) { // if we're on a phone
         video_iframe_h = 310;
         video_iframe_w = 360;
@@ -57,13 +57,13 @@ function openVideo(index) {
     if (code.substring(0,8) != "https://" && !files.includes(content_array[0].slice(-3).toLowerCase())) {
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
-            <div class="iframe-container">
-                <iframe src="https://www.youtube.com/embed/${code}?mute=0&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
-                    height="${video_iframe_h}" width="${video_iframe_w}" frameborder="0" allowfullscreen style="position:absolute; top:-60px;"></iframe>
-            </div>
             <div class="cover"></div>
             <div class="video-cover" onclick="removeCover('${code}')">
                 <div class="heartplay"></div>
+            </div>
+            <div class="iframe-container">
+                <iframe src="https://www.youtube.com/embed/${code}?mute=0&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+                    height="${video_iframe_h}" width="${video_iframe_w}" frameborder="0" allowfullscreen style="position:absolute; top:-60px;"></iframe>
             </div>
             <div class="left-panel">
                 <div class="title">${title}</div>
@@ -88,10 +88,6 @@ function openVideo(index) {
     } else if (files.includes(content_array[0].slice(-3).toLowerCase())) { // if it should be a media slideshow for the main iframe
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
-            <div class="iframe-container">
-                <iframe src="" height="1100" width="1610" frameborder="0" id="setZoom" muted="no" style="position: absolute;"></iframe>
-                <video width="${video_iframe_w}" height="${video_iframe_h}" src="content/${all[index][4]}/${content_array[0]}" autoplay muted playsinline></video>
-            </div>
             <div class="video-cover" onclick="pause()">
                 <div class="heartplay"></div>
                 <div class="bottom-bar"></div>
@@ -101,6 +97,10 @@ function openVideo(index) {
                 <div class="next" onclick="next(${index})"></div>
                 <div class="moment-text">${all[index][14][0]}</div>
                 <a href="content/${all[index][4]}/${content_array[0]}" target="_blank" onclick="play=0;pause()" id="full-screen"><div class="full-screen"></div></a>
+            </div>
+            <div class="iframe-container">
+                <iframe src="" height="1100" width="1610" frameborder="0" id="setZoom" muted="no" style="position: absolute;"></iframe>
+                <video width="${video_iframe_w}" height="${video_iframe_h}" src="content/${all[index][4]}/${content_array[0]}" autoplay muted playsinline></video>
             </div>
             <div class="left-panel">
                 <div class="title">${title}</div>
@@ -139,14 +139,14 @@ function openVideo(index) {
     } else { // if we should embed a website as the main iframe
         document.getElementById("container").innerHTML = 
         `<div class="open-video">
-            <div class="iframe-container">
-                <iframe src="${code}" height="${video_iframe_h}" width="${video_iframe_w}" frameborder="0" id="none" muted="no"></iframe>
-            </div>
             <div class="video-cover" onclick="pause()">
                 <div class="heartplay"></div>
                 <div class="playbar"></div>
                 <div class="play" onclick="pause()"></div>
                 <a href="${code}" target="_blank"><div class="full-screen"></div></a>
+            </div>
+            <div class="iframe-container">
+                <iframe src="${code}" height="${video_iframe_h}" width="${video_iframe_w}" frameborder="0" id="none" muted="no"></iframe>
             </div>
             <div class="left-panel">
                 <div class="title">${title}</div>
@@ -419,43 +419,32 @@ function next(index) {
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
     } else {
         document.getElementsByTagName("iframe")[0].src = `${all[index][15][current_content]}`;
-        document.getElementsByTagName("iframe")[0].addEventListener('load', () => {
-            let isWorking = false;
-            console.log("TRYING TO ACCESS IFRAME CONTENT")
-            
-            try {
-                // Try to read a property from the cross-origin window
-                const internalWindow = extIframe.contentWindow;
-                
-                // If it successfully loaded the external domain, 
-                // reading its location will immediately throw a CORS error.
-                const testAccess = internalWindow.location.href; 
-                
-                // If it didn't throw an error, it means the page is about:blank 
-                // or a local error page, meaning the real website didn't load.
-                if (testAccess === "about:blank" || testAccess === "") {
-                    isWorking = false;
-                    console.log("Loaded page is blank or an error page.");
-                }
-                console.log("IS WORKING")
-            } catch (error) {
-                // A "Permission denied" or CORS error means the external page 
-                // loaded successfully and the browser is protecting it!
-                if (error.message.includes("blocked") || error.name === "SecurityError") {
-                    isWorking = true;
-                }
-                console.log("ERROR: " + error.message);
-            }
-
-            if (!isWorking) {
-                console.error("External iframe failed to load.");
-            } else {
-                console.log("External iframe is working.");
-            }
-        });
         document.getElementsByTagName("video")[0].style.opacity = 0;
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
         document.getElementById("full-screen").href = `${all[index][15][current_content]}`;
+
+        let isWorking = true;
+        document.getElementsByTagName("iframe")[0].addEventListener('load', () => {
+            try {
+                const internalWindow = extIframe.contentWindow;
+                const testAccess = internalWindow.location.href; 
+                if (testAccess === "about:blank" || testAccess === "") {
+                    console.log("Loaded page is blank or an error page.");
+                    isWorking = false;
+                }
+            } catch (error) {
+                console.log("ERROR: " + error.message);
+                isWorking = false;
+            }
+
+            if (!isWorking) {
+                document.getElementsByTagName("iframe")[0].src = "";
+                document.getElementsByClassName("iframe-container")[0].style.backgroundImage = `url("content/${all[index][4]}/${current_content}.png")`;
+                document.getElementsByTagName("video")[0].style.opacity = 0;
+                document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
+                document.getElementById("full-screen").href = `${all[index][15][current_content]}`;
+            }
+        });
     }
     play = 0;
 }
