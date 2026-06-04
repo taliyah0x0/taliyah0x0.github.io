@@ -317,11 +317,10 @@ function clickMenu(index) {
                     </div>
                     <div class="trailer-text">
                         <a href="trailer.mp4" target="_blank"><div class="trailer-video-title">Channel Trailer: Taliyah Huang</div></a>
-                        <div class="trailer-video-sub">Inventive trailblazer with a cheerful energy! • 20 years old</div>
-                        <div class="trailer-video-description">I’m a biomedical engineering and computer science student at Johns Hopkins University, pursuing minors that capture my interest for robotics and entrepreneurship.
-                            <br><br>As a high schooler, I discovered a passion for engineering, and spent years honing my creativity and innovation.
-                            <br><br>I met my best friend who supported me, despite my failed assistive device I had worked on for months.
-                            <br><br> Now, it’s my goal to develop in the clinical field, so that I can give back to the kindest hearts who need technology more than anyone.
+                        <div class="trailer-video-sub">Inventive trailblazer with a cheerful energy! • 21 years old</div>
+                        <div class="trailer-video-description">I'm a recent graduate of Johns Hopkins University, majoring in biomedical engineering and computer science with minors that capture my interests for robotics and entrepreneurship.
+                            <br><br>As a high schooler, I discovered my passion for engineering, and spent years honing my creativity and skills. I grew to love building assistive devices for people with disabilities, and I realized it was the field of medical technologies that I wanted to apply my abilities most.
+                            <br><br>Now, I work toward collecting more knowledge and experiences through academia, industry, and personal projects, so that I can one day grow my own unicorn startup, that saves lives through innovation.
                         </div>
                     </div>
                 </div>
@@ -343,7 +342,7 @@ function clickMenu(index) {
             </div>`;
         loadhomefull();
         
-    } else if (index == 1) { // EXPERIENCes
+    } else if (index == 1) { // EXPERIENCES
         // unused code below for the dynamic loading
         /*let container = document.getElementById("container");
         //total_load = Math.floor((container.offsetWidth - 60) / 240) * 2;
