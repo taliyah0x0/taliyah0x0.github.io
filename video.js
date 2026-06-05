@@ -46,8 +46,8 @@ function openVideo(index) {
     let content_array = all[index][15];
 
     // set the iframe dimensions
-    let video_iframe_h = 455;//500;//455;
-    let video_iframe_w = 600;//650;//600;
+    let video_iframe_h = 500;//455;
+    let video_iframe_w = 650;//600;
     if (window.matchMedia("(max-aspect-ratio: 1/1)").matches) { // if we're on a phone
         video_iframe_h = 310;
         video_iframe_w = 360;
@@ -468,6 +468,24 @@ function previous(index) {
         document.getElementsByTagName("video")[0].style.opacity = 0;
         document.getElementsByTagName("video")[0].src = 'content/placeholder.mp4';
         document.getElementById("full-screen").href = `${all[index][15][current_content]}`;
+
+        let isWorking = true;
+        try {
+            const internalWindow = extIframe.contentWindow;
+            const testAccess = internalWindow.location.href; 
+            if (testAccess === "about:blank" || testAccess === "") {
+                console.log("Loaded page is blank or an error page.");
+                isWorking = false;
+            }
+        } catch (error) {
+            console.log("ERROR: " + error.message);
+            isWorking = false;
+        }
+
+        if (!isWorking) {
+            document.getElementsByTagName("iframe")[0].src = "";
+            document.getElementsByClassName("iframe-container")[0].style.backgroundImage = `url("content/${all[index][4]}/${current_content}.png")`;
+        }
     }
     play = 0;
 }

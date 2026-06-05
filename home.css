@@ -643,6 +643,10 @@ a {
     position:relative;
 }
 
+.video-cover {
+    z-index: 400;
+}
+
 .video-sub {
     width: 265px;
     font-size: 12px;
