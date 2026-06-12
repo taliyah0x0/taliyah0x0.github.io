@@ -163,8 +163,8 @@ var w = [ // Thumbnail [0], Duration [1], Title [2], Start Date [3], Company [4]
         <br>❥ Showcase engineering projects at youth STEM outreach events with local organizations such as Camp B’More and Barclay Elementary School`,
 
         ['3D Printing', 'Matlab', 'Python', 'Arduino', 'Video Editing'],
-        ['Finished wiring up actuation lines for ball-jointed prosthetic hand design','Showcasing prosthetic hand project to local youth','Presenting my poster at 2025 Malone Healthcare Symposium','Working with eye-tracking for damping perception user study','Preprint available on bioRxiv!'],
-        ['hand.mov','volunteering.mp4','poster.jpg','IMG_9094.MOV','https://www.biorxiv.org/content/10.64898/2026.03.02.708982v1'],
+        ['EMG controlled flexible hand', 'Simulink program to control robotic hand', 'Wired up for ball-jointed prosthetic hand design','Showcasing prosthetic hand project to local youth','Presenting my poster at 2025 Malone Healthcare Symposium','Working with eye-tracking for damping perception user study','Preprint available on bioRxiv!'],
+        ['IMG_0163.MOV', 'simulink.png', 'hand.mov','volunteering.mp4','poster.jpg','IMG_9094.MOV','https://www.biorxiv.org/content/10.64898/2026.03.02.708982v1'],
         ''
     ],
     ["moonsurgical.jpg", '3 mos', 'Clinical Development Engineering Intern', '2024-06-03', 'Moon Surgical', 'sWpCpD1zYg8', 8, "", "#sancarlos #summerintern", 
