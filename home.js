@@ -549,7 +549,7 @@ function openAbout() {
             </div>
             </div>
         </div>`;
-        document.getElementsByClassName("about-text")[0].innerHTML = `Hello! My name is Taliyah. I am an inventor, entrepreneur, and a recent graduate of Johns Hopkins University, where I studyied biomedical engineering and computer science with a passion for cryogenics and medical robotics.
+        document.getElementsByClassName("about-text")[0].innerHTML = `Hello! My name is Taliyah. I am an inventor, entrepreneur, and a recent graduate of Johns Hopkins University, where I studied biomedical engineering and computer science with a passion for cryogenics and medical robotics.
         <br><br>❤︎❤︎❤︎
         <br>Current Education
         <br>Johns Hopkins University (August 2022 - May 2026)
